@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-compatible" content="IE=edge">
+        <meta name="viewport" content="width=devicewidth, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+        <link rel="stylesheet" href="static/css/style.css"> 
+        <title>
+            foodtruck
+        </title>
+
+    </head>
+    <body>
+        <header>
+           <div class="header-barra">
+            <div class="icon-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+                <form action="search.php" method="get">
+                    <fieldset>
+                        <input type="busqueda" name="busqueda" placeholder="Buscar">
+                        <button class="btn-lupa"><span class="fas fa-search"></span></button>
+                        
+                        
+                    </fieldset>
+                </form>
+                <div class="contacto">
+                    <i class="fas fa-headset"></i>
+                    <h3>Contacto</h3>
+                   </div>
+           </div>
+           <nav class="list">
+               <ul>
+                    <li><a href="/">logo</a></li>
+                   <li>Nombre</li>
+                   <li>Ubicacion</li>
+                   <li>Galeria</li>
+               </ul>
+               <ul class="cuenta">
+                <i class="fas fa-user"></i>
+                <li><a href="/register">Cuenta</a></li>
+                <li><a href="/login">Iniciar Sesion</a></li>
+               </ul>
+           </nav>
+           
+        </header>
+        <main>
+            <form class="formulario">
+                <div class="seccion-icon">
+                    <i class="far fa-times-circle"></i>
+                </div>
+                <h3>Iniciar sesion</h3>
+                <div class="login">
+                    <input type="text" placeholder="Nombre de Usuario">
+                    <br>
+                    <input type="password" placeholder="Contraseña">
+                </div>
+                <div class="seccion-btn">
+                    <button class="button" type="submit"> Enviar</button>
+                     
+                </div>
+         </form>
+    
+        </main>
+        <footer class="footer">
+            <section>
+                <div class="icon-footer">
+                    <i class="fas fa-utensils"></i>
+                </div>
+                <h3>Siguenos en</h3>
+                <div class="icon-footer">
+                    <i class="fab fa-facebook"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-twitter"></i>
+                </div>
+            </section>  
+            <section>
+                <p>Nosotros</p>
+                <p>Terminos y condiciones</p>
+                <p>Politica de tratamiento de datos</p>
+                <p>Aviso de privacidad</p>
+                <p>Ayuda</p>
+                <p>Comentarios</p>
+            </section>
+            <section>
+                <h3>Copyright © 1999-2020 Foodtruck S.R.L.</h3>
+            </section>
+        </footer>
+    </body>
+    
+    </html>

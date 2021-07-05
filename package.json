@@ -4,7 +4,7 @@
   "description": "Descripción: El sitio web estará diseñado para la venta de comida de un restaurante llamado \"Nombre\", que ofrece principalmente hamburguesas y otros snack tradicionales con recetas autenticas. El restaurante estará dirigido a jóvenes que quieran disfrutar de comida deliciosa desde la comodidad de su casa.\r Equipo:\r -Rebeca: Licenciada en Comercio Internacional enfocada en gestionar la arquitectura y funcionalidad de la aplicación\r -David: Ingeniero en sistemas automotrices enfocado en el diseño y optimización de la aplicación.\r -Raúl: Ingeniero Industrial enfocado en reducir desperdicios, eficientar el flujo de información y  aumentar el valor agregado de la aplicación.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon app.js"
   },
   "repository": {
     "type": "git",
@@ -18,5 +18,8 @@
   "homepage": "https://github.com/RaulLlamas/e-commerce#readme",
   "dependencies": {
     "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodeman": "^1.1.2"
   }
 }
