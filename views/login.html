@@ -1,95 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-compatible" content="IE=edge">
-        <meta name="viewport" content="width=devicewidth, initial-scale=1.0">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap" rel="stylesheet">
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
-        <link rel="stylesheet" href="static/css/style.css"> 
-        <title>
-            foodtruck
-        </title>
-
-    </head>
-    <body>
-        <header>
-           <div class="header-barra">
-            <div class="icon-menu">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width">
+    <title>Rogers</title>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400&family=Teko:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/normalize.css"> 
+    <link rel="stylesheet" href="/css/styles.css"> 
+    <script src="https://kit.fontawesome.com/a08ed63178.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <div class="main-header">
+            <div class="left-navbar">
                 <i class="fas fa-bars"></i>
+                <a href="/"><img src="/img/Rogers-logo(amarrillo).svg" class= "logo" alt="logo"></a>
             </div>
-                <form action="search.php" method="get">
-                    <fieldset>
-                        <input type="busqueda" name="busqueda" placeholder="Buscar">
-                        <button class="btn-lupa"><span class="fas fa-search"></span></button>
-                        
-                        
-                    </fieldset>
-                </form>
-                <div class="contacto">
-                    <i class="fas fa-headset"></i>
-                    <h3>Contacto</h3>
-                   </div>
-           </div>
-           <nav class="list">
-               <ul>
-                    <li><a href="/">logo</a></li>
-                   <li>Nombre</li>
-                   <li>Ubicacion</li>
-                   <li>Galeria</li>
-               </ul>
-               <ul class="cuenta">
-                <i class="fas fa-user"></i>
-                <li><a href="/register">Cuenta</a></li>
-                <li><a href="/login">Iniciar Sesion</a></li>
-               </ul>
-           </nav>
-           
-        </header>
-        <main>
-            <form class="formulario">
-                <div class="seccion-icon">
-                    <i class="far fa-times-circle"></i>
-                </div>
-                <h3>Iniciar sesion</h3>
-                <div class="login">
-                    <input type="text" placeholder="Nombre de Usuario">
-                    <br>
-                    <input type="password" placeholder="Contraseña">
-                </div>
-                <div class="seccion-btn">
-                    <button class="button" type="submit"> Enviar</button>
-                     
-                </div>
-         </form>
-    
-        </main>
-        <footer class="footer">
-            <section>
-                <div class="icon-footer">
-                    <i class="fas fa-utensils"></i>
-                </div>
-                <h3>Siguenos en</h3>
-                <div class="icon-footer">
-                    <i class="fab fa-facebook"></i>
-                    <i class="fab fa-instagram"></i>
-                    <i class="fab fa-twitter"></i>
-                </div>
-            </section>  
-            <section>
-                <p>Nosotros</p>
-                <p>Terminos y condiciones</p>
-                <p>Politica de tratamiento de datos</p>
-                <p>Aviso de privacidad</p>
-                <p>Ayuda</p>
-                <p>Comentarios</p>
-            </section>
-            <section>
-                <h3>Copyright © 1999-2020 Foodtruck S.R.L.</h3>
-            </section>
-        </footer>
-    </body>
-    
-    </html>
+            <div class="right-navbar">
+                <ul class="option-navbar">
+                    <li><a href="#"><p>Nosotros</p></a></li>
+                    <li><a href="/#menu"><p>Menu</p></a></li>
+                    <li><a href="/shopping-cart"><i class="fas fa-shopping-cart"></i><p>Carrito</p></a></li>
+                    <li><a href="/login"><i class="fas fa-user"></i><p>Iniciar Sesión</p></a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <main>
+        <!-- <img src="/img/back-register.png" class= "background" alt="background"> -->
+        <div class="iniciar-sesion">
+            <p class="title-register">Iniciar Sesión</p>
+            <form class="form" action="">
+                <input type="email" name="email" placeholder="Correo electrónico">
+                <input type="password" name="password" placeholder="Contraseña">
+                <button type="submit">Aceptar</button>
+            </form>
+        </div>
+        <div class="register-back">
+            <img src="/img/back-login.png" class= "background-login" alt="background">
+        </div>
+    </main>
+</body>
+</html>

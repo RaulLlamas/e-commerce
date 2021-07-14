@@ -1,0 +1,231 @@
+body{
+    background-color:red;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+    
+}
+main{
+    width: 100%;
+    background-image: url("../img/hamburguesa.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 20px auto;
+}
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+header{
+    display: block;
+}
+.header-barra{
+    background-color: red;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    flex-wrap: wrap;
+
+}
+.header-barra h3{
+    color: whitesmoke;
+}
+fieldset{
+    padding: 0;
+    border: none;
+    margin: 5px;
+    width: 50%;
+    display: flex;
+}
+input[type="busqueda"]{
+    display: inline-block;
+    padding: 10px;
+    border-radius: 4px;
+    font-size: 18px;
+    border: none;
+    background-color: #eaeaea;
+}
+.contacto{
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+}
+.icon-menu{
+    margin: 20px auto;
+    margin-bottom: 20px;
+    width: 2.5em;
+    font-size: 1.5em;
+}
+.icon-menu i{
+    width:100%;
+    padding: 6px 5px;
+     text-align: center;
+    color:white;
+    border-radius: 10%;
+    font-weight: 700;
+    font-size: 2em;
+    background-color: #03264C;
+}
+
+.section-main{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 15px;
+    align-items: center;
+    text-align: left;
+    width: 70%;
+    margin-left: 20px;
+    height: 25em;
+
+}
+.titulo{
+    color: white;
+    margin: 20px 0;
+}
+.footer{
+    background-color: #eaeaea;
+    padding: 5px;
+   
+    
+}
+
+.footer *{
+    text-align: center;
+    margin: 15px;
+    margin-top: 10px; 
+}
+.icon-footer{
+    margin: 0;
+    font-size: 3.5em;
+    color: #1259c3; 
+}
+.list{
+    margin-left: 0px; 
+    background-color: white;
+}
+.list ul{
+    text-align: left;
+    padding-inline-start: 0;
+}
+
+.list li, a{
+    list-style: none;
+   text-decoration: none;
+   
+}
+.formulario{
+    background-color: white;
+    display: flex;
+    padding: 20px;
+    width: 90%;
+    margin: auto;
+    flex-direction: column;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+.formulario *{
+    margin: 5px;
+    padding-top: 5px;
+}
+.formulario input{
+    padding: 10px;
+    width: 65%;
+    margin: 10px;
+}
+.formulario div{
+    text-align: center;
+} 
+.formulario h3{
+    text-align: center;
+    margin: 5px;
+    margin-bottom: 15px;
+    font-size: 2em;
+    font-weight: 300;
+}
+.seccion-icon{
+    text-align: end;
+    margin: 0;
+    padding: 0;
+}
+.seccion-icon i{    
+    font-weight: 700;
+    font-size: 2em;
+    
+}
+.button{
+    background-color: #041f47;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.25em;
+    font-weight: 500;
+    border-radius: 3px;
+    width: 50%;
+
+}
+.form-arrow{
+    display: flex;
+    align-items: baseline;
+}
+input:required:valid {
+    border: none;
+  border-bottom: 2px solid green;
+  }
+  input:invalid {
+    border: none;
+    border-bottom: 2px solid red;
+  }
+  input:optional {
+    border: none;
+
+  }
+  .seccion-btn{
+      width: 100%;
+  }
+@media (max-width:361px) {
+    .list{
+        display:none;
+    }
+    .contacto{
+    justify-content: center;
+    width: 100%;
+    }
+}
+@media (min-width:361px) {
+    .list{
+        display: flex;
+        flex-direction: row;
+        align-items: baseline;
+   }
+   .list ul{
+    flex-wrap: wrap;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 50%;
+    margin: 10px;
+   
+   }
+   .icon-menu{
+    display: none;
+    }
+    .formulario{
+        width: 65%;
+        margin: 0 auto;
+        
+    }
+}
+@media (min-width:769px) {
+    .footer{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: flex-end;
+    }
+    .footer section{
+        width: 29%;
+    }
+    
+}

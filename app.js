@@ -1,7 +1,9 @@
 const express = require('express');
 const app = express();
+const path =require('path');
 
-app.use('/static', express.static(__dirname +'/public'));
+const publicPath = path.resolve(__dirname,'./public');
+app.use(express.static(publicPath));
 
 app.listen(8000, () =>{
     console.log("Servidor funcionando");
@@ -9,6 +11,9 @@ app.listen(8000, () =>{
 
 app.get('/',(req,res) =>{
     res.sendFile(__dirname + '/views/index.html');
+});
+app.get('/shopping-cart',(req,res) =>{
+    res.sendFile(__dirname + '/views/productCart.html');
 });
 app.get('/register',(req,res) =>{
     res.sendFile(__dirname + '/views/register.html');

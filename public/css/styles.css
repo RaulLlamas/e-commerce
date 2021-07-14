@@ -1,0 +1,635 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Teko', sans-serif;
+    background-color: #EBEBEB;
+    position: relative;
+}
+.main-header {
+    width: 100%;
+    height: 50px;
+    background-color: #001D3D;
+    display: flex;
+    align-items: center;
+    position:fixed;
+    z-index: 2;
+}
+.main-header .logo {
+    width: 70px;
+}
+.main-header .left-navbar i{
+    font-size: 25px;
+    color: #EBEBEB;
+    margin: 0 10px;
+}
+.main-header .right-navbar {
+    width: 50%;
+}
+.main-header .left-navbar {
+    display: flex;
+    align-items: center;
+    width: 50%;
+}
+.main-header .option-navbar {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 5%;
+}
+.main-header .option-navbar li{
+    padding: 0;
+    margin: 0;
+}
+.main-header .option-navbar p{
+    display: none;
+    text-decoration: none;
+    font-weight: 300;
+    font-size: 24px;
+    color: #EBEBEB;
+}
+.main-header .option-navbar a i{
+    font-size: 19px;
+    color: #EBEBEB;
+    margin: 10px 15px 0 15px;
+}
+main {
+    position: absolute;
+    top: 50px;
+    z-index: 1;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+main .home{
+    padding:25px 0;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+main #photo-home{
+    display: none;
+}
+main .photo-home{
+    width: 100vw;
+}
+main .logo-home{
+    position: absolute;
+    display: block;
+    width: 60%;
+}
+main .menu-index{
+    margin: auto;
+    background-color: #001D3D;
+    height: fit-content;
+    width: 85%;
+    display: block;
+    text-align: center;
+}
+main .menu-index p{
+    font-size: 3em;
+    color: #FFC300;
+    margin: 0 30px;
+    font-weight: 400;
+    justify-content: center;
+    padding-top: 15px;
+}
+main .menu-option{
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+    font-size: 30px;
+    width: 100%;
+    padding: 20px 0;
+    margin: 0;
+}
+main .menu-option li{
+    padding: 15px 0;
+    width: 100%;
+}
+main .menu-option a{
+    text-decoration: none;
+    font-weight: 300;
+    font-size: 1em;
+    color: #EBEBEB;
+}
+main .menu-option .amarillo{
+    color: #FFC300;
+}
+main .quick-button{
+    width: 100%;
+}
+main .quick-button p{
+    text-align: center;
+    margin: 60px 0;
+}
+main .quick-button a{
+    text-decoration: none;
+    font-size: 2.2em;
+    color: #001D3D;
+    display: block;
+    padding-top: 5px;
+}
+section .title-menu{
+    text-align: center;
+    margin: 70px auto 0;
+    font-size: 2rem;
+    width: 65%;
+    height: 50px;
+    color:#EBEBEB;
+    background-color: #001D3D;
+    padding-top: 8px;
+}
+main .options-menu{
+    width: 90%;
+    margin: auto;
+}
+main .options-menu{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.element-menu{
+    width: 80%;
+    margin: 45px auto 0;
+    text-align:  center;
+}
+.element-menu .body-element{
+    text-align: center;
+}
+.element-menu img{
+    border-radius: 50%;
+    width: 80%;
+    margin-bottom: 6px;
+}
+.element-menu .body-element .title-element{
+    width: fit-content;
+    margin: auto;
+    padding: 5px 10px 2px;
+    font-weight: 100;
+    font-size: 1.6rem;
+    background-color: #001D3D;
+    color: #FFC300;
+    border-radius: 3px;
+}
+.element-menu .body-element .price-element{
+    width: 40%;
+    margin: 8px auto;
+    font-weight: 500;
+    font-size: 1.6em;
+    color: #000814;
+}
+.element-menu .body-element i{
+    margin: auto;
+    font-weight: 600;
+    font-size: 1.6em;
+    color: #ffffff;
+    padding-top: 4px;
+}
+.element-menu .body-element button{
+    text-align: center;
+    background-color: #9C9C9C;
+    border: none;
+    border-radius: 60%;
+    height: 45px;
+    width: 45px;
+}
+.element-menu .body-element form{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+.element-menu .body-element .quantity{
+    background-color: #ffffff;
+    color: #9C9C9C;
+    padding: 8px 16px;
+    margin: auto 18px;
+    border-radius: 5px;
+    font-size: 1.6em;
+}
+main footer{ 
+    height: 250px;
+    margin-top: 100px;
+    background-color: #9C9C9C;
+}
+.register{
+    position: relative;
+    width: 80%;
+    margin: auto;
+}
+.register .title-register{
+    font-size: 3em;
+    font-weight: 500;
+    color: #001D3D;
+    margin: 35px 0 10px;
+}
+.register .subtitle-register{
+    font-size: 2em;
+    font-weight: 500;
+    color: #001D3D;
+    margin: 15px 0 8px;
+}
+.register ::placeholder{
+    color: #9C9C9C;
+    font-size: 1.1em;
+    font-weight: 300;
+}
+.register .form-1 {
+    text-align: center;
+}
+.register .form-1 input{
+    border: none;
+    width: 90%;
+    height: 33px;
+    margin: 10px auto;
+    padding-left: 12px;
+    padding-top: 4px;
+    border-radius: 5px;
+}
+.register .form-2{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.register .form-2 input{
+    border: none;
+    width: 90%;
+    height: 33px;
+    margin: 10px 2%;
+    padding-left: 12px;
+    padding-top: 4px;
+    border-radius: 5px;
+}
+.register .form-2 textarea{
+    border: none;
+    width: 80%;
+    margin: 10px 2%;
+    padding-left: 12px;
+    padding-top: 4px;
+    border-radius: 5px;
+}
+.register form button{
+    background-color: #001D3D;
+    color: #EBEBEB;
+    font-size: 2em;
+    width: 70%;
+    margin: 30px auto;
+    padding-top: 10px;
+    padding-bottom: 5px;;
+    border: none;
+}
+.background{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 60%;
+}
+.order{
+    position: relative;
+    width: 85%;
+    margin: auto;
+}
+.order .title-order{
+    font-size: 3em;
+    font-weight: 500;
+    color: #001D3D;
+    margin: 35px 0 10px;
+}
+.order .element-order{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 10px;
+    border-bottom: solid 4px #ffffff;
+    margin-bottom: 10px;
+}
+.order .element-order img{
+    border-radius: 50%;
+    width: 20%;
+}
+.order .element-order .body-element{
+    width: 60%;
+    text-align: center;
+}
+.order .element-order .price-element{
+    width: 20%;
+    margin: auto;
+    text-align: center;
+    font-size: 1.8em;
+}
+.order .element-order .body-element button{
+    text-align: center;
+    background-color: #9C9C9C;
+    border: none;
+    border-radius: 50%;
+    height: 35px;
+    width: 35px;
+}
+.order .element-order .body-element i{
+    margin: auto;
+    font-weight: 600;
+    font-size: 1.2em;
+    color: #ffffff;
+    padding-top: 4px;
+}
+.order .element-order .body-element .name-element{
+    margin: 13px 0;
+    font-weight: 100;
+    font-size: 1.7em;
+    color: #001D3D;
+}
+.order .element-order .body-element form{
+    height: 50%;
+}
+.order .element-order .body-element .quantity{
+    background-color: #ffffff;
+    color: #9C9C9C;
+    padding: 3px 11px 0 11px;
+    margin: auto 10px;
+    border-radius: 5px;
+    font-size: 1.5em;
+}
+.order .subtitle-order{
+    font-size: 2em;
+    font-weight: 500;
+    color: #001D3D;
+    margin: 35px 0 10px;
+}
+.order .part-order{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.order .part-order i{
+    width: 10%;
+    font-size: 1.5em;
+    text-align: center;
+}
+.order .part-order p{
+    width: 70%;
+    font-size: 1.1em;
+    margin: 0 0 auto;
+    padding-left: 5px;
+}
+.order .part-order form{
+    width: 20%;
+    text-align: center;
+}
+.order #pago{
+    margin-bottom: 210px;
+}
+.order .part-order button{
+    width: 80%;
+    margin: auto;
+    border: none;
+    background-color:#001D3D;
+    font-size: 1em;
+    font-weight: 300;
+    color: #EBEBEB;
+    padding-top: 5px;
+}
+.final-payment{
+    background-color: #001D3D;
+    color: #EBEBEB;
+    width: 100%;
+    height: 190px;
+    display: flex;
+    padding: 20px 0 0;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: fixed;
+    z-index: 1;
+    bottom: 0;
+}
+.final-payment p{
+    width: 50%;
+    text-align:center;
+    margin: auto;
+}
+.final-payment .subtotal, .qty-subtotal{
+    font-size: 1.7em;
+    font-weight: 300;
+}
+.final-payment .shipping, .qty-shipping{
+    font-weight: 300;
+    font-size: 1.4em;
+    margin: 0 auto;
+    text-align: center;
+}
+.final-payment .total, .qty-total{
+    font-size: 1.9em;
+}
+.final-payment form{
+    text-align: end;
+    width: 100%;
+}
+.final-payment button{
+    font-size: 2.1em;
+    border: none;
+    color: #FFC300;
+    background-color: #001D3D;
+    width: 100%;
+}
+.final-payment button:hover{
+    color: #001D3D;
+    background-color: #FFC300;
+}
+.iniciar-sesion {
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+}
+.iniciar-sesion .title-register{
+    width: 100%;
+    text-align: center;
+    font-size: 2.5em;
+    font-weight: 500;
+    color: #001D3D;
+    margin: 35px 0 10px;
+}
+.iniciar-sesion .form {
+    margin: 30px auto;
+    text-align: center;
+}
+.iniciar-sesion .form input{
+    border: none;
+    width: 90%;
+    height: 35px;
+    margin: 20px auto;
+    padding-left: 12px;
+    padding-top: 4px;
+    border-radius: 5px;
+}
+.iniciar-sesion .form button{
+    background-color: #001D3D;
+    color: #EBEBEB;
+    font-size: 2em;
+    width: 70%;
+    margin: 50px auto;
+    padding-top: 5px;
+    border: none;
+}
+.iniciar-sesion ::placeholder{
+    color: #9C9C9C;
+    font-size: 1.3em;
+    font-weight: 300;
+}
+.register-back {
+    width: 100%;
+    text-align: center;
+}
+.background-login{
+    position: relative;
+    width: 80%;
+    margin: auto;
+    bottom: 0;
+}
+@media (min-width:625px) {
+    .main-header .right-navbar {
+        width: 80%;
+    }
+    .main-header .left-navbar {
+        width: 20%;
+    }
+    .main-header .left-navbar i{
+        display: none;
+    }
+    .main-header .option-navbar p{
+        display: inline-block;
+    }
+    .main-header .logo {
+        width: 100px;
+        margin-left: 25%;
+    }
+    .main-header {
+        height: 70px;
+    }
+    .main-header .option-navbar li{
+        padding: 30px 20px 0 20px;
+        margin: 0;
+    }
+    .main-header .option-navbar a i{
+        margin: 0 6px 0 0;
+    }
+    main {
+        top: 70px
+    }
+    main #photo-home{
+        display: block;
+    }
+    main #photo-home2{
+        display: none;
+    }
+    main .logo-home{
+        width: 40%;
+    }
+    main .menu-index{
+        height: 70px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    main .menu-index p{
+        margin-bottom: 10px;
+    }
+    main .menu-option{
+        margin-right: 10%;
+    }
+    main .menu-option li{
+        padding: 0;
+        width: auto;
+    }
+    section .title-menu{
+        margin-left: 5%;
+        width: 25%;
+    }
+    .element-menu{
+        width: 50%;
+    }
+    .register .form-2 input{
+        width: 45%;
+    }
+    .register form button{
+        width: 40%;
+    }
+    .background{
+        width: 40%;
+    }
+    .final-payment{
+        width: 20%;
+        height: 250px;
+        margin-top: 35px;
+        padding-right: 5px;
+        position: relative;
+        z-index: 0;
+        top: 0;
+        right: 0;
+    }
+    .order{
+        position: relative;
+        width: 75%;
+        margin: 0;
+        padding:0 20px 0 50px;
+    }
+    .order .element-order img{
+        width: 10%;
+    }
+    .order .element-order .body-element{
+        display: flex;
+        justify-content: space-around;
+    }
+    .order .element-order form{
+        margin: auto;
+        width: 50%;
+    }
+    .order .element-order .name-element{
+        width: 50%;
+    }
+    .order #pago{
+        margin-bottom: 0;
+    }
+    .register-back .background-login{
+        width: 50%;
+    }
+}
+@media (min-width:900px) {
+    .element-menu{
+        width: 33%;
+    }
+    section .title-menu{
+        width: 230px;
+    }
+    .register{
+        width: 60%;
+    }
+    .background{
+        width: 35%;
+    }
+    .register-back .background-login{
+        width: 30%;
+    }
+}
+@media (min-width:1200px) {
+    .element-menu{
+        width: 25%;
+    }
+    section .title-menu{
+        width: 300px;
+    }
+    .register{
+        width: 50%;
+    }
+}
+main .quick-button a:hover { 
+    background-color: #FFC300;
+}
+.iniciar-sesion .form button:hover{
+    background-color: #FFC300;
+    color: #001D3D;
+}
