@@ -13,3 +13,5 @@ http://www.mccarthyspub.com.mx/food-and-drinks.php -> Ofrece el mismo tipo de co
 https://thecheesecakefactory.com.mx/ --> Pagina de inicio con foto en pantalla completa
 
 Nuestros wireframes: https://marvelapp.com/prototype/gf9i867
+
+Tablero Trello: https://trello.com/b/ekCfGK2R/pagina-web
