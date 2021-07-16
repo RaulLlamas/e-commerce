@@ -4,7 +4,6 @@
 body {
     font-family: 'Teko', sans-serif;
     background-color: #EBEBEB;
-    position: relative;
 }
 .main-header {
     width: 100%;
@@ -54,7 +53,7 @@ body {
     margin: 10px 15px 0 15px;
 }
 main {
-    position: absolute;
+
     top: 50px;
     z-index: 1;
     width: 100%;
@@ -68,6 +67,7 @@ main .home{
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 3em;
 }
 main #photo-home{
     display: none;
@@ -217,9 +217,10 @@ main footer{
     background-color: #9C9C9C;
 }
 .register{
-    position: relative;
     width: 80%;
     margin: auto;
+  
+    margin-top: 3em;
 }
 .register .title-register{
     font-size: 3em;
@@ -289,7 +290,7 @@ main footer{
     width: 60%;
 }
 .order{
-    position: relative;
+    margin-top: 3em;
     width: 85%;
     margin: auto;
 }
@@ -405,6 +406,7 @@ main footer{
     position: fixed;
     z-index: 1;
     bottom: 0;
+   
 }
 .final-payment p{
     width: 50%;
@@ -490,6 +492,25 @@ main footer{
     margin: auto;
     bottom: 0;
 }
+.footer{
+    
+    padding: 5px;
+    margin-top: 10px;
+    box-shadow: 1px 1px 5px #999;
+    border-radius: 0%;
+    
+}
+
+.footer *{
+    text-align: center;
+    margin: 15px;
+    margin-top: 10px; 
+}
+.icon-footer{
+    margin: 0;
+    font-size: 3.5em;
+ 
+}
 @media (min-width:625px) {
     .main-header .right-navbar {
         width: 80%;
@@ -564,17 +585,18 @@ main footer{
     .final-payment{
         width: 20%;
         height: 250px;
-        margin-top: 35px;
+        margin-top: 9em;
         padding-right: 5px;
         position: relative;
         z-index: 0;
         top: 0;
-        right: 0;
+        right: 20px;
     }
     .order{
         position: relative;
         width: 75%;
-        margin: 0;
+        margin: auto;
+        margin-top: 3em;
         padding:0 20px 0 50px;
     }
     .order .element-order img{

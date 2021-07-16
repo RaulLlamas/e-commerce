@@ -17,7 +17,8 @@
   },
   "homepage": "https://github.com/RaulLlamas/e-commerce#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "nodemon": "^2.0.12"
   },
   "devDependencies": {
     "nodeman": "^1.1.2"
