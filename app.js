@@ -1,23 +1,13 @@
-const express = require('express');
+const express = require("express");
 const app = express();
-const path =require('path');
+const path = require("path");
+const mainRouter = require("./routes/main");
 
-const publicPath = path.resolve(__dirname,'./public');
+const PORT = process.env.PORT || 8000;
+
+const publicPath = path.resolve(__dirname, "./public");
 app.use(express.static(publicPath));
 
-app.listen(8000, () =>{
-    console.log("Servidor funcionando");
-});
+app.use(mainRouter);
 
-app.get('/',(req,res) =>{
-    res.sendFile(__dirname + '/views/index.html');
-});
-app.get('/shopping-cart',(req,res) =>{
-    res.sendFile(__dirname + '/views/productCart.html');
-});
-app.get('/register',(req,res) =>{
-    res.sendFile(__dirname + '/views/register.html');
-});
-app.get('/login',(req,res) =>{
-    res.sendFile(__dirname + '/views/login.html');
-});
+app.listen(PORT, () => console.log("Server listening on port: " + PORT));
