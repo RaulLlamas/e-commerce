@@ -5,14 +5,17 @@ body {
     font-family: 'Teko', sans-serif;
     background-color: #EBEBEB;
 }
+header {
+    position:fixed;
+    z-index: 2;
+    width: 100%;
+}
 .main-header {
     width: 100%;
     height: 50px;
     background-color: #001D3D;
     display: flex;
     align-items: center;
-    position:fixed;
-    z-index: 2;
 }
 .main-header .logo {
     width: 70px;
@@ -53,13 +56,13 @@ body {
     margin: 10px 15px 0 15px;
 }
 main {
-
-    top: 50px;
     z-index: 1;
     width: 100%;
     display: flex;
     flex-wrap: wrap;
+    padding-top: 70px;
     justify-content: center;
+    
 }
 main .home{
     padding:25px 0;
@@ -67,7 +70,6 @@ main .home{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 3em;
 }
 main #photo-home{
     display: none;
@@ -219,7 +221,6 @@ main footer{
 .register{
     width: 80%;
     margin: auto;
-  
     margin-top: 3em;
 }
 .register .title-register{
@@ -450,7 +451,7 @@ main footer{
 .iniciar-sesion .title-register{
     width: 100%;
     text-align: center;
-    font-size: 2.5em;
+    font-size: 3em;
     font-weight: 500;
     color: #001D3D;
     margin: 35px 0 10px;

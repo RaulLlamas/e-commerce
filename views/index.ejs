@@ -1,12 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <%- include('../head') %>
+    <%- include('partials/head') %>
 </head>
 <body>
-    <header>
-        <%- include('../header') %>
-    </header>
+    <%- include('partials/header') %>
     <main>
         <div class="home">
             <img src="/img/photo-home.jpg" class= "photo-home" alt="photo-home" id="photo-home">
@@ -23,7 +21,7 @@
         </div>
         <div class="quick-button">
             <p id="paint-button"> 
-                <a href="/register">Registrate</a>
+                <a href="/users/register">Registrate</a>
             </p>
         </div>
         <div class="menu">
@@ -188,7 +186,7 @@
             </section>
         </div>
         <footer>
-            <%- include('../footer') %>
+            <%- include('partials/footer') %>
         </footer>
     </main>
 </body>
