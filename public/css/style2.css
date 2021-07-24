@@ -84,7 +84,7 @@ input[type="busqueda"]{
     margin: 20px 0;
 }
 .footer{
-    background-color: #eaeaea;
+
     padding: 5px;
    
     
@@ -97,7 +97,7 @@ input[type="busqueda"]{
 }
 .icon-footer{
     margin: 0;
-    font-size: 3.5em;
+    font-size: 4.5em;
     color: #1259c3; 
 }
 .list{
