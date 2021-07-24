@@ -13,4 +13,4 @@ router.get("/login", mainController.login);
 
 router.get("/productDetail", mainController.productDetail);
 
-module.exports = router;
+module.exports = router;  
