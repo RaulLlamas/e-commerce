@@ -1,20 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1043" height="849.5" viewBox="0 0 1043 849.5">
   <defs>
-    <style>
-      .cls-1 {
-        fill: #fec335;
-        font-size: 604px;
-        font-family: Teko-Regular, Teko;
-      }
-
-      .cls-2 {
-        font-size: 483px;
-      }
-
-      .cls-3 {
-        filter: url(#Rogers);
-      }
-    </style>
     <filter id="Rogers" x="0" y="0" width="1043" height="849.5" filterUnits="userSpaceOnUse">
       <feOffset dy="3" input="SourceAlpha"/>
       <feGaussianBlur stdDeviation="0.5" result="blur"/>
@@ -23,7 +8,7 @@
       <feComposite in="SourceGraphic"/>
     </filter>
   </defs>
-  <g class="cls-3" transform="matrix(1, 0, 0, 1, 0, 0)">
-    <text id="Rogers-2" data-name="Rogers" class="cls-1" transform="translate(1.5 634)"><tspan x="0" y="0">R</tspan><tspan class="cls-2" y="0">ogers</tspan></text>
+  <g transform="matrix(1, 0, 0, 1, 0, 0)" filter="url(#Rogers)">
+    <text id="Rogers-2" data-name="Rogers" transform="translate(1.5 634)" fill="#fec335" font-size="604" font-family="Teko-Regular, Teko"><tspan x="0" y="0">R</tspan><tspan y="0" font-size="483">ogers</tspan></text>
   </g>
 </svg>
