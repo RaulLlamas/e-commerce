@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head') %>
+</head>
+<body>
+    <header>
+        <%- include('../partials/header') %>
+    </header>
+    <main>
+        <div class="new-product">
+            <p class="title-new-product">Nuevo producto</p>
+                <form class="form-1" action="">
+                    <div class="input-new-product">
+                        <label for="name" >Nombre del producto</label>
+                        <input type="text" name="name" id="name">
+                    </div>
+                    <div class="input-new-product">
+                        <label for="price" >Precio:</label>
+                        <input type="number" name="price" id="price" class="price">
+                    </div>
+                    <div class="input-new-product">
+                        <label for="category">Categoria:</label>
+                        <select name="category" id="category">
+                            <option value="">Entradas</option>
+                            <option value="in-sale">Por lo que vienes</option>
+                            <option value="visited">Postres</option>
+                        </select>
+                    </div>
+                    <div class="input-new-product">
+                        <label for="description" class="description">Descripción:</label>
+                        <textarea name="description" id="description" cols="30" rows="5"></textarea>
+                    </div> 
+                    <div class="input-new-product">
+                        <label for="image" class="form-label">Imagen:</label>
+                        <input type="file" class="file" id="image" name="image" accept="image/png, image/jpeg">
+                    </div> 
+                    <button type="submit" class="buy-now-button">Modificar producto</button>
+                </form>
+        </div>
+    </main>
+    <footer>
+        <%- include('../partials/footer') %>
+    </footer>
+</body>
+</html>

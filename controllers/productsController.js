@@ -7,6 +7,10 @@ const controller = {
       //res.sendFile(path.resolve("views/products/productDetail.html"));
       res.render('products/prodcutDetail');
     },
+    newProduct: (req, res) => {
+      
+      res.render('products/newProduct');
+    },
   };
   
   module.exports = controller;

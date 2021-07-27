@@ -512,6 +512,66 @@ main footer{
     font-size: 3.5em;
  
 }
+.new-product {
+    width: 70%;
+    margin: auto;
+    text-align: left;
+}
+.new-product .title-new-product{
+    width: 100%;
+    text-align:left;
+    font-size: 3em;
+    font-weight: 500;
+    color: #001D3D;
+    margin: 35px 0 10px;
+}
+.new-product .input-new-product{
+    width: 100%;
+    display: inline-block;
+    margin: 8px auto;
+}
+.new-product .input-new-product label {
+
+    font-size: 1.5em;
+    padding-right: 10px;
+    color: #001D3D;
+}
+.new-product .input-new-product input{
+    border: none;
+    height: 34px;
+    width: 80%;
+    border-radius: 5px;
+}
+.new-product .input-new-product .price {
+    width: 120px;
+}
+.new-product .input-new-product select{
+    border: none;
+    background-color: #ffffff;
+    height: 34px;
+    width: 120px;
+    border-radius: 5px;
+}
+.new-product .input-new-product .description{
+   display: block;
+}
+.new-product .input-new-product textarea{
+    border: none;
+    background-color: #ffffff;
+    border-radius: 5px;
+    width: 100%;
+}
+.new-product button{
+    background-color: #001D3D;
+    color: #EBEBEB;
+    font-size: 1.8em;
+    width: 80%;
+    font-weight: 300;
+    margin: 50px auto;
+    padding-top: 5px;
+    border: none;
+    align-self: center;
+}
 @media (min-width:625px) {
     .main-header .right-navbar {
         width: 80%;
@@ -620,6 +680,15 @@ main footer{
     .register-back .background-login{
         width: 50%;
     }
+    .new-product .input-new-product input{
+        width: 400px;
+    }
+    .new-product .input-new-product textarea{
+        width: 500px;
+    }
+    .new-product button{
+        width: 200px;
+    }
 }
 @media (min-width:900px) {
     .element-menu{
@@ -653,6 +722,10 @@ main .quick-button a:hover {
     background-color: #FFC300;
 }
 .iniciar-sesion .form button:hover{
+    background-color: #FFC300;
+    color: #001D3D;
+}
+.new-product button:hover{
     background-color: #FFC300;
     color: #001D3D;
 }
