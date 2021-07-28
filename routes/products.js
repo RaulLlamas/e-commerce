@@ -10,5 +10,7 @@ router.get("/productDetail/:id", productsController.productDetail);
 
 router.get("/newProduct", productsController.newProduct);
 
+router.get("/editProduct", productsController.newProduct);
+
 
 module.exports = router;  

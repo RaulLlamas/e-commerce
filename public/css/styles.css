@@ -159,6 +159,7 @@ main .options-menu{
     width: 80%;
     margin: 45px auto 0;
     text-align:  center;
+    text-decoration: none;
 }
 .element-menu .body-element{
     text-align: center;
@@ -173,7 +174,7 @@ main .options-menu{
     margin: auto;
     padding: 5px 10px 2px;
     font-weight: 100;
-    font-size: 1.6rem;
+    font-size: 1.8em;
     background-color: #001D3D;
     color: #FFC300;
     border-radius: 3px;

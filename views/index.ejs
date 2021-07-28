@@ -28,160 +28,61 @@
             <section>
                 <p class="title-menu" id="entradas">ENTRADAS</p>
                 <div class="options-menu">
-                    <article class="element-menu">
-                        <img src="/img/photo-element1.jpg" class= "photo-element" alt="logo-home">
+                    <% entradas.forEach(product => { %>
+                    <a href="/products/productDetail/<%= product.id %>"class="element-menu" >
+                        <img src="/img/<%= product.image %>" class= "photo-element" alt="logo-home">
                         <div class="body-element">
-                            <p class="title-element">Papas a la francesa</p>
-                            <p class="price-element">$49.00</p>
+                            <p class="title-element"><%= product.name %></p>
+                            <p class="price-element">$<%= toThousand(product.price) %></p>
                             <form action="">
                                 <button type="submit" class="button"><i class="fas fa-plus"></i></button>
-                                <label class="quantity">0</label>
+                                <!-- Variable de agregar -->
+                                <label class="quantity">0</label> 
                                 <button type="submit" class="button"><i class="fas fa-minus"></i></button>
                             </form>
                         </div>
-                    </article> 
-                    <article class="element-menu">
-                        <img src="/img/photo-element2.jpg" class= "photo-element" alt="logo-home">
-                        <div class="body-element">
-                            <p class="title-element">Aros de Cebolla</p>
-                            <p class="price-element">$69.00</p>
-                            <form action="">
-                                <button type="submit" class="button"><i class="fas fa-plus"></i></button>
-                                <label class="quantity">0</label>
-                                <button type="submit" class="button"><i class="fas fa-minus"></i></button>
-                            </form>
-                        </div>
-                    </article>
-                    <article class="element-menu">
-                        <img src="/img/photo-element1.jpg" class= "photo-element" alt="logo-home">
-                        <div class="body-element">
-                            <p class="title-element">Papas a la francesa</p>
-                            <p class="price-element">$49.00</p>
-                            <form action="">
-                                <button type="submit" class="button"><i class="fas fa-plus"></i></button>
-                                <label class="quantity">0</label>
-                                <button type="submit" class="button"><i class="fas fa-minus"></i></button>
-                            </form>
-                        </div>
-                    </article> 
-                    <article class="element-menu">
-                        <img src="/img/photo-element2.jpg" class= "photo-element" alt="logo-home">
-                        <div class="body-element">
-                            <p class="title-element">Aros de Cebolla</p>
-                            <p class="price-element">$69.00</p>
-                            <form action="">
-                                <button type="submit" class="button"><i class="fas fa-plus"></i></button>
-                                <label class="quantity">0</label>
-                                <button type="submit" class="button"><i class="fas fa-minus"></i></button>
-                            </form>
-                        </div>
-                    </article>              
+                    </a>
+                    <% }) %>     
                 </div>
             </section>
             <section>
                 <p class="title-menu" id="por-lo-que-vienes">POR LO QUE VIENES</p>
                 <div class="options-menu">
-                    <article class="element-menu">
-                        <img src="/img/photo-element1.jpg" class= "photo-element" alt="logo-home">
+                    <% porvienes.forEach(product => { %>
+                    <a href="/products/productDetail/<%= product.id %>" class="element-menu" >
+                        <img src="/img/<%= product.image %>" class= "photo-element" alt="logo-home">
                         <div class="body-element">
-                            <p class="title-element">Papas a la francesa</p>
-                            <p class="price-element">$49.00</p>
+                            <p class="title-element"><%= product.name %></p>
+                            <p class="price-element">$<%= toThousand(product.price) %></p>
                             <form action="">
                                 <button type="submit" class="button"><i class="fas fa-plus"></i></button>
-                                <label class="quantity">0</label>
+                                <!-- Variable de agregar -->
+                                <label class="quantity">0</label> 
                                 <button type="submit" class="button"><i class="fas fa-minus"></i></button>
                             </form>
                         </div>
-                    </article> 
-                    <article class="element-menu">
-                        <img src="/img/photo-element2.jpg" class= "photo-element" alt="logo-home">
-                        <div class="body-element">
-                            <p class="title-element">Aros de Cebolla</p>
-                            <p class="price-element">$69.00</p>
-                            <form action="">
-                                <button type="submit" class="button"><i class="fas fa-plus"></i></button>
-                                <label class="quantity">0</label>
-                                <button type="submit" class="button"><i class="fas fa-minus"></i></button>
-                            </form>
-                        </div>
-                    </article>
-                    <article class="element-menu">
-                        <img src="/img/photo-element1.jpg" class= "photo-element" alt="logo-home">
-                        <div class="body-element">
-                            <p class="title-element">Papas a la francesa</p>
-                            <p class="price-element">$49.00</p>
-                            <form action="">
-                                <button type="submit" class="button"><i class="fas fa-plus"></i></button>
-                                <label class="quantity">0</label>
-                                <button type="submit" class="button"><i class="fas fa-minus"></i></button>
-                            </form>
-                        </div>
-                    </article> 
-                    <article class="element-menu">
-                        <img src="/img/photo-element2.jpg" class= "photo-element" alt="logo-home">
-                        <div class="body-element">
-                            <p class="title-element">Aros de Cebolla</p>
-                            <p class="price-element">$69.00</p>
-                            <form action="">
-                                <button type="submit" class="button"><i class="fas fa-plus"></i></button>
-                                <label class="quantity">0</label>
-                                <button type="submit" class="button"><i class="fas fa-minus"></i></button>
-                            </form>
-                        </div>
-                    </article>              
+                    </a>
+                    <% }) %>  
                 </div>
             </section>
             <section>
                 <p class="title-menu" id="postres">POSTRES</p>
-                <div class="options-menu">
-                    <article class="element-menu">
-                        <img src="/img/photo-element1.jpg" class= "photo-element" alt="logo-home">
+                <div class="options-menu">                    
+                    <% postres.forEach(product => { %>
+                    <a href="/products/productDetail/<%= product.id %>"class="element-menu" >
+                        <img src="/img/<%= product.image %>" class= "photo-element" alt="logo-home">
                         <div class="body-element">
-                            <p class="title-element">Papas a la francesa</p>
-                            <p class="price-element">$49.00</p>
+                            <p class="title-element"><%= product.name %></p>
+                            <p class="price-element">$<%= toThousand(product.price) %></p>
                             <form action="">
                                 <button type="submit" class="button"><i class="fas fa-plus"></i></button>
-                                <label class="quantity">0</label>
+                                <!-- Variable de agregar -->
+                                <label class="quantity">0</label> 
                                 <button type="submit" class="button"><i class="fas fa-minus"></i></button>
                             </form>
                         </div>
-                    </article> 
-                    <article class="element-menu">
-                        <img src="/img/photo-element2.jpg" class= "photo-element" alt="logo-home">
-                        <div class="body-element">
-                            <p class="title-element">Aros de Cebolla</p>
-                            <p class="price-element">$69.00</p>
-                            <form action="">
-                                <button type="submit" class="button"><i class="fas fa-plus"></i></button>
-                                <label class="quantity">0</label>
-                                <button type="submit" class="button"><i class="fas fa-minus"></i></button>
-                            </form>
-                        </div>
-                    </article>
-                    <article class="element-menu">
-                        <img src="/img/photo-element1.jpg" class= "photo-element" alt="logo-home">
-                        <div class="body-element">
-                            <p class="title-element">Papas a la francesa</p>
-                            <p class="price-element">$49.00</p>
-                            <form action="">
-                                <button type="submit" class="button"><i class="fas fa-plus"></i></button>
-                                <label class="quantity">0</label>
-                                <button type="submit" class="button"><i class="fas fa-minus"></i></button>
-                            </form>
-                        </div>
-                    </article> 
-                    <article class="element-menu">
-                        <img src="/img/photo-element2.jpg" class= "photo-element" alt="logo-home">
-                        <div class="body-element">
-                            <p class="title-element">Aros de Cebolla</p>
-                            <p class="price-element">$69.00</p>
-                            <form action="">
-                                <button type="submit" class="button"><i class="fas fa-plus"></i></button>
-                                <label class="quantity">0</label>
-                                <button type="submit" class="button"><i class="fas fa-minus"></i></button>
-                            </form>
-                        </div>
-                    </article>              
+                    </a>
+                    <% }) %>  
                 </div>
             </section>
         </div>
