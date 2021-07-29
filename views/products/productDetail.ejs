@@ -10,17 +10,14 @@
    <main>
        <div class="product-detail">
             <div class="image-detail">
-
+                <img src="/img/<%= product.image %>" alt="">
             </div>
             <div class="product-info">
-                <div class="product-name">
-                    <h2><%= product.name %></h2>
-                </div>
-                <div class="product-price">
-
-                </div>
+                <p class="product-name"><%= product.name %></p>
+                <p class="product-price" >$<%= toThousand(product.price) %></p>
+                <p class="description-title">Descripcion</p>
                 <div class="product-description">
-
+                    <p><%= product.description %></p>
                 </div>
             </div>
        </div>
