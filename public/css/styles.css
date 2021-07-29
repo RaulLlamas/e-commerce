@@ -7,8 +7,11 @@ body {
 }
 header {
     position:fixed;
-    z-index: 2;
+    z-index: 10;
     width: 100%;
+}
+footer {
+    margin-top: 100px;
 }
 .main-header {
     width: 100%;
@@ -223,6 +226,7 @@ main footer{
     width: 80%;
     margin: auto;
     margin-top: 3em;
+    z-index: 2;
 }
 .register .title-register{
     font-size: 3em;
@@ -290,6 +294,7 @@ main footer{
     right: 0;
     bottom: 0;
     width: 60%;
+    z-index: 1;
 }
 .order{
     margin-top: 3em;
