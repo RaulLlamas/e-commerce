@@ -13,23 +13,29 @@
                 <form class="form-1" action="">
                     <div class="input-new-product">
                         <label for="name" >Nombre del producto</label>
-                        <input type="text" name="name" id="name">
+                        <input type="text" name="name" id="name" value="<%= product.name %>">
                     </div>
                     <div class="input-new-product">
                         <label for="price" >Precio:</label>
-                        <input type="number" name="price" id="price" class="price">
+                        <input type="number" name="price" id="price" class="price" value="<%= toThousand(product.price) %>">
                     </div>
                     <div class="input-new-product">
                         <label for="category">Categoria:</label>
                         <select name="category" id="category">
-                            <option value="">Entradas</option>
-                            <option value="in-sale">Por lo que vienes</option>
-                            <option value="visited">Postres</option>
+                            <% const options = ['Elige una','Entrada','Por lo que vienes', 'Postre'] %>
+							<% const values = ['','entrada','por-lo-que-vienes', 'postre'] %>
+							<% for(let x=0; x<options.length; x++) { %>
+								<% if(product.category == values[x]) { %>
+									<option value="<%= values[x] %>" selected><%= options[x] %></option>
+								<% }else{ %>
+									<option value="<%= values[x] %>"><%= options[x] %></option>
+								<% } %>
+							<% } %>
                         </select>
                     </div>
                     <div class="input-new-product">
                         <label for="description" class="description">Descripción:</label>
-                        <textarea name="description" id="description" cols="30" rows="5"></textarea>
+                        <textarea name="description" id="description" cols="30" rows="5"><%= product.description %></textarea>
                     </div> 
                     <div class="input-new-product">
                         <label for="image" class="form-label">Imagen:</label>

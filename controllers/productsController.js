@@ -22,8 +22,9 @@ const controller = {
       res.render('products/newProduct');
     },
     editProduct: (req, res) => {
-      
-      res.render('products/editProduct');
+      let id = parseInt(req.params.id,10);
+      const product = products.find(p => p.id == id);
+      res.render('products/editProduct',{ product :product, toThousand:toThousand } );
     },
     
   };
