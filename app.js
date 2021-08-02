@@ -1,11 +1,15 @@
 const express = require("express");
 const app = express();
 const path = require("path");
+const methodOverride =  require('method-override'); 
+
+app.use(methodOverride('_method'));
 
 const PORT = process.env.PORT || 8000;
 
 const publicPath = path.resolve(__dirname, "./public");
 
+app.use(express.urlencoded({ extended: false }));
 app.use(express.static(publicPath));
 
 app.set('view engine', 'ejs'); 

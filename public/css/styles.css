@@ -647,7 +647,9 @@ main footer{
     color: #ffffff;
     background-color: #001D3D;
     padding: 5px 8px 0;
+    cursor: pointer;
 }
+
 
 @media (min-width:625px) {
     .main-header .right-navbar {

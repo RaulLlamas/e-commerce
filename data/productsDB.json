@@ -1,98 +1,98 @@
 [
-    {
-      "id": 1,
-      "name": "Papas a la francesa",
-      "price": 59,
-      "category": "entrada",
-      "description": "",
-      "image": "img-papas-francesas.jpg"
-    },
-    {
-      "id": 2,
-      "name": "Aros de cebolla",
-      "price": 65,
-      "category": "entrada",
-      "description": "",
-      "image": "img-aros-cebolla.jpg"
-    },
-    {
-      "id": 3,
-      "name": "Nachos",
-      "price": 50,
-      "category": "entrada",
-      "description": "",
-      "image": "img-nachos.png"
-    },
-    {
-      "id": 4,
-      "name": "Alitas",
-      "price": 79,
-      "category": "entrada",
-      "description": "Alas empanizadas con salsa y aderezo a elección. 1400-1800 cal | el queso light ranch o bleu agrega 200/260 cal (las calorías enumeradas son para un 10 pc)",
-      "image": "img-alitas.png"
-    },
-    {
-      "id": 5,
-      "name": "Pizza",
-      "price": 115,
-      "category": "por-lo-que-vienes",
-      "description": "",
-      "image": "img-pizza.png"
-    },
-    {
-      "id": 6,
-      "name": "Hamburguesa",
-      "price": 145,
-      "category": "por-lo-que-vienes",
-      "description": "",
-      "image": "img-hamburguesa.png"
-    },
-    {
-      "id": 7,
-      "name": "Hot Dog",
-      "price": 89,
-      "category": "por-lo-que-vienes",
-      "description": "",
-      "image": "img-hot-dog.png"
-    },
-    {
-      "id": 8,
-      "name": "Costillas BBQ",
-      "price": 59,
-      "category": "por-lo-que-vienes",
-      "description": "",
-      "image": "img-costillas-bbq.png"
-    },
-    {
-      "id": 9,
-      "name": "Cheese Cake",
-      "price": 70,
-      "category": "postre",
-      "description": "",
-      "image": "img-cheese-cake.png"
-    },
-    {
-      "id": 10,
-      "name": "Brownie",
-      "price": 60,
-      "category": "postre",
-      "description": "",
-      "image": "img-brownie.png"
-    },
-    {
-      "id": 11,
-      "name": "Nieve de Vainilla",
-      "price": 50,
-      "category": "postre",
-      "description": "",
-      "image": "img-nieve-vainilla.png"
-    },
-    {
-      "id": 12,
-      "name": "Dona glaseada",
-      "price": 40,
-      "category": "postre",
-      "description": "",
-      "image": "img-dona-glaseada.png"
-    }
-  ]
+  {
+    "id": 1,
+    "name": "Papas a la francesa",
+    "price": 59,
+    "category": "entrada",
+    "description": "son las patatas que se preparan cortándose en rodajas o en forma de bastones y friéndolas en aceite caliente hasta que queden doradas, retirándolas del aceite y luego sazonándolas con sal.",
+    "image": "img-papas-francesas.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Aros de cebolla",
+    "price": 65,
+    "category": "entrada",
+    "description": "Cebollas cortadas transversalmente para que se puedan poner en forma de anillo que son rebozados en harina con algo de levadura y posteriormente son fritos en aceite. ",
+    "image": "img-aros-cebolla.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Nachos",
+    "price": 50,
+    "category": "entrada",
+    "description": "Pedazos triangulares de tortilla de maíz, fritos y bañados con queso amarillo derretido. ",
+    "image": "img-nachos.png"
+  },
+  {
+    "id": 4,
+    "name": "Alitas",
+    "price": 79,
+    "category": "entrada",
+    "description": "Alas empanizadas con salsa y aderezo a elección. 1400-1800 cal | el queso light ranch o bleu agrega 200/260 cal (las calorías enumeradas son para un 10 pc)",
+    "image": "img-alitas.png"
+  },
+  {
+    "id": 5,
+    "name": "Pizza",
+    "price": 115,
+    "category": "por-lo-que-vienes",
+    "description": "un pan plano horneado, habitualmente cuya base es elaborada con harina de trigo, cubierto de queso mozzarella, salsa de tomate y otros ingredientes como el salami yjamón.",
+    "image": "img-pizza.png"
+  },
+  {
+    "id": 6,
+    "name": "Hamburguesa",
+    "price": 145,
+    "category": "por-lo-que-vienes",
+    "description": "Carne de puerco deshebrada mezclada con salsa BBQ, con una mezcla de quesos cheddar y mozzarella gratinados.",
+    "image": "img-hamburguesa.png"
+  },
+  {
+    "id": 7,
+    "name": "Hot Dog",
+    "price": 89,
+    "category": "por-lo-que-vienes",
+    "description": "Panecillo blando y alargado con una salchicha en su interior generalmente untada con mostaza o ketchup",
+    "image": "img-hot-dog.png"
+  },
+  {
+    "id": 8,
+    "name": "Costillas BBQ",
+    "price": 59,
+    "category": "por-lo-que-vienes",
+    "description": "Las costillas BBQ es un clásico dentro de la gastronomía americana. Deliciosas costillitas de cerdo, bañadas en una salsa BBQ agridulce.",
+    "image": "img-costillas-bbq.png"
+  },
+  {
+    "id": 9,
+    "name": "Cheese Cake",
+    "price": 70,
+    "category": "postre",
+    "description": "Tarta de queso en el diccionario es una rica tarta con una base de galleta, llena de una mezcla de queso crema, crema, azúcar y con  aderezo de fruta.",
+    "image": "img-cheese-cake.png"
+  },
+  {
+    "id": 10,
+    "name": "Brownie",
+    "price": 60,
+    "category": "postre",
+    "description": "Un bizcocho de chocolate que contiene nueces y que se cuece al horno sobre una placa",
+    "image": "img-brownie.png"
+  },
+  {
+    "id": 11,
+    "name": "Nieve de Vainilla",
+    "price": 50,
+    "category": "postre",
+    "description": "Helado con sabor a vainilla",
+    "image": "img-nieve-vainilla.png"
+  },
+  {
+    "id": 12,
+    "name": "Dona glaseada",
+    "price": 40,
+    "category": "postre",
+    "description": "Pan de dulce elaborado con masa para bizcocho o apastelada.",
+    "image": "img-dona-glaseada.png"
+  }
+]

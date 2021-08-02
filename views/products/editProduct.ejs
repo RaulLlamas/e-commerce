@@ -10,7 +10,7 @@
     <main>
         <div class="new-product">
             <p class="title-new-product">Nuevo producto</p>
-                <form class="form-1" action="">
+                <form class="form-1" action="/products/editProduct/<%= product.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
                     <div class="input-new-product">
                         <label for="name" >Nombre del producto</label>
                         <input type="text" name="name" id="name" value="<%= product.name %>">
@@ -38,8 +38,8 @@
                         <textarea name="description" id="description" cols="30" rows="5"><%= product.description %></textarea>
                     </div> 
                     <div class="input-new-product">
-                        <label for="image" class="form-label">Imagen:</label>
-                        <input type="file" class="file" id="image" name="image" accept="image/png, image/jpeg">
+                        <label for="productImage" class="form-label">Imagen:</label>
+                        <input type="file" class="file" id="image" name="productImage" >
                     </div> 
                     <button type="submit" class="buy-now-button">Modificar producto</button>
                 </form>
