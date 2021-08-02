@@ -20,7 +20,7 @@
                     <p><%= product.description %></p>
                 </div>
                 <a href="/products/editProduct/<%= product.id %>" class="action-button-edit">EDITAR PRODUCTO</a>
-                <form action="/products/delete/<%= product.id %>" method="POST" style="display: inline-flex">
+                <form action="/products/delete/<%= product.id %>?_method=DELETE>" method="POST" style="display: inline-flex">
                     <button type="submit" class="action-button-delete">ELIMINAR</button>
                 </form>
             </div>
