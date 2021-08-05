@@ -11,6 +11,7 @@ const publicPath = path.resolve(__dirname, "./public");
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(publicPath));
+app.use(express.json());
 
 app.set('view engine', 'ejs'); 
 

@@ -11,22 +11,31 @@
         <img src="/img/back-register.png" class= "background" alt="background">
         <div class="register">
             <p class="title-register">Registro</p>
-                <form class="form-1" action="">
-                    <input type="text" name="name" placeholder="Nombre  y apellido">
-                    <input type="email" name="email" placeholder="Correo">
-                    <input type="tel" name="telephone" placeholder="Teléfono">
-                    <input type="password" name="password" placeholder="Contraseña">
-                    <input type="password" name="conf-password" placeholder="Confirmar contraseña">
-                </form>
-            <p class="subtitle-register">Domicilio</p>
-            <form class="form-2" action="">
-                <input type="text" name="street" placeholder="Calle">
-                <input type="number" name="number-ext" placeholder="Numero exterior">
-                <input type="text" name="colonia" placeholder="Colonia">
-                <input type="text" name="number-int" placeholder="Interior">
-                <textarea name="reference" id="" cols="30" rows="3" placeholder="Referencias"></textarea>
-                <button type="submit">Aceptar</button>
-            </form>
+                <form class="form-1" action="/users/register" method="POST" enctype="multipart/form-data">
+                    <div class="input-new-usuario">
+                       
+                        <input type="text" name="name" placeholder="Nombre  y apellido">
+                        <input type="email" name="email" placeholder="Correo">
+                        <input type="tel" name="telephone" placeholder="Teléfono">
+                        <label for="UsuarioImage" class="form-label">Imagen:</label>
+                        <input type="file" class="file" id="image" name="UsuarioImage">
+                        <input type="password" name="password" placeholder="Contraseña">
+                        <input type="password" name="conf-password" placeholder="Confirmar contraseña">
+                        
+                    </div>
+                
+                    <p class="subtitle-register">Domicilio</p>
+                   
+                    <div class="input-new-usuario">
+                        <input type="text" name="street" placeholder="Calle">
+                        <input type="number" name="number_ext" placeholder="Numero exterior">
+                        <input type="text" name="colonia" placeholder="Colonia">
+                        <input type="text" name="number_int" placeholder="Interior">
+                        <textarea name="reference" id="" cols="30" rows="3" placeholder="Referencias"></textarea>
+                    </div>  
+                   
+                    <button type="submit">Aceptar</button>
+              </form> 
         </div>
     </main>
     <footer>

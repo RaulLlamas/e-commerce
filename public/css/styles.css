@@ -227,6 +227,7 @@ main footer{
     margin: auto;
     margin-top: 3em;
     z-index: 2;
+    text-align: center;
 }
 .register .title-register{
     font-size: 3em;
@@ -288,6 +289,9 @@ main footer{
     padding-top: 10px;
     padding-bottom: 5px;;
     border: none;
+}
+.form-label{
+    margin: 30px;
 }
 .background{
     position: absolute;

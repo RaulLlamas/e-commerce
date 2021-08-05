@@ -1,0 +1,55 @@
+[
+  {
+    "id": 1,
+    "name": "Locky",
+    "email": "Locky1212@gmail.com",
+    "telephone": "656187151",
+    "street": "sddasdda",
+    "number_ext": "513",
+    "colonia": "sdsdsd",
+    "number_int": "151",
+    "reference": "dssd"
+  },
+  {
+    "name": "David Eduardo Moya Flores",
+    "email": "al181210@alumnos.uacj.mx",
+    "telephone": "6681115517",
+    "password": "asddasadsdas",
+    "conf-password": "",
+    "street": "Quinta Aurora 1411",
+    "number_ext": "121",
+    "colonia": "212",
+    "number_int": "11",
+    "reference": "as",
+    "id": 1628123463391,
+    "image": "default-image.png"
+  },
+  {
+    "name": "sddsds",
+    "email": "dsds@gmail.com",
+    "telephone": "dsdsds",
+    "password": "dsdsdsdssdds",
+    "conf-password": "asas",
+    "street": "as",
+    "number_ext": "515",
+    "colonia": "dsds",
+    "number_int": "dssd",
+    "reference": "ds",
+    "id": 1628124431518,
+    "image": "img-356-3562377_personal-user.png"
+  },
+  {
+    "name": "Raul ",
+    "email": "raul@gmail.com",
+    "telephone": "615651651651",
+    "password": "asdsdsdas",
+    "conf-password": "saddsd",
+    "street": "sddsd",
+    "number_ext": "15515",
+    "colonia": "dsdds",
+    "number_int": "1515",
+    "reference": "5165165",
+    "id": 1628125953461,
+    "image": "img-photo-1530878955558-a6c31b9c97db.jfif"
+  }
+]
