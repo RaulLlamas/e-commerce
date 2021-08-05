@@ -516,23 +516,24 @@ main footer{
     text-align: center;
     margin: 15px;
     margin-top: 10px; 
-    color: #fafafa ;
+    color: #EBEBEB ;
 }
 .footer section{
     width: 90%;
 }
+
+.section-footer-about a{
+    text-decoration: none;
+}
 .section-footer-about{
-    font-size: 1.5em;
-    font-weight: 500;
-
-
+    font-size: 1.8em;
+    font-weight: 300;
 }
 .section-footer-Copyight{
     font-size: 1.5em;
-    font-weight: 200;
+    font-weight: 300;
 
 }
-
 
 .icon-footer{
     display: inline-block;
@@ -545,7 +546,6 @@ main footer{
     transition:.4s linear;
     position: relative;
     
- 
 }
 .icon-footer::before, .icon-footer::after{
     content: ' ';
@@ -574,7 +574,7 @@ main footer{
     display: flex;
     justify-content:center;
     flex-wrap: wrap;    
-    border-top: 5px solid #82b1ff;
+    border-top: 5px solid #EBEBEB;
     
     
 }
