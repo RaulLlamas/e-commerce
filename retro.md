@@ -9,3 +9,4 @@ SPRINT 3
 Las imagenes en el carrito de compras no se ven debemos darle solución
 
 SPRINT 4
+Trabajar en detalles de  css
