@@ -10,13 +10,19 @@
     <main>
         <img src="/img/back-register.png" class= "background" alt="background">
         <div class="register">
-            <p class="title-register">Registro</p>
+            <p class="title-register">Registro</p>  
+            <% if(locals.errors){ %>
+                <% errors.forEach(function(error){ %>
+                    <p><%=error.msg %></p>
+                  <% }); %>
+            <% } %>
+       
                 <form class="form-1" action="/users/register" method="POST" enctype="multipart/form-data">
                     <div class="input-new-usuario">
                        
-                        <input type="text" name="name" placeholder="Nombre  y apellido">
-                        <input type="email" name="email" placeholder="Correo">
-                        <input type="tel" name="telephone" placeholder="Teléfono">
+                        <input type="text" name="name" value="<%= locals.old && old.name ? old.name : '' %>" placeholder="Nombre  y apellido">
+                        <input type="email" name="email" value= "<%= locals.old && old.email ? old.email : '' %>" placeholder="Correo">
+                        <input type="tel" name="telephone" value= "<%= locals.old && old.telephone ? old.telephone : '' %>" placeholder="Teléfono">
                         <label for="UsuarioImage" class="form-label">Imagen:</label>
                         <input type="file" class="file" id="image" name="UsuarioImage">
                         <input type="password" name="password" placeholder="Contraseña">
@@ -27,9 +33,9 @@
                     <p class="subtitle-register">Domicilio</p>
                    
                     <div class="input-new-usuario">
-                        <input type="text" name="street" placeholder="Calle">
-                        <input type="number" name="number_ext" placeholder="Numero exterior">
-                        <input type="text" name="colonia" placeholder="Colonia">
+                        <input type="text" name="street" value= "<%= locals.old && old.street ? old.street : '' %>" placeholder="Calle">
+                        <input type="number" name="number_ext" value= "<%= locals.old && old.number_ext ? old.number_ext : '' %>" placeholder="Numero exterior">
+                        <input type="text" name="colonia" value= "<%= locals.old && old.colonia ? old.colonia : '' %>" placeholder="Colonia">
                         <input type="text" name="number_int" placeholder="Interior">
                         <textarea name="reference" id="" cols="30" rows="3" placeholder="Referencias"></textarea>
                     </div>  
