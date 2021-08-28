@@ -10,3 +10,6 @@ Las imagenes en el carrito de compras no se ven debemos darle solución
 
 SPRINT 4
 Trabajar en detalles de  css
+
+SPRINT 5
+Falta trabajar en el punto 6 e intentar implementar la función de recordar al usuario.
