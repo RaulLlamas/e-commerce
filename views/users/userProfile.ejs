@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head') %>
+</head>
+<body>
+    <header>
+        <%- include('../partials/header') %>
+    </header>
+   <main>
+       <div class="product-detail">
+            <div class="image-detail">
+                <img src="/img/<%= product.image %>" alt="">
+            </div>
+            <div class="product-info">
+                <p class="product-name"><%= product.name %></p>
+                <p class="product-price" >$<%= toThousand(product.price) %></p>
+                <p class="description-title">Descripcion</p>
+                <div class="product-description">
+                    <p><%= product.description %></p>
+                </div>
+                <a href="/products/editProduct/<%= product.id %>" class="action-button-edit">EDITAR PRODUCTO</a>
+                <form action="/products/delete/<%= product.id %>?_method=DELETE>" method="POST" style="display: inline-flex">
+                    <button type="submit" class="action-button-delete">ELIMINAR</button>
+                </form>
+            </div>
+       </div>
+   </main>
+   <footer>
+    <%- include('../partials/footer') %>
+   </footer>
+</body>
+</html>

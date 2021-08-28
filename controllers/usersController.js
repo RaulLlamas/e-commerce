@@ -18,8 +18,8 @@ const controller = {
   },
   create: (req,res) => {
     const newUser = req.body;
-   //let errors = validationResult(req);
-    //if(errors.isEmpty()){
+   let errors = validationResult(req);
+    if(errors.isEmpty()){
     newUser.id = Date.now();
     if(req.file){
       newUser.image = req.file.filename
@@ -33,10 +33,10 @@ const controller = {
     fs.writeFileSync(usersFilePath,usersJSON);
 
     res.redirect('/')
-  /*}else{
+  }else{
     res.render('users/register',{ errors: errors.array(),
       old: req.body})
-   }*/
+   }
    console.log(errors)
    console.log(newUser)
   }
