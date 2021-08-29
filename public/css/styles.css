@@ -750,6 +750,73 @@ main footer{
     margin: 0;
 }
 
+.profile {
+    width: 80%;
+    text-align: center;
+    margin-top: 70px;
+}
+
+.profile img{
+    width: 170px;
+    border-radius: 50%;
+}
+.profile .name{
+    font-weight: 400;
+    font-size: 2em;
+    background-color: #001D3D;
+    color: #FFC300;
+    text-align: center;
+    padding-top: 5px;
+}
+.profile .profile-info{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+}
+.profile .profile-info p{
+    margin: 10px auto;
+}
+.profile .title{
+    width: 40%;
+    text-align: right;
+    font-size: 22px;
+    padding-right: 6px;
+    color: #001D3D;
+}
+.profile .info{
+    width: 60%;
+    text-align: left;
+    font-size: 20px;
+    padding-top: 2px;
+    padding-left: 5px;
+    background-color: #ffffff;
+}
+.profile .action-button-edit{
+    display: block;
+    text-decoration: none;
+    font-size: 1.1em;
+    font-weight: 500;
+    color: #001D3D;
+    background-color: #FFC300;
+    padding: 5px 6px 0;
+    margin: 30px auto;
+    width: 100%;
+}
+.profile form{
+    width: 100%;
+}
+.profile .action-button-delete{
+    display: block;
+    font-size: 1.3em;
+    border: none;
+    color: #ffffff;
+    background-color: #001D3D;
+    padding: 5px 8px 0;
+    cursor: pointer;
+    width: 100%;
+}
+
+
 @media (min-width:625px) {
     .main-header .right-navbar {
         width: 80%;
@@ -904,6 +971,19 @@ main footer{
     }
     .section-icon-footer span {
         margin: 2.25em 0 0;
+    }
+    .profile {
+        display: flex;
+        flex-wrap: wrap;
+        flex-grow: inherit;
+        width: 625px;
+    }
+    .profile-info {
+        width: 60%;
+    }
+    .image-profile {
+        width: 40%;
+        height: 100%;
     }
 
 }

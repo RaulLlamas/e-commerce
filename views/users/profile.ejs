@@ -8,12 +8,32 @@
         <%- include('../partials/header') %>
     </header>
     <main>
-
-        
-        <p>Foto de perfil</p>
-        <p>Datos del usuario</p>
-        <p>Cerrar Sesion</p>
-
+        <div class="profile">
+            <div class="image-profile">
+                <img src="/img/users/<%= user.image %>" alt="">
+                <p class="name"><%= user.name %></p>
+            </div>
+            <div class="profile-info">
+                <p class="title">Correo:</p>
+                <p class="info"><%= user.email %></p>
+                <p class="title">Telefono:</p>
+                <p class="info"><%= user.telephone %></p>
+                <p class="title">Calle</p>
+                <p class="info"><%= user.street %></p>
+                <p class="title">Numero Ext:</p>
+                <p class="info"><%= user.number_ext %></p>
+                <p class="title">Colonia:</p>
+                <p class="info"><%= user.colonia %></p>
+                <p class="title">Numero Int:</p>
+                <p class="info"><%= user.number_int %></p>
+                <p class="title">Referencias:</p>
+                <p class="info"><%= user.reference %></p>
+                <a href="/users/profile" class="action-button-edit">Editar información</a>
+                <form action="/users/logout" method="GET" style="display: inline-flex">
+                    <button type="submit" class="action-button-delete">Cerrar Sesion</button>
+                </form>
+            </div>
+       </div>
         
     </main>
     <footer>
