@@ -21,6 +21,10 @@ const controller = {
         delete userToLogin.password;
         delete userToLogin.confPassword;
         req.session.userLogged = userToLogin;
+
+        if(req.body.remember){
+          res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60)* 30})
+        }
         return res.redirect('/');
       }
     }
@@ -74,9 +78,11 @@ const controller = {
     res.redirect('users/login');
   },
   profile: (req, res) => {
+    console.log(req.cookies.userEmail);
     return res.render('users/profile', {user: req.session.userLogged});
   },
   logout: (req, res) => {
+    res.clearCookie('userEmail');
     req.session.destroy();
     return res.redirect('/');
   }
