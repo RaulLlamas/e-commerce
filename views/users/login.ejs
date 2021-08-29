@@ -11,10 +11,16 @@
         <!-- <img src="/img/back-register.png" class= "background" alt="background"> -->
         <div class="iniciar-sesion">
             <p class="title-register">Iniciar Sesión</p>
-            <form class="form" action="">
-                <input type="email" name="email" placeholder="Correo electrónico">
+            <form class="form" action="/users/login" method="POST">
+                <input type="email" name="email" value="<%= locals.oldData ? oldData.email : null %>" placeholder="Correo electrónico">
                 <input type="password" name="password" placeholder="Contraseña">
-                <button type="submit">Aceptar</button>
+                <% if(locals.errors && errors.email) { %>
+                    <p class="errorMsg" > <%= errors.email.msg %> </p>
+                <% } %>
+                <input type="checkbox" name="remember" class="check-b">
+                <label for="remember" class="check-l"> Recordar mi cuenta </label>    
+                <button type="submit" >Aceptar</button>
+                <a href="/users/register" class="link">Crear una cuenta</a>
             </form>
         </div>
         <div class="register-back">

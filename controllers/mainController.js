@@ -20,7 +20,7 @@ const controller = {
       })
 
       //res.sendFile(path.resolve("views/products/index.html"));
-      res.render('index',{ entradas: entradas, porvienes: porvienes, postres: postres, toThousand: toThousand});
+      res.render('index',{ entradas: entradas, porvienes: porvienes, postres: postres, toThousand: toThousand, user: req.session.userLogged});
     }
   };
   

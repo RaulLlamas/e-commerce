@@ -474,10 +474,26 @@ main footer{
     border: none;
     width: 90%;
     height: 35px;
-    margin: 20px auto;
+    margin: 30px auto 0;
     padding-left: 12px;
     padding-top: 4px;
     border-radius: 5px;
+}
+.iniciar-sesion .link{
+    display: block;
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: 400;
+    color: #9C9C9C;
+    text-decoration: none;
+}
+.iniciar-sesion .form .check-b{
+    width: 10%;
+    height: 20px;
+    border-color: #EBEBEB;
+}
+.iniciar-sesion .form .check-l{
+    font-size: 1.2em;
 }
 .iniciar-sesion .form button{
     background-color: #001D3D;
@@ -508,10 +524,7 @@ main footer{
     padding: 5px;
     margin-top: 10px;
     background-color: #212121;
-
-    
 }
-
 .footer *{
     text-align: center;
     margin: 15px;
@@ -521,7 +534,6 @@ main footer{
 .footer section{
     width: 90%;
 }
-
 .section-footer-about a{
     text-decoration: none;
 }
@@ -532,9 +544,7 @@ main footer{
 .section-footer-Copyight{
     font-size: 1.5em;
     font-weight: 300;
-
 }
-
 .icon-footer{
     display: inline-block;
     font-size: 2.5em;
@@ -575,8 +585,6 @@ main footer{
     justify-content:center;
     flex-wrap: wrap;    
     border-top: 5px solid #EBEBEB;
-    
-    
 }
 .section-icon-footer div,span{
     width: 50%;
@@ -590,7 +598,6 @@ main footer{
     font-size: 2em;
     width: 100%;
     text-decoration: none;
-    
 }
 .section-footerTop:hover{
     background-color: #424242 ;
@@ -602,9 +609,7 @@ main footer{
 .logo-footer{
     width: 50%;
     margin: 0;
-    
 }
-
 .new-product {
     width: 70%;
     margin: auto;
@@ -736,7 +741,14 @@ main footer{
     padding: 5px 8px 0;
     cursor: pointer;
 }
-
+.register .errorMsg{
+    color: #FFC300;
+    margin: 0;
+}
+.iniciar-sesion .errorMsg{
+    color: #FFC300;
+    margin: 0;
+}
 
 @media (min-width:625px) {
     .main-header .right-navbar {

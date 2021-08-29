@@ -9,7 +9,16 @@
                 <li><a href="#"><p>Nosotros</p></a></li>
                 <li><a href="/#menu"><p>Menu</p></a></li>
                 <li><a href="/products/shopping-cart"><i class="fas fa-shopping-cart"></i><p>Carrito</p></a></li>
-                <li><a href="/users/login"><i class="fas fa-user"></i><p>Iniciar Sesión</p></a></li>
+                <li>
+                    <a href="/users/login">
+                        <i class="fas fa-user"></i>
+                        <% if(locals.isLogged) {%>
+                            <p><%= locals.userLogged.name %></p>
+                        <% }else{ %>
+                            <p>Iniciar Sesión</p>
+                        <% } %>
+                    </a>
+                </li>
             </ul>
         </div>
     </div>

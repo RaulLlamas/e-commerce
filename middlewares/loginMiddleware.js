@@ -1,5 +1,8 @@
-function redirigirLogin(req, res, next) {
-  res.redirect("/login");
+function loginMiddleware(req, res, next) {
+  if(req.session.userLogged){
+    return   res.redirect("/users/profile");
+  }
+  next();
 }
 
-module.exports = redirigirLogin;
+module.exports = loginMiddleware;
