@@ -1,5 +1,8 @@
-function redirigirSinLogin(req, res, next) {
-  res.redirect("/");
+function sinLoginMiddleware(req, res, next) {
+  if(!req.session.userLogged){
+    return   res.redirect("/users/login");
+  }
+  next();
 }
 
-module.exports = redirigirSinLogin;
+module.exports = sinLoginMiddleware;

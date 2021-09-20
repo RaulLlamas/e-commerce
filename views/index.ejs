@@ -21,7 +21,11 @@
         </div>
         <div class="quick-button">
             <p id="paint-button"> 
-                <a href="/users/register">Registrate</a>
+                <% if (user){ %>
+                    <a href="/users/profile">Bienvenido <%= user.name %></a>
+                <% }else{ %>
+                    <a href="/users/register">Registrate</a>
+                <% } %>
             </p>
         </div>
         <div class="menu">
@@ -30,7 +34,7 @@
                 <div class="options-menu">
                     <% entradas.forEach(product => { %>
                     <a href="products/productDetail/<%= product.id %>"class="element-menu" >
-                        <img src="/img/<%= product.image %>" class= "photo-element" alt="logo-home">
+                        <img src="/img/products/<%= product.image %>" class= "photo-element" alt="logo-home">
                         <div class="body-element">
                             <p class="title-element"><%= product.name %></p>
                             <p class="price-element">$<%= toThousand(product.price) %></p>
@@ -50,7 +54,7 @@
                 <div class="options-menu">
                     <% porvienes.forEach(product => { %>
                     <a href="/products/productDetail/<%= product.id %>" class="element-menu" >
-                        <img src="/img/<%= product.image %>" class= "photo-element" alt="logo-home">
+                        <img src="/img/products/<%= product.image %>" class= "photo-element" alt="logo-home">
                         <div class="body-element">
                             <p class="title-element"><%= product.name %></p>
                             <p class="price-element">$<%= toThousand(product.price) %></p>
@@ -70,7 +74,7 @@
                 <div class="options-menu">                    
                     <% postres.forEach(product => { %>
                     <a href="/products/productDetail/<%= product.id %>"class="element-menu" >
-                        <img src="/img/<%= product.image %>" class= "photo-element" alt="logo-home">
+                        <img src="/img/products/<%= product.image %>" class= "photo-element" alt="logo-home">
                         <div class="body-element">
                             <p class="title-element"><%= product.name %></p>
                             <p class="price-element">$<%= toThousand(product.price) %></p>
