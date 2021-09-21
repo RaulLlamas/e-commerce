@@ -19,9 +19,9 @@
 -- Table structure for table `addresses`
 --
 
-DROP DATABASE IF EXISTS 'structure';
-CREATE DATABASE 'structure';
-USE 'structure';
+DROP DATABASE IF EXISTS structure;
+CREATE DATABASE structure;
+USE structure;
 
 DROP TABLE IF EXISTS `addresses`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
@@ -81,7 +81,7 @@ DROP TABLE IF EXISTS `products`;
 CREATE TABLE `products` (
   `Id_products` int(11) NOT NULL AUTO_INCREMENT,
   `Name` varchar(100) NOT NULL,
-  `Price` tinytext NOT NULL,
+  `Price` varchar(200) NOT NULL,
   `Id_Categories` varchar(10) NOT NULL,
   `Description` text DEFAULT NULL,
   `Image` mediumblob DEFAULT NULL,

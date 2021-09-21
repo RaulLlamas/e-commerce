@@ -66,27 +66,25 @@ const controller = {
     }
 
     const newUser = req.body;
-   let errors = validationResult(req);
-    if(errors.isEmpty()){
-    newUser.id = Date.now();
     if(req.file){
       newUser.image = req.file.filename
     }else{
       newUser.image = 'default-image.png'
     }
-    newUser.password = bcrypt.hashSync(req.body.password,10)
-    users.push(newUser);
-    
-    const usersJSON = JSON.stringify(users,null,2);
-    fs.writeFileSync(usersFilePath,usersJSON);
+    newUser.password = bcrypt.hashSync(userData.password,10)
+    newUser.confPassword = bcrypt.hashSync(userData.confPassword,10)
 
-    res.redirect('/')
-  }else{
-    res.render('users/register',{ errors: errors.array(),
-      old: req.body})
-   }
-   console.log(errors)
-   console.log(newUser)
+    let userCreated = User.create(newUser);
+    res.redirect('users/login');
+  },
+  profile: (req, res) => {
+    console.log(req.cookies.userEmail);
+    return res.render('users/profile', {user: req.session.userLogged});
+  },
+  logout: (req, res) => {
+    res.clearCookie('userEmail');
+    req.session.destroy();
+    return res.redirect('/');
   }
   
 }
