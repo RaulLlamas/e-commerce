@@ -2,19 +2,19 @@ module.exports = function(sequelize, dataTypes) {
     let alias = 'Producto';
 
     let cols = {
-        id: {
-            type: dataTypes.INTERGER,
+        Id_categories: {
+            type: dataTypes.INTEGER,
             primaryKey: true,
             autoIncrement:true
         },
         id_user: {
-            type: dataTypes.INTERGER
+            type: dataTypes.INTEGER
         },
         number_of_items: {
-            type: dataTypes.INTERGER
+            type: dataTypes.INTEGER
         },
         id_product: {
-            type: dataTypes.INTERGER,
+            type: dataTypes.INTEGER,
         }
     }
 
@@ -26,14 +26,15 @@ module.exports = function(sequelize, dataTypes) {
     let Shopping = sequelize.define(alias, cols, config);
 
     Shopping.associate = function(models){
-        Shopping.belongsTo(models.User, {
+        Shopping.belongsTo(models.Usuario, {
             as: 'user',
             foreignKey: 'Id_users'
         })
 
-        Shopping.belongsTo(models.Product, {
+        Shopping.belongsTo(models.Producto, {
             as: 'products',
             foreignKey: 'Id_Products'
         })
     }
+    return Shopping
 }

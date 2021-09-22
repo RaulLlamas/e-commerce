@@ -2,21 +2,22 @@ module.exports = function(sequelize, dataTypes) {
     let alias = 'Direccion';
 
     let cols = {
-        id: {
-            type: dataTypes.INTERGER,
+        Id_addresses: {
+            type: dataTypes.BIGINT(10).UNSIGNED,
             primaryKey: true,
-            autoIncrement:true
+            allowNull: false,
+            autoIncrement: true
         },
         street: {
             type: dataTypes.STRING
         },
-        numberExt: {
+        Number_ext: {
             type: dataTypes.STRING
         },
         colony: {
-            type: dataTypes.INTERGER,
+            type: dataTypes.INTEGER,
         },
-        numberInt:{
+        Number_int:{
             type: dataTypes.STRING
         },
         reference:{
@@ -32,9 +33,10 @@ module.exports = function(sequelize, dataTypes) {
     let Address = sequelize.define(alias, cols, config);
     
     Address.associate = function(models){
-        Address.belongsTo(models.User, {
-            as: 'user',
+        Address.belongsTo(models.Usuario, {
+            as: 'users',
             foreignKey: 'Id_Addresses'
         })
     }
+    return Address
 }

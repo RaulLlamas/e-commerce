@@ -1,10 +1,11 @@
 module.exports = function(sequelize, dataTypes) {
-    let alias = 'Usuarios';
+    let alias = 'Usuario';
 
     let cols = {
-        id: {
-            type: dataTypes.INTERGER,
+        Id_users: {
+            type: dataTypes.BIGINT(10).UNSIGNED,
             primaryKey: true,
+            allowNull: false,
             autoIncrement:true
         },
         name: {
@@ -13,17 +14,20 @@ module.exports = function(sequelize, dataTypes) {
         email: {
             type: dataTypes.STRING
         },
-        phone: {
-            type: dataTypes.INTERGER,
+        Telephone: {
+            type: dataTypes.INTEGER,
         },
         password:{
             type: dataTypes.STRING
         },
-        birthday:{
+        Birthday_date:{
             type: dataTypes.DATE
         },
-        id_address:{
-            type: dataTypes.INTERGER,
+        Id_Addresses:{
+            type: dataTypes.INTEGER,
+        },
+        Image:{
+            type: dataTypes.STRING
         }
     }
 
@@ -35,17 +39,17 @@ module.exports = function(sequelize, dataTypes) {
     let User = sequelize.define(alias, cols, config);
 
     User.associate = function(models){
-        User.hasOne(models.Address, {
+        User.hasOne(models.Direccion, {
             as: 'address',
             foreignKey: 'Id_Addresses'
         })
 
-        User.hasMany(models.Shopping, {
+        User.hasMany(models.Producto, {
             as: 'products',
             foreignKey: 'Id_users'
         })
     }
 
-    
+    return User
 
 }

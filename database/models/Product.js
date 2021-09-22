@@ -2,8 +2,8 @@ module.exports = function(sequelize, dataTypes) {
     let alias = 'Producto';
 
     let cols = {
-        id: {
-            type: dataTypes.INTERGER,
+        Id_products: {
+            type: dataTypes.INTEGER,
             primaryKey: true,
             autoIncrement:true
         },
@@ -14,10 +14,10 @@ module.exports = function(sequelize, dataTypes) {
             type: dataTypes.FLOAT
         },
         id_category: {
-            type: dataTypes.INTERGER,
+            type: dataTypes.INTEGER,
         },
         description:{
-            type: dataTypes.INTERGER
+            type: dataTypes.INTEGER
         }
     }
 
@@ -29,14 +29,14 @@ module.exports = function(sequelize, dataTypes) {
     let Product = sequelize.define(alias, cols, config);
 
     Product.associate = function(models){
-        Product.belongsTo(models.Category, {
-            as: 'category',
+        Product.belongsTo(models.Categoria,{
+            as: 'categories',
             foreignKey: 'Id_Categories'
         })
-        Product.hasMany(models.Shopping, {
+        Product.hasMany(models.Producto, {
             as: 'products',
             foreignKey: 'Id_Products'
         })
     }
-
+    return Product
 }

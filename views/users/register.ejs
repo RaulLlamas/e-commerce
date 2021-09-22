@@ -22,6 +22,8 @@
                         <% if(locals.errors && errors.email) { %>
                             <p class="errorMsg" > <%= errors.email.msg %> </p>
                         <% } %>
+                        <label for="birthday" class="form-label">Fecha de nacimiento:</label>
+                        <input type="date" id="birthday" name="birthday">
                         <input type="tel" name="telephone" value= "<%= locals.oldData ? oldData.telephone : null %>" placeholder="Teléfono">
                         <% if(locals.errors && errors.telephone) { %>
                             <p class="errorMsg" > <%= errors.telephone.msg %> </p>

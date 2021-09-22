@@ -5,7 +5,7 @@ const bcrypt = require('bcryptjs')
 const { validationResult } = require('express-validator');
 const usersFilePath = path.join(__dirname, '../data/usersDB.json');
 let users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
-
+let db = require("../database/models")
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 
 const controller = {
@@ -42,9 +42,13 @@ const controller = {
   register: (req, res) => {
    // res.sendFile(path.resolve("views/users/register.html"));
    res.render('users/register')
+   /* db.Usuarios.findAll()
+      .then(function(user){
+        return res.render('register',{user:user})
+      })*/
   },
   create: (req,res) => {
-    const resultValidation = validationResult(req);
+    /*const resultValidation = validationResult(req);
 
     if(resultValidation.errors.length > 0){
       return res.render('users/register', {
@@ -75,7 +79,27 @@ const controller = {
     newUser.confPassword = bcrypt.hashSync(userData.confPassword,10)
 
     let userCreated = User.create(newUser);
-    res.redirect('users/login');
+    res.redirect('users/login');*/
+    db.Usuario.create({
+      name: req.body.name,
+      email: req.body.email,
+      phone: req.body.telephone,
+      password:req.body.password,
+      birthday: req.body.birthday,
+      Image:req.body.UsuarioImage
+    })
+    
+    db.Direccion.create({
+      street: req.body.street,
+    numberExt: req.body.number_ext,
+    colony: req.body.colonia,
+    numberInt:req.body.number_int,
+    reference: req.body.reference
+    })
+    .then(()=> {
+      return res.redirect('/register')})            
+  .catch(error => res.send(error))
+      
   },
   profile: (req, res) => {
     console.log(req.cookies.userEmail);
