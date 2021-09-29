@@ -3,9 +3,10 @@ module.exports = function(sequelize, dataTypes) {
 
     let cols = {
         Id_products: {
-            type: dataTypes.INTEGER,
+            type: dataTypes.BIGINT(10).UNSIGNED,
             primaryKey: true,
-            autoIncrement:true
+            allowNull: false,
+            autoIncrement: true
         },
         name: {
             type: dataTypes.STRING
@@ -13,11 +14,13 @@ module.exports = function(sequelize, dataTypes) {
         price: {
             type: dataTypes.FLOAT
         },
-        id_category: {
-            type: dataTypes.INTEGER,
+        Id_Categories: {
+            type: dataTypes.BIGINT(10).UNSIGNED,
         },
         description:{
             type: dataTypes.INTEGER
+        },Image:{
+            type: dataTypes.STRING
         }
     }
 

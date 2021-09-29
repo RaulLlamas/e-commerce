@@ -8,26 +8,26 @@ module.exports = function(sequelize, dataTypes) {
             allowNull: false,
             autoIncrement: true
         },
-        street: {
+        Street: {
             type: dataTypes.STRING
         },
         Number_ext: {
             type: dataTypes.STRING
         },
-        colony: {
+        Colony: {
             type: dataTypes.INTEGER,
         },
         Number_int:{
             type: dataTypes.STRING
         },
-        reference:{
+        Reference:{
             type: dataTypes.STRING
         }
     }
 
     let config = {
         tableName: 'addresses',
-        timestamps: true
+        timestamps: false
     }
     
     let Address = sequelize.define(alias, cols, config);

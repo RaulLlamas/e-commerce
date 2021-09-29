@@ -13,6 +13,58 @@ header {
 footer {
     margin-top: 100px;
 }
+.main-header .center-navbar{
+    align-items: center;
+    width: 35%;
+}
+
+.center-navbar .search-box{
+    align-items: center;
+    position: relative;
+    height: 35px;
+    max-width: 35px;
+    margin: auto;
+    box-shadow: 0 5px 10px rgb(0,0,0,0.25);
+    transition: all 0.3s ease;
+}
+#check:checked ~ .search-box{
+   
+    max-width: 100%;
+
+}
+.search-box input{
+    height: 100%;
+    width: 100%;
+    border-radius: 25px;
+    background-color: #EBEBEB;
+    outline: none;
+    border: none;
+    padding-left: 20px;
+    font-size: 15px;
+}
+.search-box .icon-search{
+    position: absolute;
+    right: -2px;
+    top: 0;
+    width: 40px;
+    background-color: #FFC300;
+    height: 100%;
+    text-align: center;
+    line-height: 41px;
+    color: #ffffff;
+    font-size: 20px;
+    pointer-events: stroke;
+    border-radius: 5px;
+}
+#check:checked ~ .search-box .icon-search{
+    background-color: #FFC300;
+    color: #ffffff;
+    border-radius: 5px;
+    width: 40px;
+}
+#check{
+    display: none;
+}
 .main-header {
     width: 100%;
     height: 50px;
@@ -29,12 +81,12 @@ footer {
     margin: 0 10px;
 }
 .main-header .right-navbar {
-    width: 50%;
+    width: 33%;
 }
 .main-header .left-navbar {
     display: flex;
     align-items: center;
-    width: 50%;
+    width: 33%;
 }
 .main-header .option-navbar {
     list-style: none;
@@ -819,7 +871,33 @@ main footer{
 
 @media (min-width:625px) {
     .main-header .right-navbar {
-        width: 80%;
+        width: 45%;
+    }
+    .main-header .center-navbar{
+        width: 50%;
+        
+    }
+   .center-navbar .search-box{
+        max-width: 100%;
+    
+    }
+
+    .center-navbar .search-box{
+        height: 50px;
+        max-width: 100%;
+        
+    }
+    .search-box input{
+        font-size: 18px;
+    }
+    .search-box .icon-search{
+       
+        width: 50px;
+        line-height: 55px;
+       
+    }
+    #check:checked ~ .search-box .icon-search{
+        width: 60px;
     }
     .main-header .left-navbar {
         width: 20%;

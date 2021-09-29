@@ -24,7 +24,7 @@ module.exports = function(sequelize, dataTypes) {
             type: dataTypes.DATE
         },
         Id_Addresses:{
-            type: dataTypes.INTEGER,
+            type: dataTypes.BIGINT(10).UNSIGNED,
         },
         Image:{
             type: dataTypes.STRING
@@ -46,7 +46,7 @@ module.exports = function(sequelize, dataTypes) {
 
         User.hasMany(models.Producto, {
             as: 'products',
-            foreignKey: 'Id_users'
+            foreignKey: 'Id_products'
         })
     }
 

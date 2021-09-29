@@ -27,7 +27,7 @@ DROP TABLE IF EXISTS `addresses`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `addresses` (
-  `Id_addresses` int(11) NOT NULL AUTO_INCREMENT,
+  `Id_addresses` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `Street` varchar(100) NOT NULL,
   `Number_ext` tinyint(4) NOT NULL,
   `Colony` varchar(100) NOT NULL,
@@ -35,7 +35,7 @@ CREATE TABLE `addresses` (
   `Reference` text DEFAULT NULL,
   PRIMARY KEY (`Id_addresses`),
   UNIQUE KEY `Addresses_un` (`Street`,`Number_ext`,`Colony`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -55,11 +55,11 @@ DROP TABLE IF EXISTS `categories`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `categories` (
-  `Id_categories` int(11) NOT NULL AUTO_INCREMENT,
+  `Id_categories` int(11) unsigned  NOT NULL AUTO_INCREMENT,
   `Name` varchar(100) NOT NULL,
   PRIMARY KEY (`Id_categories`),
   UNIQUE KEY `Categories_un` (`Name`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -68,6 +68,7 @@ CREATE TABLE `categories` (
 
 LOCK TABLES `categories` WRITE;
 /*!40000 ALTER TABLE `categories` DISABLE KEYS */;
+INSERT INTO `categories` VALUES (1,'Entrada'),(2,'Por lo que vienes'),(3,'Postres');
 /*!40000 ALTER TABLE `categories` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -79,17 +80,17 @@ DROP TABLE IF EXISTS `products`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `products` (
-  `Id_products` int(11) NOT NULL AUTO_INCREMENT,
+  `Id_products` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `Name` varchar(100) NOT NULL,
   `Price` varchar(200) NOT NULL,
-  `Id_Categories` varchar(10) NOT NULL,
+  `Id_Categories` int(11) unsigned DEFAULT NULL,
   `Description` text DEFAULT NULL,
   `Image` mediumblob DEFAULT NULL,
   PRIMARY KEY (`Id_products`),
   UNIQUE KEY `Products_un` (`Name`,`Price`) USING HASH,
   KEY `products_FK` (`Id_Categories`),
-  CONSTRAINT `products_FK` FOREIGN KEY (`Id_Categories`) REFERENCES `categories` (`Name`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  CONSTRAINT `products_FK` FOREIGN KEY (`Id_Categories`) REFERENCES `categories` (`Id_categories`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -109,16 +110,16 @@ DROP TABLE IF EXISTS `shopping cart`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `shopping cart` (
-  `Id_categories` int(11) NOT NULL AUTO_INCREMENT,
-  `Id_users` int(11) NOT NULL,
+  `Id_categories` int(11) unsigned DEFAULT NULL,
+  `Id_users` int(11) unsigned DEFAULT NULL,
   `Number_of_items` int(11) NOT NULL,
-  `Id_products` int(11) NOT NULL,
+  `Id_products` int(11) unsigned DEFAULT NULL,
   PRIMARY KEY (`Id_categories`),
   KEY `shopping_cart_FK` (`Id_users`),
   KEY `shopping_cart_FK_1` (`Id_products`),
   CONSTRAINT `shopping_cart_FK` FOREIGN KEY (`Id_users`) REFERENCES `users` (`Id_users`),
   CONSTRAINT `shopping_cart_FK_1` FOREIGN KEY (`Id_products`) REFERENCES `products` (`Id_products`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -138,13 +139,13 @@ DROP TABLE IF EXISTS `users`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `users` (
-  `Id_users` int(11) NOT NULL AUTO_INCREMENT,
+  `Id_users` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `Name` varchar(100) NOT NULL,
   `Email` varchar(100) NOT NULL,
   `Telephone` int(11) DEFAULT NULL,
   `Password` varchar(100) NOT NULL,
   `Birthday_date` date DEFAULT NULL,
-  `Id_Addresses` int(11) NOT NULL,
+  `Id_Addresses` int(11) unsigned DEFAULT NULL,
   `Image` mediumblob DEFAULT NULL,
   PRIMARY KEY (`Id_users`),
   UNIQUE KEY `Users_un` (`Email`),

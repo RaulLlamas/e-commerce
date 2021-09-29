@@ -9,29 +9,24 @@
     </header>
     <main>
         <div class="new-product">
-            <p class="title-new-product">Nuevo producto</p>
-                <form class="form-1" action="/products/editProduct/<%= product.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+            <p class="title-new-product">Editar producto</p>
+                <form class="form-1" action="/products/editProduct/<%= product.Id_products %>?_method=PUT" method="POST" enctype="multipart/form-data">
                     <div class="input-new-product">
                         <label for="name" >Nombre del producto</label>
                         <input type="text" name="name" id="name" value="<%= product.name %>">
                     </div>
                     <div class="input-new-product">
                         <label for="price" >Precio:</label>
-                        <input type="number" name="price" id="price" class="price" value="<%= toThousand(product.price) %>">
+                        <input type="number" name="price" id="price" class="price" value="<%= product.price %>">
                     </div>
                     <div class="input-new-product">
                         <label for="category">Categoria:</label>
-                        <select name="category" id="category">
-                            <% const options = ['Elige una','Entrada','Por lo que vienes', 'Postre'] %>
-							<% const values = ['','entrada','por-lo-que-vienes', 'postre'] %>
-							<% for(let x=0; x<options.length; x++) { %>
-								<% if(product.category == values[x]) { %>
-									<option value="<%= values[x] %>" selected><%= options[x] %></option>
-								<% }else{ %>
-									<option value="<%= values[x] %>"><%= options[x] %></option>
-								<% } %>
-							<% } %>
-                        </select>
+                    <select name="category_id" id="" required>
+                        <option value="" disabled selected>- Seleccione la categoria - </option>
+                        <% allCategoria.forEach(categoria => { %>
+                        <option value="<%= categoria.Id_categories %>"><%= categoria.name %></option>
+                        <% }); %>
+                    </select>
                     </div>
                     <div class="input-new-product">
                         <label for="description" class="description">Descripción:</label>

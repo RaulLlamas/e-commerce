@@ -10,9 +10,9 @@
    <main>
        <div class="product-detail">
         <ul>
-            <% for( let i = 0; i < usuarios.length; i++ ) { %>
+            <% for( let i = 0; i < producto.length; i++ ) { %>
             <li>
-                <a href="/users/userDetail/<%= usuarios[i].Id_users %>"><%= usuarios[i].name %></a>
+                <a href="/products/productDetail/<%= producto[i].Id_products %>"><%= producto[i].name %></a>
            
             <% } %>
             

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head') %>
+</head>
+<body>
+    <header>
+        <%- include('../partials/header') %>
+    </header>
+   <main>
+            <div class="product-detail">
+                <div class="product-info">
+                    <p class="product-name"><%= usuarios.name %></p>
+                    <p class="product-name"><%= usuarios.email %></p>
+                    <p class="product-name"><%= usuarios.Birthday_date %></p>
+                    <p class="product-name"><%= usuarios.address.Street %></p>
+                    <p class="product-price" >Celular: <%= usuarios.Telephone %></p>
+                    <a href="/users/editUser/<%= usuarios.Id_users %>" class="action-button-edit">EDITAR USUARIO</a>
+                </div>
+            </div>
+   </main>
+   <footer>
+    <%- include('../partials/footer') %>
+   </footer>
+</body>
+</html>

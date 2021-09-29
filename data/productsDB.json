@@ -2,7 +2,7 @@
   {
     "id": 1,
     "name": "Papas a la francesa",
-    "price": 59,
+    "price": "59",
     "category": "entrada",
     "description": "son las patatas que se preparan cortándose en rodajas o en forma de bastones y friéndolas en aceite caliente hasta que queden doradas, retirándolas del aceite y luego sazonándolas con sal.",
     "image": "img-papas-francesas.jpg"
@@ -25,10 +25,10 @@
   },
   {
     "id": 4,
-    "name": "Alitas",
-    "price": 79,
-    "category": "entrada",
-    "description": "Alas empanizadas con salsa y aderezo a elección. 1400-1800 cal | el queso light ranch o bleu agrega 200/260 cal (las calorías enumeradas son para un 10 pc)",
+    "name": "sushi",
+    "price": "140",
+    "category": "por-lo-que-vienes",
+    "description": "dsdsdss",
     "image": "img-alitas.png"
   },
   {

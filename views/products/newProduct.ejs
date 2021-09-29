@@ -21,11 +21,11 @@
                 </div>
                 <div class="input-new-product">
                     <label for="category">Categoria:</label>
-                    <select name="category" id="category">
-                        <option value="">Elige una</option>
-                        <option value="entrada">Entrada</option>
-                        <option value="por-lo-que-vienes">Por lo que vienes</option>
-                        <option value="postre">Postre</option>
+                    <select name="category_id" id="" required>
+                        <option value="" disabled selected>- Seleccione la categoria - </option>
+                        <% allCategoria.forEach(categoria => { %>
+                        <option value="<%= categoria.Id_categories %>"><%= categoria.name %></option>
+                        <% }); %>
                     </select>
                 </div>
                 <div class="input-new-product">

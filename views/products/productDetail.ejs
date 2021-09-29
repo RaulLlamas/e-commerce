@@ -14,13 +14,15 @@
             </div>
             <div class="product-info">
                 <p class="product-name"><%= product.name %></p>
-                <p class="product-price" >$<%= toThousand(product.price) %></p>
+                <p class="product-price" >$<%= product.price %></p>
+                <p class="description-title"><%= product.categories.name %></p>
+                <br>
                 <p class="description-title">Descripcion</p>
                 <div class="product-description">
                     <p><%= product.description %></p>
                 </div>
-                <a href="/products/editProduct/<%= product.id %>" class="action-button-edit">EDITAR PRODUCTO</a>
-                <form action="/products/delete/<%= product.id %>?_method=DELETE>" method="POST" style="display: inline-flex">
+                <a href="/products/editProduct/<%= product.Id_products %>" class="action-button-edit">EDITAR PRODUCTO</a>
+                <form action="/products/delete/<%= product.Id_products %>?_method=DELETE>" method="POST" style="display: inline-flex">
                     <button type="submit" class="action-button-delete">ELIMINAR</button>
                 </form>
             </div>

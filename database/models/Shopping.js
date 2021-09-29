@@ -1,20 +1,21 @@
 module.exports = function(sequelize, dataTypes) {
-    let alias = 'Producto';
+    let alias = 'Carrito';
 
     let cols = {
         Id_categories: {
-            type: dataTypes.INTEGER,
-            primaryKey: true,
-            autoIncrement:true
+            type: dataTypes.BIGINT(10).UNSIGNED,
+          
         },
         id_user: {
-            type: dataTypes.INTEGER
+            type: dataTypes.BIGINT(10).UNSIGNED,
+        
         },
         number_of_items: {
             type: dataTypes.INTEGER
         },
         id_product: {
-            type: dataTypes.INTEGER,
+            type: dataTypes.BIGINT(10).UNSIGNED,
+          
         }
     }
 

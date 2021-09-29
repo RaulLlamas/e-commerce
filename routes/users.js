@@ -44,6 +44,13 @@ router.get("/profile", usersController.profile);
 
 router.get("/logout", usersController.logout);
 
+router.get("/userProfile", usersController.list);
+
+router.get("/userDetail/:id", usersController.detail);
+
+router.get("/editUser/:id",usersController.edit)
+
+router.put("/editUser/:id",usersController.update)
 
 
 module.exports = router;  

@@ -5,10 +5,24 @@ const bcrypt = require('bcryptjs')
 const { validationResult } = require('express-validator');
 const usersFilePath = path.join(__dirname, '../data/usersDB.json');
 let users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
-let db = require("../database/models")
+const db = require("../database/models");
+const { Console } = require('console');
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 
 const controller = {
+  'list': (req, res) => {
+    db.Usuario.findAll()
+        .then(usuarios => {
+            res.render('users/userProfile', {usuarios})
+        })
+        
+},
+'detail': (req, res) => {
+    db.Usuario.findByPk(req.params.id, {include:[{association:"address"}]})
+        .then(usuarios => {
+            res.render('users/userDetail', {usuarios:usuarios});
+        });
+},
   login: (req, res) => {
     //res.sendFile(path.resolve("views/users/login.html"));
     res.render('users/login');
@@ -80,27 +94,62 @@ const controller = {
 
     let userCreated = User.create(newUser);
     res.redirect('users/login');*/
-    db.Usuario.create({
-      name: req.body.name,
-      email: req.body.email,
-      phone: req.body.telephone,
-      password:req.body.password,
-      birthday: req.body.birthday,
-      Image:req.body.UsuarioImage
-    })
-    
+   
+
     db.Direccion.create({
-      street: req.body.street,
-    numberExt: req.body.number_ext,
-    colony: req.body.colonia,
-    numberInt:req.body.number_int,
-    reference: req.body.reference
+      Street: req.body.street,
+      Number_ext: req.body.number_ext,
+      Colony: req.body.colonia,
+      Number_int:req.body.number_int,
+      Reference: req.body.reference
+    })
+    .then((Direccion)=>{
+      const idAddress = Direccion.Id_addresses
+      console.log('Hola'+ idAddress)
+      console.log('adios' + req.body.UsuarioImage)
+      return   db.Usuario.create({
+        name: req.body.name,
+        email: req.body.email,
+        Telephone: req.body.telephone,
+        password:req.body.password,
+        Birthday_date: req.body.birthday,
+        Id_Addresses: idAddress,
+        Image:req.body.UsuarioImage
+      })
     })
     .then(()=> {
-      return res.redirect('/register')})            
+      return res.redirect('/')})            
   .catch(error => res.send(error))
       
-  },
+  },edit: function(req,res) {
+    let idusuario = req.params.id;
+    let promUser = db.Usuario.findByPk(idusuario,{include:[{association:"address"}]});
+    let promAddress = db.Direccion.findAll();
+    Promise
+    .all([promUser, promAddress])
+    .then(([Usuario, allAddress]) => {
+        return res.render(path.resolve(__dirname, '..', 'views','users',  'editUser'), {Usuario,allAddress})})
+    .catch(error => res.send(error))
+},
+update: function (req,res) {
+    
+    db.Usuario.update(
+        {
+          name: req.body.name,
+          email: req.body.email,
+          Telephone: req.body.telephone,
+          password:req.body.password,
+          Birthday_date: req.body.birthday,
+          Image:req.body.UsuarioImage
+        },
+        {
+            where: {Id_users: req.params.id}
+        })
+    .then(()=> {
+      console.log(req.params.name)
+        return res.redirect('/')})            
+    .catch(error => res.send(error))
+},
   profile: (req, res) => {
     console.log(req.cookies.userEmail);
     return res.render('users/profile', {user: req.session.userLogged});
