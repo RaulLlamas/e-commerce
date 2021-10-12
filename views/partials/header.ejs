@@ -6,12 +6,20 @@
             </div>
             <div class="center-navbar">
                 <input type="checkbox" id="check">
-                <div class="search-box">
-                    <input type="text" placeholder="Type here...">
+                <!-- <div class="search-box">
+                    <input type="text" name="ggg" placeholder="Type here...">
                     <label for="check" class="icon-search">
                         <a href="/products/productList"><i class="fas fa-search"></i>
                     </label>
-                </div>
+                </div> -->
+                <form  action="/products/searchProduct" method="get"  >
+                    <div class="search-box">
+                    <input type="text" name="search" placeholder="Type here...">
+                    <label for="check" class="icon-search">
+                        <button class="btn-search" type="submit"><i class="fas fa-search"></i></button>
+                    </label>
+                    </div>
+                </form>
             </div>   
             <div class="right-navbar">
                 <ul class="option-navbar">

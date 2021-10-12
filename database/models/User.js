@@ -27,7 +27,7 @@ module.exports = function(sequelize, dataTypes) {
             type: dataTypes.BIGINT(10).UNSIGNED,
         },
         Image:{
-            type: dataTypes.STRING
+            type: dataTypes.BLOB("long"),
         }
     }
 
@@ -39,7 +39,7 @@ module.exports = function(sequelize, dataTypes) {
     let User = sequelize.define(alias, cols, config);
 
     User.associate = function(models){
-        User.hasOne(models.Direccion, {
+        User.belongsTo(models.Direccion, {
             as: 'address',
             foreignKey: 'Id_Addresses'
         })

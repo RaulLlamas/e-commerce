@@ -50,7 +50,7 @@ router.get("/userDetail/:id", usersController.detail);
 
 router.get("/editUser/:id",usersController.edit)
 
-router.put("/editUser/:id",usersController.update)
+router.put("/editUser/:id",uploadFile.single('UsuarioImage'),usersController.update)
 
 
 module.exports = router;  

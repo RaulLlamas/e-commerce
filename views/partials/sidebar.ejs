@@ -1,0 +1,83 @@
+<div class="sidebar">
+    <div class="logo-details">
+        <div class="logo_name">Mi cuenta</div>
+        <i class='bx bx-menu' id="btn" ></i>
+    </div>
+    <ul class="nav-list">
+        <li>
+            <a href="#">
+              <i class='bx bx-user' ></i>
+              <span class="links_name">Perfil</span>
+            </a>
+            <span class="tooltip">Perfil</span>
+          </li>
+        
+        <li>
+            <a href="#">
+             <i class='bx bx-shopping-bag' ></i>
+              <span class="links_name">Mis Compras</span>
+            </a>
+            <span class="tooltip">Mis Compras</span>
+          </li>
+        <li>
+            <a href="#">
+              <i class='bx bx-heart' ></i>
+              <span class="links_name">Saved</span>
+            </a>
+            <span class="tooltip">Saved</span>
+          </li>
+        <li>
+            <a href="#">
+             <i class='bx bxs-credit-card-alt'></i>
+              <span class="links_name">Mis tarjetas</span>
+            </a>
+            <span class="tooltip">Mis tarjetas</span>
+          </li>
+        <li>
+            <a href="#">
+                <i class='bx bx-map'></i>
+                <span class="links_name">Dirección</span>
+            </a>
+            <span class="tooltip">Dirección</span>
+            </li>
+        <li>
+            <a href="#">
+                <i class='bx bx-cog' ></i>
+                <span class="links_name">Setting</span>
+            </a>
+            <span class="tooltip">Setting</span>
+            </li>
+     <li class="profile">
+         <div class="profile-details">
+            <img src="/img/products/<%= usuarios.Image %>" alt="">
+           <div class="name_job">
+             <div class="name"><%= usuarios.name %></div>
+           </div>
+         </div>
+         <i class='bx bx-log-out' id="log_out" ></i>
+     </li>
+    </ul>
+  </div>
+  <script>
+    let sidebar = document.querySelector(".sidebar");
+    let closeBtn = document.querySelector("#btn");
+    let searchBtn = document.querySelector(".bx-search");
+  
+    closeBtn.addEventListener("click", ()=>{
+      sidebar.classList.toggle("open");
+      menuBtnChange();
+    });
+  
+    searchBtn.addEventListener("click", ()=>{ 
+      sidebar.classList.toggle("open");
+      menuBtnChange(); 
+    });
+  
+    function menuBtnChange() {
+     if(sidebar.classList.contains("open")){
+       closeBtn.classList.replace("bx-menu", "bx-menu-alt-right");
+     }else {
+       closeBtn.classList.replace("bx-menu-alt-right","bx-menu");
+     }
+    }
+    </script>

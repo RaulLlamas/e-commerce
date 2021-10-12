@@ -8,14 +8,21 @@
         <%- include('../partials/header') %>
     </header>
    <main>
-            <div class="product-detail">
-                <div class="product-info">
-                    <p class="product-name"><%= usuarios.name %></p>
-                    <p class="product-name"><%= usuarios.email %></p>
-                    <p class="product-name"><%= usuarios.Birthday_date %></p>
-                    <p class="product-name"><%= usuarios.address.Street %></p>
-                    <p class="product-price" >Celular: <%= usuarios.Telephone %></p>
-                    <a href="/users/editUser/<%= usuarios.Id_users %>" class="action-button-edit">EDITAR USUARIO</a>
+            <div class="user-detail">
+                <%- include('../partials/sidebar') %>
+                
+                <div class="user-about">
+                    
+                    <div class="image-user">
+                            <img src="/img/products/<%= usuarios.Image %>" alt="">
+                    </div>
+                    <div class="user-info">
+                        <div class="user-name"> <%= usuarios.name %></div>                    
+                        <div class="user-email"><%= usuarios.email %></div>
+                        <a href="/users/editUser/<%= usuarios.Id_users %>" class="btn-update-user">EDITAR USUARIO</a>
+                    </div>
+                    
+                    
                 </div>
             </div>
    </main>

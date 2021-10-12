@@ -10,9 +10,9 @@ const { Console } = require('console');
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 
 const controller = {
-  'list': (req, res) => {
-    db.Usuario.findAll()
-        .then(usuarios => {
+'list': (req, res) => {
+  db.Usuario.findAll()
+      .then(usuarios => {
             res.render('users/userProfile', {usuarios})
         })
         
@@ -56,10 +56,6 @@ const controller = {
   register: (req, res) => {
    // res.sendFile(path.resolve("views/users/register.html"));
    res.render('users/register')
-   /* db.Usuarios.findAll()
-      .then(function(user){
-        return res.render('register',{user:user})
-      })*/
   },
   create: (req,res) => {
     /*const resultValidation = validationResult(req);
@@ -104,17 +100,15 @@ const controller = {
       Reference: req.body.reference
     })
     .then((Direccion)=>{
-      const idAddress = Direccion.Id_addresses
-      console.log('Hola'+ idAddress)
-      console.log('adios' + req.body.UsuarioImage)
+      const idAddress = Direccion.Id_addresses      
       return   db.Usuario.create({
         name: req.body.name,
         email: req.body.email,
         Telephone: req.body.telephone,
-        password:req.body.password,
+        password:bcrypt.hashSync(req.body.password,10),
         Birthday_date: req.body.birthday,
         Id_Addresses: idAddress,
-        Image:req.body.UsuarioImage
+        Image:req.file.filename
       })
     })
     .then(()=> {
@@ -127,31 +121,40 @@ const controller = {
     let promAddress = db.Direccion.findAll();
     Promise
     .all([promUser, promAddress])
-    .then(([Usuario, allAddress]) => {
-        return res.render(path.resolve(__dirname, '..', 'views','users',  'editUser'), {Usuario,allAddress})})
+    .then(([Usuario, address]) => {
+        return res.render(path.resolve(__dirname, '..', 'views','users',  'editUser'), {Usuario,address})})
     .catch(error => res.send(error))
 },
 update: function (req,res) {
-    
-    db.Usuario.update(
-        {
-          name: req.body.name,
-          email: req.body.email,
-          Telephone: req.body.telephone,
-          password:req.body.password,
-          Birthday_date: req.body.birthday,
-          Image:req.body.UsuarioImage
-        },
-        {
-            where: {Id_users: req.params.id}
-        })
+  db.Usuario.update({
+    name: req.body.name,
+    email: req.body.email,
+    Telephone: req.body.telephone,
+    //password:bcrypt.hashSync(req.body.password,10),
+    Birthday_date: req.body.birthday,
+   // Image:req.file.filename
+  },{
+    where: {Id_users: req.params.id}
+    })
+  /*.then((Usuario)=>{     
+    const idusario = Usuario.Id_Addresses 
+    console.log( 'Porque no funciona '+ idusario)                                               
+    return  db.Direccion.update({
+      Street: req.body.street,
+      Number_ext: req.body.number_ext,
+      Colony: req.body.colonia,
+      Number_int:req.body.number_int,
+      Reference: req.body.reference
+    },{
+      where: {Id_addresses:Usuario.Id_Addresses}
+      }) 
+    })*/
     .then(()=> {
-      console.log(req.params.name)
         return res.redirect('/')})            
     .catch(error => res.send(error))
 },
   profile: (req, res) => {
-    console.log(req.cookies.userEmail);
+   // console.log(req.cookies.userEmail);
     return res.render('users/profile', {user: req.session.userLogged});
   },
   logout: (req, res) => {

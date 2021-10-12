@@ -4,7 +4,8 @@ const productsFilePath = path.join(__dirname, '../data/productsDB.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 const db = require("../database/models")
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-
+const Sequelize = require('sequelize');
+const Op = Sequelize.Op;
 const controller = {
     cart: (req, res) => {
      // res.sendFile(path.resolve("views/products/productCart.html"));
@@ -29,6 +30,15 @@ const controller = {
               res.render('products/productDetail', {product});
           });
   },
+  search:(req,res)=>{
+    let  term  = req.query.search;
+    term = term.toLowerCase();
+    db.Producto.findAll({ where: { name: { [Op.like]: '%' + term + '%' } } })
+        .then(producto=>{
+          res.render('products/searchProduct',{producto})
+        })
+        .catch(error => res.send(error))
+    },
     create: (req, res) => {
       let promCategoria = db.Categoria.findAll();
       
@@ -54,13 +64,13 @@ const controller = {
       const productsJSON = JSON.stringify(products,null,2);
       fs.writeFileSync(productsFilePath,productsJSON);
   */
-        
+     
       db.Producto.create({
         name: req.body.name,
         price: req.body.price,
         Id_Categories: req.body.category_id,
         description:req.body.description,
-        Image: req.body.productImage
+        Image:  req.file.filename
       })
       .then(()=> {
         return res.redirect('/');})            
@@ -102,7 +112,7 @@ const controller = {
         price: req.body.price,
         Id_Categories: req.body.category_id,
         description:req.body.description,
-        Image: req.body.productImage
+        Image: req.file.filename
       },
         {
             where: {Id_products: req.params.id}

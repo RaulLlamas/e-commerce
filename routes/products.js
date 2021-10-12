@@ -12,6 +12,7 @@ router.get("/productDetail/:id", productsController.detail);
 
 router.get("/productList", productsController.list);
 
+router.get("/searchProduct/", productsController.search);
 
 //sinLoginMiddleware
 router.get("/newProduct/", productsController.create);

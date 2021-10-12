@@ -20,7 +20,7 @@ module.exports = function(sequelize, dataTypes) {
         description:{
             type: dataTypes.INTEGER
         },Image:{
-            type: dataTypes.STRING
+            type: dataTypes.BLOB("long"),
         }
     }
 
