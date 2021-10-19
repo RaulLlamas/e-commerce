@@ -1,7 +1,7 @@
 const express = require("express");
 const usersController = require("../controllers/usersController");
 const { body } = require('express-validator');
-const uploadFile = require('../config/multer');
+const uploadFile = require('../config/multerUser');
 const loginMiddleware = require('../middlewares/loginMiddleware')
 
 const router = express.Router();
