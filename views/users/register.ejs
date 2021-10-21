@@ -14,7 +14,7 @@
                 <form class="form-1" action="/users/register" method="POST" enctype="multipart/form-data">
                     <div class="input-new-usuario">
                        
-                        <input type="text" name="name" value="<%= locals.oldData ? oldData.name : null %>" placeholder="Nombre  y apellido">
+                        <input type="text" name="name" class="<%= locals.errors && errors.name ? 'is-inavlid': null  %>" value="<%= locals.oldData ? oldData.name : null %>" placeholder="Nombre  y apellido">
                         <% if(locals.errors && errors.name) { %>
                             <p class="errorMsg" > <%= errors.name.msg %> </p>
                         <% } %>
@@ -31,6 +31,9 @@
                         <% } %>
                         <label for="UsuarioImage" class="form-label">Imagen:</label>
                         <input type="file" class="file" id="image" name="UsuarioImage">
+                        <% if(locals.errors && errors.UsuarioImage) { %>
+                            <p class="errorMsg" > <%= errors.UsuarioImage.msg %> </p>
+                        <% } %>
                         <input type="password" name="password" placeholder="Contraseña">
                         <% if(locals.errors && errors.password) { %>
                             <p class="errorMsg" > <%= errors.password.msg %> </p>
@@ -51,7 +54,7 @@
                         <% } %>
                         <input type="number" name="number_ext" value= "<%= locals.oldData ? oldData.number_ext : null %>" placeholder="Numero exterior">
                         <% if(locals.errors && errors.street) { %>
-                            <p class="errorMsg" > <%= errors.street.msg %> </p>
+                            <p class="errorMsg" > <%= errors.number_ext.msg %> </p>
                         <% } %>
                         <input type="text" name="colonia" value= "<%= locals.oldData ? oldData.colonia : null %>" placeholder="Colonia">
                         <% if(locals.errors && errors.colonia) { %>

@@ -54,12 +54,11 @@ const controller = {
 
   },
   register: (req, res) => {
-   // res.sendFile(path.resolve("views/users/register.html"));
+   
    res.render('users/register')
   },
   create: (req,res) => {
-    /*const resultValidation = validationResult(req);
-
+    const resultValidation = validationResult(req); 
     if(resultValidation.errors.length > 0){
       return res.render('users/register', {
           errors: resultValidation.mapped(),
@@ -67,53 +66,53 @@ const controller = {
       });
     } 
 
-    let userInDB = User.findByField('email', req.body.email);
-    if (userInDB){
-      return res.render('users/register', {
-        errors: {
-          email: {
-            msg: 'Este email ya está registrado'
-          }
-        },
-        oldData: req.body
-      });
-    }
+  //   // let userInDB = User.findByField('email', req.body.email);
+  //   // if (userInDB){
+  //   //   return res.render('users/register', {
+  //   //     errors: {
+  //   //       email: {
+  //   //         msg: 'Este email ya está registrado'
+  //   //       }
+  //   //     },
+  //   //     oldData: req.body
+  //   //   });
+  //   // }
 
-    const newUser = req.body;
-    if(req.file){
-      newUser.image = req.file.filename
-    }else{
-      newUser.image = 'default-image.png'
-    }
-    newUser.password = bcrypt.hashSync(userData.password,10)
-    newUser.confPassword = bcrypt.hashSync(userData.confPassword,10)
+  //   // const newUser = req.body;
+  //   // if(req.file){
+  //   //   newUser.image = req.file.filename
+  //   // }else{
+  //   //   newUser.image = 'default-image.png'
+  //   // }
+  //   // newUser.password = bcrypt.hashSync(userData.password,10)
+  //   // newUser.confPassword = bcrypt.hashSync(userData.confPassword,10)
 
-    let userCreated = User.create(newUser);
-    res.redirect('users/login');*/
+  //   // let userCreated = User.create(newUser);
+  //   // res.redirect('users/login');*/
    
 
-    db.Direccion.create({
-      Street: req.body.street,
-      Number_ext: req.body.number_ext,
-      Colony: req.body.colonia,
-      Number_int:req.body.number_int,
-      Reference: req.body.reference
-    })
-    .then((Direccion)=>{
-      const idAddress = Direccion.Id_addresses      
-      return   db.Usuario.create({
-        name: req.body.name,
-        email: req.body.email,
-        Telephone: req.body.telephone,
-        password:bcrypt.hashSync(req.body.password,10),
-        Birthday_date: req.body.birthday,
-        Id_Addresses: idAddress,
-        Image:req.file.filename
-      })
-    })
-    .then(()=> {
-      return res.redirect('/')})            
-  .catch(error => res.send(error))
+  //   db.Direccion.create({ 
+  //     Street: req.body.street,
+  //     Number_ext: req.body.number_ext,
+  //     Colony: req.body.colonia,
+  //     Number_int:req.body.number_int,
+  //     Reference: req.body.reference
+  //   })
+  //   .then((Direccion)=>{
+  //     const idAddress = Direccion.Id_addresses      
+  //     return   db.Usuario.create({
+  //       name: req.body.name,
+  //       email: req.body.email,
+  //       Telephone: req.body.telephone,
+  //       password:bcrypt.hashSync(req.body.password,10),
+  //       Birthday_date: req.body.birthday,
+  //       Id_Addresses: idAddress,
+  //       Image:req.file.filename
+  //     })
+  //   })
+  //   .then(()=> {
+  //     return res.redirect('/')})            
+  // .catch(error => res.send(error))
       
   },edit: function(req,res) {
     let idusuario = req.params.id;
