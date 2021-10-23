@@ -1364,7 +1364,7 @@ main footer{
     }
 
 }
-@media (min-width:900px) {
+@media (max-width:900px) {
     .center-navbar .search-box{
         max-width: 85%;
     

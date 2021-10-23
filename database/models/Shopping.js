@@ -2,6 +2,12 @@ module.exports = function(sequelize, dataTypes) {
     let alias = 'Carrito';
 
     let cols = {
+        Id_shopping_cart: {
+            type: dataTypes.BIGINT(10).UNSIGNED,
+            primaryKey: true,
+            allowNull: false,
+            autoIncrement: true
+        },
         Id_categories: {
             type: dataTypes.BIGINT(10).UNSIGNED,
           
@@ -35,6 +41,11 @@ module.exports = function(sequelize, dataTypes) {
         Shopping.belongsTo(models.Producto, {
             as: 'products',
             foreignKey: 'Id_Products'
+        })
+
+        Shopping.belongsTo(models.Categoria, {
+            as: 'categories',
+            foreignKey: 'Id_Categories'
         })
     }
     return Shopping

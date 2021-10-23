@@ -15,7 +15,7 @@ module.exports = function(sequelize, dataTypes) {
             type: dataTypes.STRING
         },
         Colony: {
-            type: dataTypes.INTEGER,
+            type: dataTypes.STRING,
         },
         Number_int:{
             type: dataTypes.STRING

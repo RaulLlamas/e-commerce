@@ -12,15 +12,15 @@ module.exports = function(sequelize, dataTypes) {
             type: dataTypes.STRING
         },
         price: {
-            type: dataTypes.FLOAT
+            type: dataTypes.STRING
         },
         Id_Categories: {
             type: dataTypes.BIGINT(10).UNSIGNED,
         },
         description:{
-            type: dataTypes.INTEGER
+            type: dataTypes.STRING
         },Image:{
-            type: dataTypes.BLOB("long"),
+            type: dataTypes.STRING,
         }
     }
 
@@ -36,7 +36,7 @@ module.exports = function(sequelize, dataTypes) {
             as: 'categories',
             foreignKey: 'Id_Categories'
         })
-        Product.hasMany(models.Producto, {
+        Product.hasMany(models.Carrito, {
             as: 'products',
             foreignKey: 'Id_Products'
         })

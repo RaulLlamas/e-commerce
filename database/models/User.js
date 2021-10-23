@@ -15,7 +15,7 @@ module.exports = function(sequelize, dataTypes) {
             type: dataTypes.STRING
         },
         Telephone: {
-            type: dataTypes.INTEGER,
+            type: dataTypes.STRING,
         },
         password:{
             type: dataTypes.STRING
@@ -27,7 +27,7 @@ module.exports = function(sequelize, dataTypes) {
             type: dataTypes.BIGINT(10).UNSIGNED,
         },
         Image:{
-            type: dataTypes.BLOB("long"),
+            type: dataTypes.STRING,
         }
     }
 
@@ -44,9 +44,9 @@ module.exports = function(sequelize, dataTypes) {
             foreignKey: 'Id_Addresses'
         })
 
-        User.hasMany(models.Producto, {
-            as: 'products',
-            foreignKey: 'Id_products'
+        User.hasMany(models.Carrito, {
+            as: 'user',
+            foreignKey: 'Id_users'
         })
     }
 

@@ -34,8 +34,14 @@ const mainRouter = require("./routes/main"); // Rutas main
 const productsRouter = require("./routes/products"); // Rutas /products
 const usersRouter = require("./routes/users"); // Rutas /users
 
+const apiProductsRouter = require('./routes/api/products') //Aquí llamo a la ruta de las api de products
+const apiUsersRouter = require('./routes/api/users') //Aquí llamo a la ruta de las api de users
+
 app.use("/", mainRouter);
 app.use("/products", productsRouter);
 app.use("/users", usersRouter);
+
+app.use('/api/products',apiProductsRouter);
+app.use('/api/users',apiUsersRouter);
 
 app.listen(PORT, () => console.log("Server listening on port: " + PORT));
