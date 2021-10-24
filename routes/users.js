@@ -5,6 +5,7 @@ const uploadFile = require('../config/multer');
 const loginMiddleware = require('../middlewares/loginMiddleware')
 const path = require('path')
 const router = express.Router();
+const db = require("../database/models");
 
 //Validaciones
 
@@ -22,7 +23,15 @@ const validateCreateForm =[
     body('colonia').notEmpty().withMessage('Debes completar el campo colonia'),
     body('email')
         .notEmpty().withMessage('Debes completar el campo email').bail()
-        .isEmail().withMessage('Debes ingresar un correo valido'),
+        .isEmail().withMessage('Debes ingresar un correo valido').bail()
+        .custom(async (email) => {
+            const existingUser = 
+                await db.Usuario.findOne({ where: { email: email } });
+                  
+            if (existingUser) {
+                throw new Error('Email already in use')
+            }
+        }),
     body('password').notEmpty().isLength({ min: 8}).withMessage('Debes completar el campo contraseña y contener al menos 8 caracteres'),
     body('confPassword').custom((value, { req }) => {
         if (value !== req.body.password) {

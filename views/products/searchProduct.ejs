@@ -8,20 +8,107 @@
         <%- include('../partials/header') %>
     </header>
    <main>
-       <div class="product-detail">
-        <ul>
-            <% for( let i = 0; i < producto.length; i++ ) { %>
-            <li>
-                <a href="/products/productDetail/<%= producto[i].Id_products %>"><%= producto[i].name %></a>
-           
-            <% } %>
-            
-        </ul>
-            
-       </div>
+       <div class="container mb-5 mt-5">
+            <div class="row">
+                <% for( let i = 0; i < producto.length; i++ ) { %>
+                <div class="col-md-4">
+                    <div class="card mt-3">
+                        <div class="product-1 align-items center p-2 text-cener food-card">
+                            <img src="/img/products/<%= producto[i].Image %>" class="rounded" width="200" alt="">
+
+                            <div class="mt-3 info">
+                                <span class="text1 d-block"><%= producto[i].name %></span>
+                            </div>
+                            <div class="cost mt-3 text-dark">
+                                <span class="food-card-price">
+                                    $<%= producto[i].price %></span>
+                            </div>
+                        </div>
+                        <div class="p-3 food text-center text-white mt-3 cursor">
+                            <a href="/products/productDetail/<%= producto[i].Id_products %>" class="food-card-button " class="text-uppercase">Detalle</a>
+                            
+                        </div> 
+                    </div>
+                </div> 
+                <% } %>
+            </div>
+        </div> 
+        <div class="wrapper">
+            <div class="links">
+                <ul>
+                    <li class="li-list active" data-view="list-view">
+                        <i class="fas fa-th-list"></i>List views
+                    </li>
+                    <li class="li-grid" data-view="grid-view">
+                        <i class="fas fa-th-large"></i>Grid view
+                    </li>
+                </ul>
+            </div>
+                <div class="view_main">
+                    <div class="view_wrap list-view" style="display: none;">
+                        <% for( let i = 0; i < producto.length; i++ ) { %>
+                        <div class="view_item">
+                            <div class="vi_left">
+                                <img src="/img/products/<%= producto[i].Image %>" alt="producto">
+                            </div>
+                            <div class="vi_right">
+                                <p class="title"><%= producto[i].name %></p>
+                                <p class="content"><%= producto[i].price %></p>
+                                <div class="btn">View details</div>
+                            </div>
+                        </div>
+                        <% } %>
+                    </div>
+                    <div class="view_wrap grid-view" style="display: none;">
+                        <% for( let i = 0; i < producto.length; i++ ) { %>
+                            <div class="view_item">
+                                <div class="vi_left">
+                                    <img src="/img/products/<%= producto[i].Image %>" alt="producto">
+                                </div>
+                                <div class="vi_right">
+                                    <p class="title"><%= producto[i].name %></p>
+                                    <p class="content"><%= producto[i].price %></p>
+                                    <div class="btn">View details</div>
+                                </div>
+                            </div>
+                            <% } %>
+                        </div>
+                    
+                </div>
+        </div>
    </main>
    <footer>
     <%- include('../partials/footer') %>
    </footer>
+   <script>
+        let li_links = document.querySelectorAll(".links ul li");
+        let view_wraps = document.querySelectorAll(".view_wrap");
+        let list_view = document.querySelector(".list-view");
+        let grid_view = document.querySelector(".grid-view");
+
+        li_links.forEach(function(link){
+            link.addEventListener("click", function(){
+                li_links.forEach(function(link){
+                    link.classList.remove("active");
+                })
+
+                link.classList.add("active");
+
+                var li_view = link.getAttribute("data-view");
+
+                view_wraps.forEach(function(view){
+                    view.style.display = "none";
+                })
+
+                if(li_view == "list-view"){
+                    list_view.style.display = "block";
+                }
+                else{
+                    grid_view.style.display = "block";
+                }
+            })
+        })
+
+    </script>
 </body>
 </html> 

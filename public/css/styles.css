@@ -1,3 +1,4 @@
+@import "https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/css/bootstrap.min.css";
 * {
     box-sizing: border-box;
 }
@@ -16,6 +17,139 @@ footer {
 .main-header .center-navbar{
     align-items: center;
     width: 35%;
+}
+
+.wrapper{
+    width: 800px;
+    margin: 50px auto;
+}
+.links{
+    margin-bottom: 20px;
+    background-color: #cbcbcb;
+    padding: 15px;
+    border-radius: 3px;
+}
+.links ul{
+    display: flex;
+    justify-content: center;
+}
+.links ul li{
+    margin: 0 15px;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 20px;
+    letter-spacing: 3px;
+    list-style: none;
+    cursor: pointer;
+}
+.links ul li:hover,
+.links ul li.active{
+    color: #4abd3e;
+}
+.view_item img{
+    width: 75px;
+}
+.view_main{
+    background-color: #cbcbcb;
+    border-radius: 3px;
+    padding: 15px;
+}
+.list-view .view_item{
+    border: 1px solid #e2efe1;
+    margin: 10px;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+}
+.list-view .view_item:last-child{
+    margin-bottom: 0;
+}
+.list-view .view_item .vi_left{
+    margin-right: 25px;
+}
+.view_item .title{
+    font-weight: 600;
+}
+.view_item .content{
+    margin: 5px 0;
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 200;
+}
+.view_item .btn{
+    width: 125px;
+    background-color:#FFC300;
+    color: #fff;
+    border-radius: 3px;
+    padding: 8px 5px;
+    text-align: center;
+    font-weight: 200;
+    cursor: pointer;
+}
+.view_item .btn:hover{
+    background-color:#3bd62b ;
+}
+.grid-view{
+    width: 100%;
+}
+.grid-view .view_item{
+    width: 230px;
+    border: 1px solid #e2efe1;
+    padding: 25px;
+    text-align: center;
+    margin: 10px;
+    display: inline-block;
+}
+.grid-view .view_item .vi_left{
+    margin-bottom: 10px;
+}
+.card{
+    border: none;
+    outline: none;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+}
+.card:hover{
+    transform: translateY(-15px);
+    transition: transform .3s;
+}
+.text1{
+    font-size: 21px;
+    color: #cbcbcb;
+    width: 100%;
+    text-align: center;
+}
+.food-card-price{
+    font-size: 20px;
+}
+.info{
+    line-height: 17px;
+}
+ 
+.food{
+    background-color: #FFC300;
+}
+.food:hover{
+    opacity: .8;
+}
+.cursor{
+    cursor: pointer;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius:20px ;
+}
+.food-card{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    flex-direction: column;
+    margin:10px;
+    margin-top: 40px;
+}
+.food-card-button{
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
 }
 .user-detail{
     display: flex;

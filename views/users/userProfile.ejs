@@ -8,17 +8,30 @@
         <%- include('../partials/header') %>
     </header>
    <main>
-       <div class="product-detail">
-        <ul>
+       <div class="container mb-5 mt-5">
+        <div class="row">
             <% for( let i = 0; i < usuarios.length; i++ ) { %>
-            <li>
-                <a href="/users/userDetail/<%= usuarios[i].Id_users %>"><%= usuarios[i].name %></a>
-           
+            <div class="col-md-4">
+                <div class="card mt-3">
+                    <div class="product-1 align-items center p-2 text-cener food-card">
+                        
+
+                        <div class="mt-3 info">
+                            <span class="text1 d-block"><%= usuarios[i].name %></span>
+                        </div>
+                        <div class="cost mt-3 text-dark">
+                            <span class="food-card-price">
+                                <%= usuarios[i].email %></span>
+                        </div>
+                    </div>
+                    <div class="p-3 food text-center text-white mt-3 cursor">
+                        <a href="/users/userDetail/<%= usuarios[i].Id_users %>" class="food-card-button " class="text-uppercase">Detalle</a>
+                        
+                    </div> 
+                </div>
+            </div> 
             <% } %>
-            
-        </ul>
-            
-       </div>
+        </div>
    </main>
    <footer>
     <%- include('../partials/footer') %>

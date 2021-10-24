@@ -1,9 +1,33 @@
 const express = require("express");
 const productsController = require("../controllers/productsController");
 const uploadFile = require("../config/multer");
-const sinLoginMiddleware = require('../middlewares/sinLoginMiddleware')
-
+const sinLoginMiddleware = require('../middlewares/sinLoginMiddleware');
+const { body } = require('express-validator');
 const router = express.Router();
+
+//validaciones
+const validateCreateForm =[
+  body('name')
+      .notEmpty().withMessage('Debes completar el campo nombre').bail().isLength({ min: 5})
+      .withMessage('Debe de ser solo texto  y contener al menos 2 caracteres'),
+  body('description')
+      .notEmpty().withMessage('Debes completar el campo nombre').bail().isLength({ min: 20})
+      .withMessage('Debe de ser solo texto  y contener al menos 2 caracteres'),
+  body('productImage').custom((value,{req})=>{
+      let file = req.file;
+      let acceptedExtensions = ['.jpg','.png','.gif'];
+     
+      if(!file) {
+          throw new Error('Debes subir una imagen')
+      }else{
+          let fileExtension = path.extname(file.filename)
+          if(!acceptedExtensions.includes(fileExtension)){
+              throw new Error(`Las extenciones de archivo permitidas son ${acceptedExtensions.join(', ')}`)
+          }
+      }
+      return true;
+  })
+];
 
 //,sinLoginMiddleware
 router.get("/shopping-cart", productsController.cart);
@@ -18,7 +42,7 @@ router.get("/searchProduct/", productsController.search);
 router.get("/newProduct/", productsController.create);
 router.post(
   "/newProduct",
-  uploadFile.single("productImage"),
+  uploadFile.single("productImage"),validateCreateForm,
   productsController.store
 );
 
