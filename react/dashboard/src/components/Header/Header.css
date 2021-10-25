@@ -1,0 +1,17 @@
+.WrapperHeader{
+    background-color: #001D3D;
+    width: 100%;
+    text-align: left;
+    display: flex;
+    align-items:flex-end;
+}
+.LogoHeader{
+    width: 110px;
+    margin: 0 1rem;
+}
+.TextHeader{
+    font-size: 35px;
+    font-weight: 400;
+    color: #ffffff;
+    margin-bottom: 8px;
+}

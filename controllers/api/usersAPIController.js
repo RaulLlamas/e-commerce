@@ -6,9 +6,6 @@ const usersAPIController = {
     'list': (req, res) => {
         db.Usuario.findAll()
             .then(users => {
-                const hh = users.map( user =>{
-
-                })
                 let respuesta = {
                     count: users.length,
                     users: users

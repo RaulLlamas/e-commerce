@@ -1,14 +1,9 @@
 const express = require("express");
 const productsController = require("../controllers/productsController");
-<<<<<<< HEAD
 const uploadFile = require("../config/multerProduct");
 const sinLoginMiddleware = require('../middlewares/sinLoginMiddleware')
 
-=======
-const uploadFile = require("../config/multer");
-const sinLoginMiddleware = require('../middlewares/sinLoginMiddleware');
 const { body } = require('express-validator');
->>>>>>> branch
 const router = express.Router();
 
 //validaciones
@@ -36,7 +31,7 @@ const validateCreateForm =[
 ];
 
 //,sinLoginMiddleware
-router.get("/shopping-cart", productsController.cart);
+router.get("/shopping-cart", productsController.cart,sinLoginMiddleware);
 
 router.get("/productDetail/:id", productsController.detail);
 
@@ -45,7 +40,7 @@ router.get("/productList", productsController.list);
 router.get("/searchProduct/", productsController.search);
 
 //sinLoginMiddleware
-router.get("/newProduct/", productsController.create);
+router.get("/newProduct/", productsController.create,sinLoginMiddleware);
 router.post(
   "/newProduct",
   uploadFile.single("productImage"),validateCreateForm,
@@ -53,7 +48,7 @@ router.post(
 );
 
 //,sinLoginMiddleware
-router.get("/editProduct/:id", productsController.edit);
+router.get("/editProduct/:id", productsController.edit,sinLoginMiddleware);
 router.put(
   "/editProduct/:id",
   uploadFile.single("productImage"),

@@ -1,0 +1,40 @@
+.WrapperTotal1{
+    background-color: #ffffff;
+    width: 30%;
+    text-align: center;
+    border-radius: 20px;
+}
+.TitleTotal{
+    font-size: 30px;
+    font-weight:500;
+    padding: 1rem 0;
+    margin: 0;
+}
+.WrapperTotal2{
+    background-color:#FFC300 ;
+    border-radius: 20px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.SubTitleTotal{
+    width: 30%;
+    font-size: 25px;
+    font-weight:300;
+    margin: auto 0;
+    padding: 1rem 0;
+    text-align: center;
+}
+.NumeberTotal{
+    width: 30%;
+    font-size: 40px;
+    font-weight:500;
+    padding: 1rem 0;
+    margin: 0;
+    text-align: center;
+    color: 001D3D;
+}
+.EspacioTotal{
+    width: 30%;
+}

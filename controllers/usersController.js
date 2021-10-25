@@ -28,7 +28,7 @@ const controller = {
     res.render('users/login');
   },
   loginProcess: (req, res) =>{
-    let userToLogin = User.findByField('email', req.body.email);
+    let userToLogin = db.Usuario.findOne('email', req.body.email);
     if(userToLogin){
       let isOkThePassword= bcrypt.compareSync(req.body.password, userToLogin.password);
       if(isOkThePassword){
@@ -91,28 +91,28 @@ const controller = {
   //   // res.redirect('users/login');*/
    
 
-  //   db.Direccion.create({ 
-  //     Street: req.body.street,
-  //     Number_ext: req.body.number_ext,
-  //     Colony: req.body.colonia,
-  //     Number_int:req.body.number_int,
-  //     Reference: req.body.reference
-  //   })
-  //   .then((Direccion)=>{
-  //     const idAddress = Direccion.Id_addresses      
-  //     return   db.Usuario.create({
-  //       name: req.body.name,
-  //       email: req.body.email,
-  //       Telephone: req.body.telephone,
-  //       password:bcrypt.hashSync(req.body.password,10),
-  //       Birthday_date: req.body.birthday,
-  //       Id_Addresses: idAddress,
-  //       Image:req.file.filename
-  //     })
-  //   })
-  //   .then(()=> {
-  //     return res.redirect('/')})            
-  // .catch(error => res.send(error))
+  db.Direccion.create({ 
+      Street: req.body.street,
+      Number_ext: req.body.number_ext,
+      Colony: req.body.colonia,
+      Number_int:req.body.number_int,
+      Reference: req.body.reference
+    })
+    .then((Direccion)=>{
+      const idAddress = Direccion.Id_addresses      
+      return   db.Usuario.create({
+        name: req.body.name,
+        email: req.body.email,
+        Telephone: req.body.telephone,
+        password:bcrypt.hashSync(req.body.password,10),
+        Birthday_date: req.body.birthday,
+        Id_Addresses: idAddress,
+        Image:req.file.filename
+      })
+    })
+    .then(()=> {
+      return res.redirect('/')})            
+    .catch(error => res.send(error))
       
   },edit: function(req,res) {
     let idusuario = req.params.id;
@@ -129,9 +129,9 @@ update: function (req,res) {
     name: req.body.name,
     email: req.body.email,
     Telephone: req.body.telephone,
-    //password:bcrypt.hashSync(req.body.password,10),
+    password:bcrypt.hashSync(req.body.password,10),
     Birthday_date: req.body.birthday,
-   // Image:req.file.filename
+    Image:req.file.filename
   },{
     where: {Id_users: req.params.id}
     })
