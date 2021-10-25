@@ -13,7 +13,10 @@
             <form class="form-1" action="/products/newProduct" method="POST" enctype="multipart/form-data" >
                 <div class="input-new-product">
                     <label for="name" >Nombre del producto</label>
-                    <input type="text" name="name" id="name" >
+                    <input type="text" name="name" class="<%= locals.errors && errors.name ? 'is-inavlid': null  %>" value="<%= locals.oldData ? oldData.name : null %>" placeholder="Nombre  y apellido">
+                        <% if(locals.errors && errors.name) { %>
+                            <p class="errorMsg" > <%= errors.name.msg %> </p>
+                        <% } %>
                 </div>
                 <div class="input-new-product">
                     <label for="price" >Precio:</label>
@@ -30,11 +33,18 @@
                 </div>
                 <div class="input-new-product">
                     <label for="description" class="description">Descripción:</label>
-                    <textarea name="description" id="description" cols="30" rows="5"></textarea>
+                    <textarea name="description" id="description" cols="30" rows="5" class="<%= locals.errors && errors.name ? 'is-inavlid': null  %>" value="<%= locals.oldData ? oldData.name : null %>">
+                        <% if(locals.errors && errors.name) { %>
+                            <p class="errorMsg" > <%= errors.name.msg %> </p>
+                        <% } %>
+                    </textarea>
                 </div> 
                 <div class="input-new-product">
                     <label for="productImage" class="form-label">Imagen:</label>
                     <input type="file" class="file" id="image" name="productImage">
+                        <% if(locals.errors && errors.UsuarioImage) { %>
+                            <p class="errorMsg" > <%= errors.UsuarioImage.msg %> </p>
+                        <% } %>
                 </div> 
                 <button type="submit" class="buy-now-button">Guardar producto</button>
             </form>

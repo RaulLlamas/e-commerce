@@ -50,21 +50,13 @@ const controller = {
       
     },
     store: (req, res) => {
-      /*const newProduct = req.body;
-      
-      newProduct.id= Date.now();
-      if (req.file){
-        newProduct.image = req.file.filename
-      }else{
-        newProduct.image = 'default-image.png'
-      }
-  
-      products.push(newProduct);
-      
-      const productsJSON = JSON.stringify(products,null,2);
-      fs.writeFileSync(productsFilePath,productsJSON);
-  */
-     
+      const resultValidation = validationResult(req); 
+      if(resultValidation.errors.length > 0){
+        return res.render('products/newProduct', {
+            errors: resultValidation.mapped(),
+            oldData: req.body
+        });
+      } 
       db.Producto.create({
         name: req.body.name,
         price: req.body.price,
