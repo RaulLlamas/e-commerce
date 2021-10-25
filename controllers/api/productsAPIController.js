@@ -4,10 +4,14 @@ const Op = db.Sequelize.Op
 
 const productsAPIController = {
     'list': (req, res) => {
-        db.Producto.findAll()
+        db.Producto.findAll({
+            include:['categoria'],
+            attributes: ['Id_products', 'name', 'description']})
             .then(products => {
                 let respuesta = {
-                    data: products
+                    count: products.length,
+                    data: products,
+                    url: 'api/products'
                 }
                 res.json(respuesta);
             })

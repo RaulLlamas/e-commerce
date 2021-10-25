@@ -1,14 +1,17 @@
+const { url } = require('inspector');
 const path = require('path');
 const db = require('../../database/models');
 const Op = db.Sequelize.Op
 
 const usersAPIController = {
     'list': (req, res) => {
-        db.Usuario.findAll()
+        db.Usuario.findAll({
+            attributes: ['Id_users', 'name', 'email']})
             .then(users => {
                 let respuesta = {
                     count: users.length,
-                    users: users
+                    users: users,
+                    url:'api/users'
                 }
                 res.json(respuesta);
             })
