@@ -1,48 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <%- include('../partials/head') %>
-</head>
-<body>
-    <header>
-        <%- include('../partials/header') %>
-    </header>
+  </head>
+  <body>
+    <header><%- include('../partials/header') %></header>
     <main>
-        <div class="new-product">
-            <p class="title-new-product">Editar producto</p>
-                <form class="form-1" action="/products/editProduct/<%= product.Id_products %>?_method=PUT" method="POST" enctype="multipart/form-data">
-                    <div class="input-new-product">
-                        <label for="name" >Nombre del producto</label>
-                        <input type="text" name="name" id="name" value="<%= product.name %>">
-                    </div>
-                  
-                    <div class="input-new-product">
-                        <label for="price" >Precio:</label>
-                        <input type="number" name="price" id="price" class="price" value="<%= product.price %>">
-                    </div>
-                    <div class="input-new-product">
-                        <label for="category">Categoria:</label>
-                    <select name="category_id" id="" required>
-                        <option value="" disabled selected>- Seleccione la categoria - </option>
-                        <% allCategoria.forEach(categoria => { %>
-                        <option value="<%= categoria.Id_categories %>"><%= categoria.name %></option>
-                        <% }); %>
-                    </select>
-                    </div>
-                    <div class="input-new-product">
-                        <label for="description" class="description">Descripción:</label>
-                        <textarea name="description" id="description" cols="30" rows="5"><%= product.description %></textarea>
-                    </div> 
-                    <div class="input-new-product">
-                        <label for="productImage" class="form-label">Imagen:</label>
-                        <input type="file" class="file" id="image" name="productImage" >
-                    </div> 
-                    <button type="submit" class="buy-now-button">Modificar producto</button>
-                </form>
+      <div class="new-product">
+        <p class="title-new-product">Editar producto</p>
+        <div class="errores">
+          <ul></ul>
         </div>
+        <form
+          class="form-1"
+          action="/products/editProduct/<%= product.Id_products %>?_method=PUT"
+          method="POST"
+          enctype="multipart/form-data"
+        >
+          <div class="input-new-product">
+            <label for="name">Nombre del producto</label>
+            <input
+              class="name"
+              type="text"
+              name="name"
+              id="name"
+              value="<%= product.name %>"
+            />
+          </div>
+
+          <div class="input-new-product">
+            <label for="price">Precio:</label>
+            <input
+              type="number"
+              name="price"
+              id="price"
+              class="price"
+              value="<%= product.price %>"
+            />
+          </div>
+          <div class="input-new-product">
+            <label for="category">Categoria:</label>
+            <select name="category_id" id="" required>
+              <option value="" disabled selected>
+                - Seleccione la categoria -
+              </option>
+              <% allCategoria.forEach(categoria => { %>
+              <option value="<%= categoria.Id_categories %>">
+                <%= categoria.name %>
+              </option>
+              <% }); %>
+            </select>
+          </div>
+          <div class="input-new-product">
+            <label for="description" class="description">Descripción:</label>
+            <textarea
+              class="descripcion"
+              name="description"
+              id="description"
+              cols="30"
+              rows="5"
+            >
+<%= product.description %></textarea
+            >
+          </div>
+          <div class="input-new-product">
+            <label for="productImage" class="form-label">Imagen:</label>
+            <input type="file" class="file" id="image" name="productImage" />
+          </div>
+          <button type="submit" class="buy-now-button">
+            Modificar producto
+          </button>
+        </form>
+      </div>
     </main>
-    <footer>
-        <%- include('../partials/footer') %>
-    </footer>
-</body>
+    <script src="/js/productvalidator.js"></script>
+    <footer><%- include('../partials/footer') %></footer>
+  </body>
 </html>
