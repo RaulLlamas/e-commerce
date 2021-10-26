@@ -4,8 +4,6 @@ const Op = db.Sequelize.Op
 
 const productsAPIController = {
     'list': (req, res) => {
-        const cates = db.Categoria.findAll().then(category=>category);
-        console.log(cates);
 
         db.Producto.findAll({
             include:['categories']})
