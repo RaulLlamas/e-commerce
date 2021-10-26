@@ -4,11 +4,12 @@ const Op = db.Sequelize.Op
 
 const usersAPIController = {
     'list': (req, res) => {
+
         db.Usuario.findAll()
             .then(users => {
                 let respuesta = {
                     count: users.length,
-                    users: users
+                    users: user.maps()
                 }
                 res.json(respuesta);
             })

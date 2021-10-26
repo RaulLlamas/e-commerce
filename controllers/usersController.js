@@ -1,6 +1,5 @@
 const fs = require('fs');
 const path = require('path');
-const User = require('../models/User')
 const bcrypt = require('bcryptjs')
 const { validationResult } = require('express-validator');
 const usersFilePath = path.join(__dirname, '../data/usersDB.json');
@@ -21,14 +20,15 @@ const controller = {
     db.Usuario.findByPk(req.params.id, {include:[{association:"address"}]})
         .then(usuarios => {
             res.render('users/userDetail', {usuarios:usuarios});
-        });
+    });
 },
   login: (req, res) => {
     //res.sendFile(path.resolve("views/users/login.html"));
     res.render('users/login');
   },
-  loginProcess: (req, res) =>{
-    let userToLogin = db.Usuario.findOne('email', req.body.email);
+  loginProcess: async (req, res) =>{
+    let userToLogin = await db.Usuario.findOne({ where: { email: req.body.email }});
+
     if(userToLogin){
       let isOkThePassword= bcrypt.compareSync(req.body.password, userToLogin.password);
       if(isOkThePassword){
@@ -65,31 +65,6 @@ const controller = {
           oldData: req.body
       });
     } 
-
-  //   // let userInDB = User.findByField('email', req.body.email);
-  //   // if (userInDB){
-  //   //   return res.render('users/register', {
-  //   //     errors: {
-  //   //       email: {
-  //   //         msg: 'Este email ya está registrado'
-  //   //       }
-  //   //     },
-  //   //     oldData: req.body
-  //   //   });
-  //   // }
-
-  //   // const newUser = req.body;
-  //   // if(req.file){
-  //   //   newUser.image = req.file.filename
-  //   // }else{
-  //   //   newUser.image = 'default-image.png'
-  //   // }
-  //   // newUser.password = bcrypt.hashSync(userData.password,10)
-  //   // newUser.confPassword = bcrypt.hashSync(userData.confPassword,10)
-
-  //   // let userCreated = User.create(newUser);
-  //   // res.redirect('users/login');*/
-   
 
   db.Direccion.create({ 
       Street: req.body.street,
@@ -152,9 +127,11 @@ update: function (req,res) {
         return res.redirect('/')})            
     .catch(error => res.send(error))
 },
-  profile: (req, res) => {
-   // console.log(req.cookies.userEmail);
-    return res.render('users/profile', {user: req.session.userLogged});
+  profile: async (req, res) => {
+    await db.Usuario.findOne({ where: { email: res.locals.userLogged.email }}, {include:[{association:"address"}]})
+    .then(usuarios => {
+        res.render('users/userDetail', {usuarios:usuarios});
+    });
   },
   logout: (req, res) => {
     res.clearCookie('userEmail');

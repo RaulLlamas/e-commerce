@@ -54,7 +54,11 @@
              <div class="name"><%= usuarios.name %></div>
            </div>
          </div>
-         <i class='bx bx-log-out' id="log_out" ></i>
+         <% if(locals.isLogged) {%>
+         <a href="/users/logout">
+            <i class='bx bx-log-out' id="log_out" ></i>
+         </a>
+         <% } %>
      </li>
     </ul>
   </div>
