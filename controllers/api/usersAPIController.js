@@ -5,6 +5,7 @@ const Op = db.Sequelize.Op
 
 const usersAPIController = {
     'list': (req, res) => {
+
         db.Usuario.findAll()
             .then(users => {
                 let respuesta = {
