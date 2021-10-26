@@ -1,34 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <%- include('../partials/head') %>
-</head>
-<body>
-    <header>
-        <%- include('../partials/header') %>
-    </header>
+  </head>
+  <body>
+    <header><%- include('../partials/header') %></header>
     <main>
-        <!-- <img src="/img/back-register.png" class= "background" alt="background"> -->
-        <div class="iniciar-sesion">
-            <p class="title-register">Iniciar Sesión</p>
-            <form class="form" action="/users/login" method="POST">
-                <input type="email" name="email" value="<%= locals.oldData ? oldData.email : null %>" placeholder="Correo electrónico">
-                <input type="password" name="password" placeholder="Contraseña">
-                <% if(locals.errors && errors.email) { %>
-                    <p class="errorMsg" > <%= errors.email.msg %> </p>
-                <% } %>
-                <input type="checkbox" name="remember" class="check-b">
-                <label for="remember" class="check-l"> Recordar mi cuenta </label>    
-                <button type="submit" >Aceptar</button>
-                <a href="/users/register" class="link">Crear una cuenta</a>
-            </form>
+      <!-- <img src="/img/back-register.png" class= "background" alt="background"> -->
+      <div class="iniciar-sesion">
+        <p class="title-register">Iniciar Sesión</p>
+        <div class="errores">
+          <ul></ul>
         </div>
-        <div class="register-back">
-            <img src="/img/back-login.png" class= "background-login" alt="background">
-        </div>
+        <form class="form-1" action="/users/login" method="POST">
+          <input
+            class="correo"
+            type="email"
+            name="email"
+            value="<%= locals.oldData ? oldData.email : null %>"
+            placeholder="Correo electrónico"
+          />
+          <input
+            class="passwordbd"
+            type="password"
+            name="password"
+            placeholder="Contraseña"
+          />
+          <% if(locals.errors && errors.email) { %>
+          <p class="errorMsg"><%= errors.email.msg %></p>
+          <% } %>
+          <input type="checkbox" name="remember" class="check-b" />
+          <label for="remember" class="check-l"> Recordar mi cuenta </label>
+          <button type="submit">Aceptar</button>
+          <a href="/users/register" class="link">Crear una cuenta</a>
+        </form>
+      </div>
+      <div class="register-back">
+        <img
+          src="/img/back-login.png"
+          class="background-login"
+          alt="background"
+        />
+      </div>
     </main>
-    <footer>
-        <%- include('../partials/footer') %>
-    </footer>
-</body>
+    <script src="/js/loginvalidator.js"></script>
+    <footer><%- include('../partials/footer') %></footer>
+  </body>
 </html>

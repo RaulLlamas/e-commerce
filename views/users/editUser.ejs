@@ -1,70 +1,137 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <%- include('../partials/head') %>
-</head>
-<body>
-    <header>
-        <%- include('../partials/header') %>
-    </header>
+  </head>
+  <body>
+    <header><%- include('../partials/header') %></header>
     <main>
-        <div class="register">
-            <p class="subtitle-register">Editar <%= Usuario.name %></p>
-                <form class="form-1" action="/users/editUser/<%= Usuario.Id_users %>?_method=PUT" method="POST" enctype="multipart/form-data">
-                    <div class="input-new-usuario">
-                       
-                        <input type="text" name="name" value="<%= Usuario.name %>" placeholder="Nombre  y apellido">
-                        <% if(locals.errors && errors.name) { %>
-                            <p class="errorMsg" > <%= errors.name.msg %> </p>
-                        <% } %>
-                        
-                        <input type="email" name="email" value= "<%= Usuario.email %>" placeholder="Correo">
-                        <% if(locals.errors && errors.email) { %>
-                            <p class="errorMsg" > <%= errors.email.msg %> </p>
-                        <% } %>
-                        <br>
-                        <label for="birthday" class="form-label">Fecha de nacimiento:</label>
-                        <input type="date" id="birthday" value="<%= Usuario.Birthday_date %>" name="birthday">
-                        <input type="text" name="telephone" value= "<%= Usuario.Telephone %>" placeholder="Teléfono">
-                        <% if(locals.errors && errors.telephone) { %>
-                            <p class="errorMsg" > <%= errors.telephone.msg %> </p>
-                        <% } %>
-                        <label for="UsuarioImage" class="form-label">Imagen:</label>
-                        <input type="file" class="file" id="image"  name="UsuarioImage">
-                        <input type="password" name="password" value="password" placeholder="Contraseña">
-                        <% if(locals.errors && errors.password) { %>
-                            <p class="errorMsg" > <%= errors.password.msg %> </p>
-                        <% } %>
-                        <input type="password" name="confPassword" placeholder="Confirmar contraseña">
-                        <% if(locals.errors && errors.confPassword) { %>
-                            <p class="errorMsg" > <%= errors.confPassword.msg %> </p>
-                        <% } %>
-                        
-                    </div>
-                    <p class="subtitle-register">Domicilio</p>
-                   
-                    <div class="input-new-usuario">
-                        <input type="text" name="street" value= "<%= Usuario.address.Street %>" placeholder="Calle">
-                        <% if(locals.errors && errors.street) { %>
-                            <p class="errorMsg" > <%= errors.street.msg %> </p>
-                        <% } %>
-                        <input type="number" name="number_ext" value= "<%= Usuario.address.Number_ext %>" placeholder="Numero exterior">
-                        <% if(locals.errors && errors.street) { %>
-                            <p class="errorMsg" > <%= errors.street.msg %> </p>
-                        <% } %>
-                        <input type="text" name="colonia" value= "<%= Usuario.address.Colony %>" placeholder="Colonia">
-                        <% if(locals.errors && errors.colonia) { %>
-                            <p class="errorMsg" > <%= errors.colonia.msg %> </p>
-                        <% } %>
-                        <input type="text" name="number_int" value= "<%= Usuario.address.Number_int %>" placeholder="Interior">
-                        <textarea name="reference" id="" cols="30" rows="3" placeholder="<%= Usuario.address.Reference %>"></textarea>
-                    </div>  
-                    <button type="submit" class="buy-now-button">Modificar Usuario</button>
-                </form>
+      <div class="register">
+        <p class="subtitle-register">Editar <%= Usuario.name %></p>
+        <div class="errores">
+          <ul></ul>
         </div>
+        <form
+          class="form-1"
+          action="/users/editUser/<%= Usuario.Id_users %>?_method=PUT"
+          method="POST"
+          enctype="multipart/form-data"
+        >
+          <div class="input-new-usuario">
+            <input
+              class="name"
+              type="text"
+              name="name"
+              value="<%= Usuario.name %>"
+              placeholder="Nombre  y apellido"
+            />
+            <% if(locals.errors && errors.name) { %>
+            <p class="errorMsg"><%= errors.name.msg %></p>
+            <% } %>
+
+            <input
+              class="email"
+              type="email"
+              name="email"
+              value="<%= Usuario.email %>"
+              placeholder="Correo"
+            />
+            <% if(locals.errors && errors.email) { %>
+            <p class="errorMsg"><%= errors.email.msg %></p>
+            <% } %>
+            <br />
+            <label for="birthday" class="form-label"
+              >Fecha de nacimiento:</label
+            >
+            <input
+              class="fecha"
+              type="date"
+              id="birthday"
+              value="<%= Usuario.Birthday_date %>"
+              name="birthday"
+            />
+            <input
+              type="text"
+              name="telephone"
+              value="<%= Usuario.Telephone %>"
+              placeholder="Teléfono"
+            />
+            <% if(locals.errors && errors.telephone) { %>
+            <p class="errorMsg"><%= errors.telephone.msg %></p>
+            <% } %>
+            <label for="UsuarioImage" class="form-label">Imagen:</label>
+            <input type="file" class="file" id="image" name="UsuarioImage" />
+            <input
+              class="password"
+              type="password"
+              name="password"
+              value="password"
+              placeholder="Contraseña"
+            />
+            <% if(locals.errors && errors.password) { %>
+            <p class="errorMsg"><%= errors.password.msg %></p>
+            <% } %>
+            <input
+              class="password2"
+              type="password"
+              name="confPassword"
+              placeholder="Confirmar contraseña"
+            />
+            <% if(locals.errors && errors.confPassword) { %>
+            <p class="errorMsg"><%= errors.confPassword.msg %></p>
+            <% } %>
+          </div>
+          <p class="subtitle-register">Domicilio</p>
+
+          <div class="input-new-usuario">
+            <input
+              type="text"
+              name="street"
+              value="<%= Usuario.address.Street %>"
+              placeholder="Calle"
+            />
+            <% if(locals.errors && errors.street) { %>
+            <p class="errorMsg"><%= errors.street.msg %></p>
+            <% } %>
+            <input
+              type="number"
+              name="number_ext"
+              value="<%= Usuario.address.Number_ext %>"
+              placeholder="Numero exterior"
+            />
+            <% if(locals.errors && errors.street) { %>
+            <p class="errorMsg"><%= errors.street.msg %></p>
+            <% } %>
+            <input
+              type="text"
+              name="colonia"
+              value="<%= Usuario.address.Colony %>"
+              placeholder="Colonia"
+            />
+            <% if(locals.errors && errors.colonia) { %>
+            <p class="errorMsg"><%= errors.colonia.msg %></p>
+            <% } %>
+            <input
+              type="text"
+              name="number_int"
+              value="<%= Usuario.address.Number_int %>"
+              placeholder="Interior"
+            />
+            <textarea
+              name="reference"
+              id=""
+              cols="30"
+              rows="3"
+              placeholder="<%= Usuario.address.Reference %>"
+            ></textarea>
+          </div>
+          <button type="submit" class="buy-now-button">
+            Modificar Usuario
+          </button>
+        </form>
+      </div>
     </main>
-    <footer>
-        <%- include('../partials/footer') %>
-    </footer>
-</body>
+    <script src="/js/uservalidator.js"></script>
+    <footer><%- include('../partials/footer') %></footer>
+  </body>
 </html>
