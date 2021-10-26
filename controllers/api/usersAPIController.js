@@ -1,3 +1,4 @@
+const { url } = require('inspector');
 const path = require('path');
 const db = require('../../database/models');
 const Op = db.Sequelize.Op
@@ -8,8 +9,15 @@ const usersAPIController = {
         db.Usuario.findAll()
             .then(users => {
                 let respuesta = {
-                    count: users.length,
-                    users: user.maps()
+                    total: users.length,
+                    users: users.map(user =>{
+                        return{
+                            id: user.Id_users,
+                            name: user.name,
+                            email: user.email,
+                            url: "http://localhost:8000/api/users/" + user.Id_users
+                        }
+                    })
                 }
                 res.json(respuesta);
             })
@@ -18,7 +26,14 @@ const usersAPIController = {
         db.Usuario.findByPk(req.params.id)
             .then(user => {
                 let respuesta = {
-                    data: user
+                    data:{
+                        id: user.Id_users,
+                        name: user.name,
+                        email: user.email,
+                        telephone: user.Telephone,
+                        birthday: user.Birthday_date,
+                        Image: "http://localhost:8000/api/users/" + user.Id_users + '/' + user.Image
+                    }
                 }
                 res.json(respuesta);
             });

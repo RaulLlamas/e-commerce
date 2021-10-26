@@ -4,20 +4,39 @@ const Op = db.Sequelize.Op
 
 const productsAPIController = {
     'list': (req, res) => {
-        db.Producto.findAll()
+        let categoria =db.Categoria.findAll().then(category=>{category})
+        db.Producto.findAll({
+            include:['categories']})
             .then(products => {
                 let respuesta = {
-                    data: products
+                     total: products.lengt,
+                    products: products.map(product =>{
+                        return{
+                            id: product.Id_products,
+                            name: product.name,
+                            description:product.description,
+                            categoria: product.categories,
+                            url: "http://localhost:8000/api/products/" + product.Id_products
+                        }
+                    })
                 }
                 res.json(respuesta);
             })
     },
     'detail': (req, res) => {
-        db.Producto.findByPk(req.params.id)
+        db.Producto.findByPk(req.params.id,{
+            include:['categories']})
             .then(product => {
                 let respuesta = {
-                    data: product
-                }
+                    data:{
+                        id: product.Id_products,
+                        name: product.name,
+                        price:product.price,
+                        description:product.description,
+                        categoria: product.categories,
+                        Image:"http://localhost:8000/api/products/" + product.Id_products + '/' + product.Image
+                        }
+                    }
                 res.json(respuesta);
             });
     }
