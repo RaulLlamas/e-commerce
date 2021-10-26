@@ -4,12 +4,33 @@ const Op = db.Sequelize.Op
 
 const productsAPIController = {
     'list': (req, res) => {
-        let categoria =db.Categoria.findAll().then(category=>{category})
+        const cates = db.Categoria.findAll().then(category=>category);
+        console.log(cates);
+
         db.Producto.findAll({
             include:['categories']})
             .then(products => {
+
+                let te= 0;
+                let tf= 0;
+                let tp= 0;
+
+                products.forEach(product=>{
+                    if(product.categories.name=='Entrada'){
+                        te++;
+                    }else if(product.categories.name=='Postres'){
+                        tp++;
+                    }else{
+                        tf++;
+                    }
+                })
                 let respuesta = {
-                     total: products.lengt,
+                    total: products.length,
+                    totalbyCategory: {
+                        Entradas: te,
+                        'Por lo que vienes': tf,
+                        Postres: tp
+                    },
                     products: products.map(product =>{
                         return{
                             id: product.Id_products,
