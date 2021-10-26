@@ -1,76 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <%- include('../partials/head') %>
-</head>
-<body>
-    <header>
-        <%- include('../partials/header') %>
-    </header>
+  </head>
+  <body>
+    <header><%- include('../partials/header') %></header>
     <main>
-        <img src="/img/back-register.png" class= "background" alt="background">
-        <div class="register">
-            <p class="title-register">Registro</p>  
-                <form class="form-1" action="/users/register" method="POST" enctype="multipart/form-data">
-                    <div class="input-new-usuario">
-                        <input type="text" name="name" class="<%= locals.errors && errors.name ? 'is-inavlid': null  %>" value="<%= locals.oldData ? oldData.name : null %>" placeholder="Nombre  y apellido">
-                        <% if(locals.errors && errors.name) { %>
-                            <p class="errorMsg" > <%= errors.name.msg %> </p>
-                        <% } %>
-                        <input type="email" name="email" value= "<%= locals.oldData ? oldData.email : null %>" placeholder="Correo">
-                        <% if(locals.errors && errors.email) { %>
-                            <p class="errorMsg" > <%= errors.email.msg %> </p>
-                        <% } %>
-                        <br>
-                        <label for="birthday" class="form-label">Fecha de nacimiento:</label>
-                        <input type="date" id="birthday" name="birthday">
-                        <input type="tel" name="telephone" value= "<%= locals.oldData ? oldData.telephone : null %>" placeholder="Teléfono">
-                        <% if(locals.errors && errors.telephone) { %>
-                            <p class="errorMsg" > <%= errors.telephone.msg %> </p>
-                        <% } %>
-                        <label for="UsuarioImage" class="form-label">Imagen:</label>
-                        <input type="file" class="file" id="image" name="UsuarioImage">
-                        <% if(locals.errors && errors.UsuarioImage) { %>
-                            <p class="errorMsg" > <%= errors.UsuarioImage.msg %> </p>
-                        <% } %>
-                        <input type="password" name="password" placeholder="Contraseña">
-                        <% if(locals.errors && errors.password) { %>
-                            <p class="errorMsg" > <%= errors.password.msg %> </p>
-                        <% } %>
-                        <input type="password" name="confPassword" placeholder="Confirmar contraseña">
-                        <% if(locals.errors && errors.confPassword) { %>
-                            <p class="errorMsg" > <%= errors.confPassword.msg %> </p>
-                        <% } %>
-                        
-                    </div>
-                
-                    <p class="subtitle-register">Domicilio</p>
-                   
-                    <div class="input-new-usuario">
-                        <input type="text" name="street" value= "<%= locals.oldData ? oldData.street : null %>" placeholder="Calle">
-                        <% if(locals.errors && errors.street) { %>
-                            <p class="errorMsg" > <%= errors.street.msg %> </p>
-                        <% } %>
-                        <input type="number" name="number_ext" value= "<%= locals.oldData ? oldData.number_ext : null %>" placeholder="Numero exterior">
-                        <% if(locals.errors && errors.street) { %>
-                            <p class="errorMsg" > <%= errors.number_ext.msg %> </p>
-                        <% } %>
-                        <input type="text" name="colonia" value= "<%= locals.oldData ? oldData.colonia : null %>" placeholder="Colonia">
-                        <% if(locals.errors && errors.colonia) { %>
-                            <p class="errorMsg" > <%= errors.colonia.msg %> </p>
-                        <% } %>
-                        <input type="text" name="number_int" value= "<%= locals.oldData ? oldData.number_int : null %>" placeholder="Interior">
-                        <textarea name="reference" id="" cols="30" rows="3" placeholder="Referencias">
-                            <%= locals.oldData ? oldData.reference : null %>
-                        </textarea>
-                    </div>  
-                   
-                    <button type="submit">Aceptar</button>
-              </form> 
+      <img src="/img/back-register.png" class="background" alt="background" />
+      <div class="register">
+        <p class="title-register">Registro</p>
+        <div class="errores">
+          <ul></ul>
         </div>
+        <form
+          class="form-1"
+          action="/users/register"
+          method="POST"
+          enctype="multipart/form-data"
+        >
+          <div class="input-new-usuario">
+            <input
+              class="name"
+              type="text"
+              name="name"
+              class="<%= locals.errors && errors.name ? 'is-inavlid': null %>"
+              value="<%= locals.oldData ? oldData.name : null %>"
+              placeholder="Nombre  y apellido"
+            />
+            <% if(locals.errors && errors.name) { %>
+            <p class="errorMsg"><%= errors.name.msg %></p>
+            <% } %>
+            <input
+              class="email"
+              type="email"
+              name="email"
+              value="<%= locals.oldData ? oldData.email : null %>"
+              placeholder="Correo"
+            />
+            <% if(locals.errors && errors.email) { %>
+            <p class="errorMsg"><%= errors.email.msg %></p>
+            <% } %>
+            <br />
+            <label for="birthday" class="form-label"
+              >Fecha de nacimiento:</label
+            >
+            <input class="fecha" type="date" id="birthday" name="birthday" />
+            <input
+              class="tel"
+              type="tel"
+              name="telephone"
+              value="<%= locals.oldData ? oldData.telephone : null %>"
+              placeholder="Teléfono"
+            />
+            <% if(locals.errors && errors.telephone) { %>
+            <p class="errorMsg"><%= errors.telephone.msg %></p>
+            <% } %>
+            <label for="UsuarioImage" class="form-label">Imagen:</label>
+            <input type="file" class="file" id="image" name="UsuarioImage" />
+            <% if(locals.errors && errors.UsuarioImage) { %>
+            <p class="errorMsg"><%= errors.UsuarioImage.msg %></p>
+            <% } %>
+            <input
+              class="password"
+              type="password"
+              name="password"
+              placeholder="Contraseña"
+            />
+            <% if(locals.errors && errors.password) { %>
+            <p class="errorMsg"><%= errors.password.msg %></p>
+            <% } %>
+            <input
+              class="password2"
+              type="password"
+              name="confPassword"
+              placeholder="Confirmar contraseña"
+            />
+            <% if(locals.errors && errors.confPassword) { %>
+            <p class="errorMsg"><%= errors.confPassword.msg %></p>
+            <% } %>
+          </div>
+
+          <p class="subtitle-register">Domicilio</p>
+
+          <div class="input-new-usuario">
+            <input
+              type="text"
+              name="street"
+              value="<%= locals.oldData ? oldData.street : null %>"
+              placeholder="Calle"
+            />
+            <% if(locals.errors && errors.street) { %>
+            <p class="errorMsg"><%= errors.street.msg %></p>
+            <% } %>
+            <input
+              type="number"
+              name="number_ext"
+              value="<%= locals.oldData ? oldData.number_ext : null %>"
+              placeholder="Numero exterior"
+            />
+            <% if(locals.errors && errors.street) { %>
+            <p class="errorMsg"><%= errors.number_ext.msg %></p>
+            <% } %>
+            <input
+              type="text"
+              name="colonia"
+              value="<%= locals.oldData ? oldData.colonia : null %>"
+              placeholder="Colonia"
+            />
+            <% if(locals.errors && errors.colonia) { %>
+            <p class="errorMsg"><%= errors.colonia.msg %></p>
+            <% } %>
+            <input
+              type="text"
+              name="number_int"
+              value="<%= locals.oldData ? oldData.number_int : null %>"
+              placeholder="Interior"
+            />
+            <textarea
+              name="reference"
+              id=""
+              cols="30"
+              rows="3"
+              placeholder="Referencias"
+            >
+                            <%= locals.oldData ? oldData.reference : null %>
+                        </textarea
+            >
+          </div>
+
+          <button type="submit">Aceptar</button>
+        </form>
+      </div>
     </main>
-    <footer>
-        <%- include('../partials/footer') %>
-    </footer>
-</body>
+    <script src="/js/registervalidator.js"></script>
+    <footer><%- include('../partials/footer') %></footer>
+  </body>
 </html>
