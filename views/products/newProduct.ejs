@@ -67,7 +67,14 @@
           </div>
           <div class="input-new-product">
             <label for="productImage" class="form-label">Imagen:</label>
-            <input type="file" class="file" id="image" name="productImage" />
+            <input
+              type="file"
+              class="file"
+              id="file"
+              name="productImage"
+              multiple
+              accept=".jpg, .png"
+            />
             <% if(locals.errors && errors.UsuarioImage) { %>
             <p class="errorMsg"><%= errors.UsuarioImage.msg %></p>
             <% } %>

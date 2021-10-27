@@ -60,7 +60,14 @@
             <p class="errorMsg"><%= errors.telephone.msg %></p>
             <% } %>
             <label for="UsuarioImage" class="form-label">Imagen:</label>
-            <input type="file" class="file" id="image" name="UsuarioImage" />
+            <input
+              type="file"
+              class="file"
+              id="file"
+              name="UsuarioImage"
+              multiple
+              accept=".jpg, .png"
+            />
             <input
               class="password"
               type="password"
