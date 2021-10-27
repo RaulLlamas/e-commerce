@@ -20,15 +20,23 @@ window.addEventListener("load", function () {
       errores.push("El campo de descripción debe tener al menos 20 caracteres");
     }
 
-    let image = document.querySelector("input.file");
-    let extensions = /(.jpeg |.jpeg |.png |.gif)$/i;
+    document.getElementById("file").addEventListener("change", validateFile);
 
-    if (image.value == "") {
-      errores.push("Inserta una imagen");
-    } else if (image.value != extensions) {
-      errores.push(
-        "No se admiten este tipo de archivos. Por favor carga un archivo con extensión .jpeg, .jpg, .png, .gif"
-      );
+    function validateFile() {
+      const allowedExtensions = ["jpg", "jpeg", "png"],
+        sizeLimit = 1000000;
+
+      const { name: fileName, size: fileSize } = this.files[0];
+
+      const fileExtension = fileName.split(".").pop();
+
+      if (!allowedExtensions.includes(fileExtension)) {
+        alert("please upload only jpg, jpeg and png files");
+        this.value = null;
+      } else if (fileSize > sizeLimit) {
+        alert("file size too large");
+        this.value = null;
+      }
     }
 
     if (errores.length > 0) {

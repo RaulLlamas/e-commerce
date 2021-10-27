@@ -34,38 +34,21 @@ window.addEventListener("load", function () {
       );
     }
 
-    let password2 = document.querySelector("input.password2");
+    document.getElementById("file").addEventListener("change", validateFile);
 
-    if (password2.value != password) {
-      errores.push("La contraseña no coincide");
-    }
+    function validateFile() {
+      const allowedExtensions = ["jpg", "jpeg", "png"],
+        sizeLimit = 1000000;
 
-   
-    document.getElementById("file").addEventListener("change", validateFile)
+      const { name: fileName, size: fileSize } = this.files[0];
 
-    function validateFile(){
-      const allowedExtensions =  ['jpg','jpeg','png'],
-            sizeLimit = 1000000; // 1 megabyte
-      
-      // destructuring file name and size from file object
-      const { name:fileName, size:fileSize } = this.files[0];
-      
-      /*
-      * if the filename is apple.png, we split the string to get ["apple","png"]
-      * then apply the pop() method to return the file extension (png)
-      *
-      */
       const fileExtension = fileName.split(".").pop();
-      
-      /* 
-        check if the extension of the uploaded file is included 
-        in our array of allowed file extensions
-      */
-      if(!allowedExtensions.includes(fileExtension)){
+
+      if (!allowedExtensions.includes(fileExtension)) {
         alert("please upload only jpg, jpeg and png files");
         this.value = null;
-      }else if(fileSize > sizeLimit){
-        alert("file size too large")
+      } else if (fileSize > sizeLimit) {
+        alert("file size too large");
         this.value = null;
       }
     }
