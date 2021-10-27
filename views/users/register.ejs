@@ -56,7 +56,7 @@
             <p class="errorMsg"><%= errors.telephone.msg %></p>
             <% } %>
             <label for="UsuarioImage" class="form-label">Imagen:</label>
-            <input type="file" class="file" id="image" name="UsuarioImage" />
+            <input type="file" class="file" id="file" multiple accept=".jpg, .png"/>
             <% if(locals.errors && errors.UsuarioImage) { %>
             <p class="errorMsg"><%= errors.UsuarioImage.msg %></p>
             <% } %>

@@ -33,82 +33,10 @@
                 <% } %>
             </div>
         </div> 
-        <div class="wrapper">
-            <div class="links">
-                <ul>
-                    <li class="li-list active" data-view="list-view">
-                        <i class="fas fa-th-list"></i>List views
-                    </li>
-                    <li class="li-grid" data-view="grid-view">
-                        <i class="fas fa-th-large"></i>Grid view
-                    </li>
-                </ul>
-            </div>
-                <div class="view_main">
-                    <div class="view_wrap list-view" style="display: none;">
-                        <% for( let i = 0; i < producto.length; i++ ) { %>
-                        <div class="view_item">
-                            <div class="vi_left">
-                                <img src="/img/products/<%= producto[i].Image %>" alt="producto">
-                            </div>
-                            <div class="vi_right">
-                                <p class="title"><%= producto[i].name %></p>
-                                <p class="content"><%= producto[i].price %></p>
-                                <div class="btn">View details</div>
-                            </div>
-                        </div>
-                        <% } %>
-                    </div>
-                    <div class="view_wrap grid-view" style="display: none;">
-                        <% for( let i = 0; i < producto.length; i++ ) { %>
-                            <div class="view_item">
-                                <div class="vi_left">
-                                    <img src="/img/products/<%= producto[i].Image %>" alt="producto">
-                                </div>
-                                <div class="vi_right">
-                                    <p class="title"><%= producto[i].name %></p>
-                                    <p class="content"><%= producto[i].price %></p>
-                                    <div class="btn">View details</div>
-                                </div>
-                            </div>
-                            <% } %>
-                        </div>
-                    
-                </div>
-        </div>
+       
    </main>
    <footer>
     <%- include('../partials/footer') %>
    </footer>
-   <script>
-        let li_links = document.querySelectorAll(".links ul li");
-        let view_wraps = document.querySelectorAll(".view_wrap");
-        let list_view = document.querySelector(".list-view");
-        let grid_view = document.querySelector(".grid-view");
-
-        li_links.forEach(function(link){
-            link.addEventListener("click", function(){
-                li_links.forEach(function(link){
-                    link.classList.remove("active");
-                })
-
-                link.classList.add("active");
-
-                var li_view = link.getAttribute("data-view");
-
-                view_wraps.forEach(function(view){
-                    view.style.display = "none";
-                })
-
-                if(li_view == "list-view"){
-                    list_view.style.display = "block";
-                }
-                else{
-                    grid_view.style.display = "block";
-                }
-            })
-        })
-
-    </script>
 </body>
 </html> 
