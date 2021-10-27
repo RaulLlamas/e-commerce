@@ -13,10 +13,9 @@ const LastProduct = () => (
                 <p class="ProductName">Hamburguesa</p>
                 <p class="ProductPrice" >$150</p>
                 <p class="ProductCate">Por lo que vienes</p>
-                <p class="ProductCate">Descripcion</p>
-                <div class="ProductDescription">
-                    <p>Carne de puerco deshebrada mezclada con salsa BBQ, con una mezcla de quesos cheddar y mozzarella gratinados.</p>
-                </div>
+                <p class="ProductDescTitle">Descripcion:</p>
+                <p class="ProductDescription">Carne de puerco deshebrada mezclada con salsa BBQ, con una mezcla de quesos cheddar y mozzarella gratinados.</p>
+    
             </div>
     </div>
 );
