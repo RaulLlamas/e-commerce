@@ -110,7 +110,7 @@ update: function (req,res) {
   },{
     where: {Id_users: req.params.id}
     })
-  /*.then((Usuario)=>{     
+  .then((Usuario)=>{     
     const idusario = Usuario.Id_Addresses 
     console.log( 'Porque no funciona '+ idusario)                                               
     return  db.Direccion.update({
@@ -120,9 +120,9 @@ update: function (req,res) {
       Number_int:req.body.number_int,
       Reference: req.body.reference
     },{
-      where: {Id_addresses:Usuario.Id_Addresses}
+      where: {Id_addresses:req.params.id}
       }) 
-    })*/
+    })
     .then(()=> {
         return res.redirect('/')})            
     .catch(error => res.send(error))
