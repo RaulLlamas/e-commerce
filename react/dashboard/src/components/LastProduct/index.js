@@ -11,7 +11,8 @@ class LastProduct extends Component{
         super()
         this.state={
             total: 0,
-            producto : {}
+            producto : {},
+            categoria:''
         }
     }
 
@@ -22,33 +23,36 @@ class LastProduct extends Component{
         })
         .then(products =>{
             this.setState({total: products.total})
+
+            fetch('/api/products/'+this.state.total)
+            .then(respuesta => {
+                return respuesta.json()
+            })
+            .then(product =>{
+                this.setState({producto: product.data})
+                this.setState({categoria: product.data.categoria.name})
+            })
+            .catch(error => console.log(error))
+
         })
         .catch(error => console.log(error))
 
-        fetch('/api/products/'+(this.state.total-1))
-        .then(respuesta => {
-            return respuesta.json()
-        })
-        .then(product =>{
-            console.log(product);
-            this.setState({producto: product})
-        })
-        .catch(error => console.log(error))
+
     }
 
     render(){
         return (
             <div className='LastProduct'>
                 <div class="ImageDetail">
-                    <img src={Img} alt="image-product"/>
+                    <img src={this.state.producto.Image} alt="image-product"/>
                 </div>
                 <div class="ProductInfo">
-                    {/* <p class="ProductName">{this.state.producto.name}</p>
-                    <p class="ProductPrice" >{this.state.producto.price}+</p>
-                    <p class="ProductCate">{this.state.producto.categoria.name}</p>
+                    <p class="ProductName">{this.state.producto.name}</p>
+                    <p class="ProductPrice" >{this.state.producto.price}</p>
+                    <p class="ProductCate">{this.state.categoria}</p>
                     <p class="ProductDescTitle">Descripcion:</p>
                     <p class="ProductDescription">{this.state.producto.description}</p>
-         */}
+        
                 </div>
             </div>
         )
