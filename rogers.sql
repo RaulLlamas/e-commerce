@@ -91,7 +91,7 @@ CREATE TABLE `products` (
   UNIQUE KEY `Products_un` (`Name`,`Price`) USING HASH,
   KEY `products_FK` (`Id_Categories`),
   CONSTRAINT `products_FK` FOREIGN KEY (`Id_Categories`) REFERENCES `categories` (`Id_categories`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -100,7 +100,7 @@ CREATE TABLE `products` (
 
 LOCK TABLES `products` WRITE;
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
-INSERT INTO `products` VALUES (1,'Hamburguesa Clásica','$85.00',2,'Hamburguesa con una jugosa carne 100% de res, queso tipo americano, lechuga, cebolla y  jitomate.', NULL),(2,'Alitas BBQ','$115.00',1,'Deliciosas alitas de pollo cubiertas de salsa BBQ', NULL),(3,'Brownie Sundae','$80.00',3,'Rico brownie de chocolate acompañado con helado de vainilla cubierto de caramelo y decorado con frutos secos', NULL);
+INSERT INTO `products` VALUES (1,'Hamburguesa Clásica ','$85.00',2,'Hamburguesa con una jugosa carne 100% de res, queso tipo americano, lechuga, cebolla y jitomate',''),(2,'Alitas BBQ','$115.00',1,'Deliciosas alitas de pollo cubiertas de salsa BBQ',''),(3,'Brownie Sundae','$80.00',3,'Rico brownie de chocolate acompañado con helado de vainilla cubierto de caramelo y decorado con frutos secos',''),(4,'Papas a la francesa','$59.00',1,'Las mejores papas fritas con corte a la francesa acompañadas de un rico aderezo.',NULL),(5,'Aros de Cebolla','$65.00',1,'Crujientes aros de cebolla que con un bocado te hará tocar las estrellas ',NULL),(6,'Nachos','$50.00',1,'Lo mejor para empezar;  totopos crujientes con sabrosos frijoles refritos, queso derretido, tomates y cebollitas.',NULL),(7,'Hot Dog','$89.00',2,'El mejor sabor esta en un hot dog con salsa de tomate, mostaza, jalapeño y cebolla',NULL),(8,'Pizza','$115',2,'Exquisita pizza hecha solo para ti, con masa recien horneada y exquisitas especias',NULL),(9,'Sushi','$140',2,'El mejor sushi de la ciudad acompañado de aderezos deliciosos',NULL),(10,'Dona glaseada','$40',3,'Las donas que te enamoraran a primera vista, cubierta con chocolate y con deliciosos rellenos',NULL),(11,'Cheese cake','$70',3,'Delicioso Cheese cake con orilla de galleta sabor vainilla',NULL),(12,'Nieve','$50',3,'Las mejores nieves caseras, hechas solo para ti',NULL);
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
 UNLOCK TABLES;
 
