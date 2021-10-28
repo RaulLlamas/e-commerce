@@ -19,6 +19,7 @@ footer {
   width: 35%;
 }
 
+
 .wrapper {
   width: 800px;
   margin: 50px auto;
@@ -233,7 +234,7 @@ footer {
   padding: 6px 12px;
   border-radius: 4px;
   font-size: 15px;
-  width: 90px;
+  width: 110px;
   font-weight: 400;
   opacity: 0;
   white-space: nowrap;
@@ -380,6 +381,8 @@ footer {
   padding: 8px;
   background-color: #faaca8;
   background-image: linear-gradient(19deg, #faaca8 0%, #ddd6f3 100%);
+  
+
   margin: auto;
   border-radius: 10%;
 }
@@ -711,11 +714,22 @@ main footer {
 .register .form-1 input {
   border: none;
   width: 90%;
-  height: 33px;
+  height: 35px;
   margin: 10px auto;
   padding-left: 12px;
   padding-top: 4px;
   border-radius: 5px;
+}
+.input-new-usuario textarea{
+  border: none;
+  background-color: #ffffff;
+  border-radius: 5px;
+  width: 25rem;
+  height: 8rem;
+  margin-top: 25px;
+  resize: none;
+  overflow: hidden;
+  padding: 5px;
 }
 .register .form-2 {
   display: flex;
@@ -731,7 +745,7 @@ main footer {
   padding-top: 4px;
   border-radius: 5px;
 }
-.register .form-2 textarea {
+.register .form-2  textarea {
   border: none;
   width: 80%;
   margin: 10px 2%;
@@ -1117,6 +1131,9 @@ span {
   border: none;
   background-color: #ffffff;
   border-radius: 5px;
+  resize: none;
+  overflow: hidden;
+  padding: 5px;
   width: 100%;
 }
 .new-product button {

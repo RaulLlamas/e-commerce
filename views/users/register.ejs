@@ -55,8 +55,8 @@
             <% if(locals.errors && errors.telephone) { %>
             <p class="errorMsg"><%= errors.telephone.msg %></p>
             <% } %>
-            <label for="UsuarioImage" class="form-label">Imagen:</label>
-            <input type="file" class="file" id="file" multiple accept=".jpg, .png"/>
+            <label for="UsuarioImage" class="form-label file-image">Imagen:</label>
+            <input type="file" name="UsuarioImage" class="file" id="file" />
             <% if(locals.errors && errors.UsuarioImage) { %>
             <p class="errorMsg"><%= errors.UsuarioImage.msg %></p>
             <% } %>
@@ -127,7 +127,7 @@
                         </textarea
             >
           </div>
-
+          
           <button type="submit">Aceptar</button>
         </form>
       </div>
