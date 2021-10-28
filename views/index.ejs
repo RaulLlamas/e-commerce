@@ -34,7 +34,7 @@
                 <div class="options-menu">
                     <% entradas.forEach(product => { %>
                     <a href="products/productDetail/<%= product.id %>"class="element-menu" >
-                        <img src="/img/products/<%= product.image %>" class= "photo-element" alt="logo-home">
+                        <img src="/img/products/<%= product.Image %>" class= "photo-element" alt="logo-home">
                         <div class="body-element">
                             <p class="title-element"><%= product.name %></p>
                             <p class="price-element">$<%= toThousand(product.price) %></p>

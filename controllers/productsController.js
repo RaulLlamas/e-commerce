@@ -11,12 +11,6 @@ const controller = {
      // res.sendFile(path.resolve("views/products/productCart.html"));
      res.render('products/productCart');
     },
-   /* detail: (req, res) => {
-      let id = parseInt(req.params.id,10);
-      const product = products.find(p => p.id == id);
-
-      res.render('products/productDetail',{product: product,  toThousand: toThousand});
-    },*/
     'list': (req, res) => {
       db.Producto.findAll()
       .then(producto=>{
@@ -50,13 +44,13 @@ const controller = {
       
     },
     store: (req, res) => {
-      const resultValidation = validationResult(req); 
+   /*   const resultValidation = validationResult(req); 
       if(resultValidation.errors.length > 0){
         return res.render('products/newProduct', {
             errors: resultValidation.mapped(),
             oldData: req.body
         });
-      } 
+      } */
       db.Producto.create({
         name: req.body.name,
         price: req.body.price,
@@ -83,22 +77,7 @@ const controller = {
       .catch(error => res.send(error))
     },
     update: (req, res) => {
-     /* let id = parseInt(req.params.id,10);
-      const product = products.find(p => p.id == id);
-  
-      product.name = req.body.name
-      product.price = req.body.price
-      product.discount = req.body.discount
-      product.category = req.body.category
-      product.description = req.body.description
-      if (req.file){
-        product.image = req.file.filename
-      }
-      
-      const productsJSON = JSON.stringify(products,null,2);
-      fs.writeFileSync(productsFilePath,productsJSON);
-  
-      res.redirect('/');*/
+   
       db.Producto.update({
         name: req.body.name,
         price: req.body.price,
