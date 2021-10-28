@@ -49,6 +49,39 @@ INSERT INTO `addresses` VALUES (1,'Norte 81',56,'Centro',NULL,''),(2,'Río Bravo
 UNLOCK TABLES;
 
 --
+--Table rogers for table 'admin'
+--
+
+DROP TABLE IF EXISTS `admin`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `admin` (
+  `Id_users` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `Name` varchar(100) NOT NULL,
+  `Email` varchar(100) NOT NULL,
+  `Telephone` varchar(10) DEFAULT NULL,
+  `Password` varchar(100) NOT NULL,
+  `Birthday_date` date DEFAULT NULL,
+  `Id_Addresses` int(11) unsigned DEFAULT NULL,
+  `Image` text DEFAULT NULL,
+  PRIMARY KEY (`Id_users`),
+  UNIQUE KEY `Users_un` (`Email`),
+  KEY `users_FK` (`Id_Addresses`),
+  CONSTRAINT `users_FK` FOREIGN KEY (`Id_Addresses`) REFERENCES `addresses` (`Id_addresses`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `admin`
+--
+
+LOCK TABLES `admin` WRITE;
+/*!40000 ALTER TABLE `admin` DISABLE KEYS */;
+INSERT INTO `admin` VALUES (1,'David','david@gmail.com','9856213475','david00',NULL,1,'users1.jpg  '),(2,'Raúl','raul@gmail.com','5623478915','raul01',NULL,2,'users2.jpg'),(3,'Rebeca','rebeca@gmail.com','2211568493','rebeca02',NULL,4,'users3.jpg');
+/*!40000 ALTER TABLE `admin` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table rogers for table `categories`
 --
 
@@ -100,7 +133,7 @@ CREATE TABLE `products` (
 
 LOCK TABLES `products` WRITE;
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
-INSERT INTO `products` VALUES (1,'Hamburguesa Clásica ','$85.00',2,'Hamburguesa con una jugosa carne 100% de res, queso tipo americano, lechuga, cebolla y jitomate',''),(2,'Alitas BBQ','$115.00',1,'Deliciosas alitas de pollo cubiertas de salsa BBQ',''),(3,'Brownie Sundae','$80.00',3,'Rico brownie de chocolate acompañado con helado de vainilla cubierto de caramelo y decorado con frutos secos',''),(4,'Papas a la francesa','$59.00',1,'Las mejores papas fritas con corte a la francesa acompañadas de un rico aderezo.',NULL),(5,'Aros de Cebolla','$65.00',1,'Crujientes aros de cebolla que con un bocado te hará tocar las estrellas ',NULL),(6,'Nachos','$50.00',1,'Lo mejor para empezar;  totopos crujientes con sabrosos frijoles refritos, queso derretido, tomates y cebollitas.',NULL),(7,'Hot Dog','$89.00',2,'El mejor sabor esta en un hot dog con salsa de tomate, mostaza, jalapeño y cebolla',NULL),(8,'Pizza','$115',2,'Exquisita pizza hecha solo para ti, con masa recien horneada y exquisitas especias',NULL),(9,'Sushi','$140',2,'El mejor sushi de la ciudad acompañado de aderezos deliciosos',NULL),(10,'Dona glaseada','$40',3,'Las donas que te enamoraran a primera vista, cubierta con chocolate y con deliciosos rellenos',NULL),(11,'Cheese cake','$70',3,'Delicioso Cheese cake con orilla de galleta sabor vainilla',NULL),(12,'Nieve','$50',3,'Las mejores nieves caseras, hechas solo para ti',NULL);
+INSERT INTO `products` VALUES (1,'Hamburguesa Clásica ','85.00',2,'Hamburguesa con una jugosa carne 100% de res, queso tipo americano, lechuga, cebolla y jitomate',''),(2,'Alitas BBQ','115.00',1,'Deliciosas alitas de pollo cubiertas de salsa BBQ',''),(3,'Brownie Sundae','80.00',3,'Rico brownie de chocolate acompañado con helado de vainilla cubierto de caramelo y decorado con frutos secos',''),(4,'Papas a la francesa','59.00',1,'Las mejores papas fritas con corte a la francesa acompañadas de un rico aderezo.',NULL),(5,'Aros de Cebolla','65.00',1,'Crujientes aros de cebolla que con un bocado te hará tocar las estrellas ',NULL),(6,'Nachos','50.00',1,'Lo mejor para empezar;  totopos crujientes con sabrosos frijoles refritos, queso derretido, tomates y cebollitas.',NULL),(7,'Hot Dog','89.00',2,'El mejor sabor esta en un hot dog con salsa de tomate, mostaza, jalapeño y cebolla',NULL),(8,'Pizza','115',2,'Exquisita pizza hecha solo para ti, con masa recien horneada y exquisitas especias',NULL),(9,'Sushi','140',2,'El mejor sushi de la ciudad acompañado de aderezos deliciosos',NULL),(10,'Dona glaseada','40',3,'Las donas que te enamoraran a primera vista, cubierta con chocolate y con deliciosos rellenos',NULL),(11,'Cheese cake','70',3,'Delicioso Cheese cake con orilla de galleta sabor vainilla',NULL),(12,'Nieve','50',3,'Las mejores nieves caseras, hechas solo para ti',NULL);
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -154,9 +187,9 @@ CREATE TABLE `users` (
   `Image` text DEFAULT NULL,
   PRIMARY KEY (`Id_users`),
   UNIQUE KEY `Users_un` (`Email`),
-  KEY `users_FK` (`Id_Addresses`),
-  CONSTRAINT `users_FK` FOREIGN KEY (`Id_Addresses`) REFERENCES `addresses` (`Id_addresses`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  KEY `users_FK` (`Id_Addresses`) USING BTREE,
+  CONSTRAINT `users_FK_copy` FOREIGN KEY (`Id_Addresses`) REFERENCES `addresses` (`Id_addresses`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -165,7 +198,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'David','david@gmail.com','9856213475','david00',NULL,1,'users1.jpg'),(2,'Raúl','raul@gmail.com','5623478915','raul01',NULL,2,'users2.jpg'),(3,'Rebeca','rebeca@gmail.com','2211568493','rebeca02',NULL,4,'users3.jpg'),(4,'Jorge','jorge87@gmail.com','2568942317','jorge562',NULL,3,'users4.jpg');
+INSERT INTO `users` VALUES (1,'Jorge','jorge@gmail.com','2896413525','456789',NULL,3,'users4.jpg'),(2,'María','maria@gmail.com','2574896135','qwerty',NULL,3,NULL),(3,'Pablo','pablo@gmail.com','3658941207','zxcvbn',NULL,3,NULL),(4,'Fatima','fatima@gmail.com','5468941238','678890',NULL,3,NULL),(5,'Laura','laura@gmail.com','5962431785','jkloiu',NULL,3,NULL),(6,'Marcos','marcos@gmail.com','5623489715','589632',NULL,3,NULL),(7,'Gabriel','gabriel@gmail.com','4582639847','023568',NULL,3,NULL);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
