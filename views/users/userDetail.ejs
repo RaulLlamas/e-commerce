@@ -9,18 +9,14 @@
     </header>
    <main>
             <div class="user-detail">
-                <% if(locals.isLogged) {%>
-                <%- include('../partials/sidebar') %>
-                <% } else{ %>
-                    <%- include('../partials/sidebar') %> 
-                   <% }  %>
+                 <%- include('../partials/sidebar') %> 
                 <div class="user-about">
                     
                     <div class="image-user">
                             <img src="/img/users/<%= usuarios.Image %>" alt="">
                     </div>
                     <div class="user-info">
-                        <% if(locals.isLogged) {%>
+                        <% if(locals.userLogged.Admin) {%>
                             <div class="user-info-Admin">
                                 
                                 <div class="user-name"> <%= usuarios.name %></div>                    
