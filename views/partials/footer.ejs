@@ -4,8 +4,20 @@
     </section>
     <section class="section-footer-about">
         <div><p>Nosotros</p></div>
-        <div><p><a href="/products/newProduct/">Agregar producto</a></p></div>
-        <div><p><a href="/users/userProfile/">Listado de Usuario</a></p></div>
+        <div>
+            <% if(locals.isLogged) {%>
+            <p><a href="/products/newProduct/">Agregar producto</a></p>
+            <% } else{ %>
+                <p><a href="#">Metodos de pagos</a></p>
+                <% }  %>
+        </div>
+        <div>
+            <% if(locals.isLogged) {%>
+            <p><a href="/users/userProfile/">Listado de Usuario</a></p>
+            <% } else{ %>
+                <p><a href="#">Envios</a></p>
+               <% }  %>
+        </div>
         <div><p>Seguridad</p></div>
     </section>
     <section class="section-icon-footer">

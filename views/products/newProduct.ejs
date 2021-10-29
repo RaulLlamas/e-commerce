@@ -25,7 +25,6 @@
               name="name"
               value="<%= locals.errors && errors.name ? 'is-inavlid': null  %>"
               value="<%= locals.oldData ? oldData.name : null %>"
-              placeholder="Nombre  y apellido"
             />
             <% if(locals.errors && errors.name) { %>
             <p class="errorMsg"><%= errors.name.msg %></p>

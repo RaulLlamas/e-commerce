@@ -25,8 +25,11 @@
                         </div>
                     </div>
                     <div class="p-3 food text-center text-white mt-3 cursor">
+                        <% if(locals.isLogged) {%>
                         <a href="/users/userDetail/<%= usuarios[i].Id_users %>" class="food-card-button " class="text-uppercase">Detalle</a>
-                        
+                        <% } else{ %>
+                            <a href="/users/userDetail/<%= usuarios[i].Id_users %>" class="food-card-button " class="text-uppercase">Detalle</a>
+                           <% }  %>
                     </div> 
                 </div>
             </div> 

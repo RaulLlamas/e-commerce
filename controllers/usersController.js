@@ -111,8 +111,7 @@ update: function (req,res) {
     where: {Id_users: req.params.id}
     })
   .then((Usuario)=>{     
-    const idusario = Usuario.Id_Addresses 
-    console.log( 'Porque no funciona '+ idusario)                                               
+    const idusario = Usuario.Id_Addresses                                              
     return  db.Direccion.update({
       Street: req.body.street,
       Number_ext: req.body.number_ext,

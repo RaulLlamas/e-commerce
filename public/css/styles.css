@@ -19,7 +19,14 @@ footer {
   width: 35%;
 }
 
-
+.user-info-Admin{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  height: 25vh;
+}
 .wrapper {
   width: 800px;
   margin: 50px auto;
