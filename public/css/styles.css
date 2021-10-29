@@ -1306,7 +1306,7 @@ span {
 }
 @media (min-width: 625px) {
   .user-about {
-    height: 80vh;
+    height: 70vh;
   }
   .image-user {
     width: 40vh;
@@ -1473,6 +1473,9 @@ span {
     display: inline-block;
     margin: 0;
     margin-right: 40px;
+  }
+  .product-detail .agregar{
+    margin-right: 0;
   }
   .footer {
     display: flex;

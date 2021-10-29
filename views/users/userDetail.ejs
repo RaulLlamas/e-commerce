@@ -15,9 +15,19 @@
                     <div class="image-user">
                             <img src="/img/users/<%= usuarios.Image %>" alt="">
                     </div>
-                    <div class="user-info">
-                                <div class="user-name"> <%= usuarios.name %></div>                    
-                                <div class="user-email"><%= usuarios.email %></div>
+                    <div class="user-info profile-info">
+                        <p class="title">Correo: <%= usuarios.email %></p>
+                        <p class="title">Telefono: <%= usuarios.Telephone %></p>
+                        <p class="info"></p>
+                        <p class="title">Calle: <%= usuarios.address.Street %></p>
+                        <p class="title">Numero Ext: <%= usuarios.address.Number_ext %></p>
+                      
+                        <p class="title">Colonia: <%= usuarios.address.Colonia %></p>
+                        
+                        <p class="title">Numero Int: <%= usuarios.address.Number_int %></p>
+                       
+                        <p class="title">Referencias: <%= usuarios.address.Reference %> </p>
+                      
                                 <a href="/users/editUser/<%= usuarios.Id_users %>" class="btn-update-user">EDITAR USUARIO</a>
                     </div>
                     
