@@ -82,11 +82,12 @@ const controller = {
         password:bcrypt.hashSync(req.body.password,10),
         Birthday_date: req.body.birthday,
         Id_Addresses: idAddress,
-        Image:req.file.filename
+        Image:req.file.filename,
+        Admin: 0
       })
     })
     .then(()=> {
-      return res.redirect('/')})            
+      return res.redirect('/users/login')})            
     .catch(error => res.send(error))
       
   },edit: function(req,res) {
@@ -110,8 +111,7 @@ update: function (req,res) {
   },{
     where: {Id_users: req.params.id}
     })
-  .then((Usuario)=>{     
-    const idusario = Usuario.Id_Addresses                                              
+  .then((Usuario)=>{                                                  
     return  db.Direccion.update({
       Street: req.body.street,
       Number_ext: req.body.number_ext,
@@ -126,10 +126,14 @@ update: function (req,res) {
         return res.redirect('/')})            
     .catch(error => res.send(error))
 },
-  profile: async (req, res) => {
-    await db.Usuario.findOne({ where: { email: res.locals.userLogged.email }}, {include:[{association:"address"}]})
-    .then(usuarios => {
-        res.render('users/userDetail', {usuarios:usuarios});
+  profile:  (req, res) => {
+    //console.log(res.locals.userLogged.email + ' +++Hola'); [{association:"address"}]
+    //, {include: {association:"address"} }
+
+    db.Usuario.findByPk(res.locals.userLogged.Id_users, {include: {association:"address"}})
+    .then(usuario => {
+        
+        return res.render('users/userDetail', {usuarios:usuario.dataValues});
     });
   },
   logout: (req, res) => {

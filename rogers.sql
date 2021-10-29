@@ -49,39 +49,6 @@ INSERT INTO `addresses` VALUES (1,'Norte 81',56,'Centro',NULL,''),(2,'Río Bravo
 UNLOCK TABLES;
 
 --
---Table rogers for table 'admin'
---
-
-DROP TABLE IF EXISTS `admin`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `admin` (
-  `Id_users` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `Name` varchar(100) NOT NULL,
-  `Email` varchar(100) NOT NULL,
-  `Telephone` varchar(10) DEFAULT NULL,
-  `Password` varchar(100) NOT NULL,
-  `Birthday_date` date DEFAULT NULL,
-  `Id_Addresses` int(11) unsigned DEFAULT NULL,
-  `Image` text DEFAULT NULL,
-  PRIMARY KEY (`Id_users`),
-  UNIQUE KEY `Users_un` (`Email`),
-  KEY `users_FK` (`Id_Addresses`),
-  CONSTRAINT `users_FK` FOREIGN KEY (`Id_Addresses`) REFERENCES `addresses` (`Id_addresses`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `admin`
---
-
-LOCK TABLES `admin` WRITE;
-/*!40000 ALTER TABLE `admin` DISABLE KEYS */;
-INSERT INTO `admin` VALUES (1,'David','david@gmail.com','9856213475','david00',NULL,1,'users1.jpg  '),(2,'Raúl','raul@gmail.com','5623478915','raul01',NULL,2,'users2.jpg'),(3,'Rebeca','rebeca@gmail.com','2211568493','rebeca02',NULL,4,'users3.jpg');
-/*!40000 ALTER TABLE `admin` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table rogers for table `categories`
 --
 
@@ -185,6 +152,7 @@ CREATE TABLE `users` (
   `Birthday_date` date DEFAULT NULL,
   `Id_Addresses` int(11) unsigned DEFAULT NULL,
   `Image` text DEFAULT NULL,
+  `Admin` int(11) NOT NULL,
   PRIMARY KEY (`Id_users`),
   UNIQUE KEY `Users_un` (`Email`),
   KEY `users_FK` (`Id_Addresses`) USING BTREE,
@@ -198,7 +166,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'Jorge','jorge@gmail.com','2896413525','456789',NULL,3,'users4.jpg'),(2,'María','maria@gmail.com','2574896135','qwerty',NULL,3,NULL),(3,'Pablo','pablo@gmail.com','3658941207','zxcvbn',NULL,3,NULL),(4,'Fatima','fatima@gmail.com','5468941238','678890',NULL,3,NULL),(5,'Laura','laura@gmail.com','5962431785','jkloiu',NULL,3,NULL),(6,'Marcos','marcos@gmail.com','5623489715','589632',NULL,3,NULL),(7,'Gabriel','gabriel@gmail.com','4582639847','023568',NULL,3,NULL);
+INSERT INTO `users` VALUES (1,'Raul','raul@gmail.com','3333135034','$2a$10$EKm90tLFrLZRLtLh0K7zu.85TP6J7H.3IgTVHOCpxdNJ9iwhCcKW.',NULL,1,'default-image.png', 1),(2,'María','maria@gmail.com','2574896135','$2a$10$EKm90tLFrLZRLtLh0K7zu.85TP6J7H.3IgTVHOCpxdNJ9iwhCcKW.',NULL,2,'default-image.png', 0),(3,'Pablo','pablo@gmail.com','3658941207','zxcvbn',NULL,3,'default-image.png',0),(4,'Fatima','fatima@gmail.com','5468941238','678890',NULL,4,'default-image.png',0),(5,'Laura','laura@gmail.com','5962431785','jkloiu',NULL,5,'default-image.png',0),(6,'Marcos','marcos@gmail.com','5623489715','589632',NULL,6,'default-image.png',0),(7,'Gabriel','gabriel@gmail.com','4582639847','023568',NULL,7,'default-image.png',0);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 

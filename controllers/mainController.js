@@ -17,7 +17,6 @@ const controller = {
        db.Producto.findAll({include:[{association:"categories"}]})
       .then(products=>{
         const entradas = products.filter((pro) => {
-          console.log(pro)
           return pro.Id_Categories === 1;
 
         })

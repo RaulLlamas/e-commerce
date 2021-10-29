@@ -31,7 +31,7 @@ const validateCreateForm =[
 ];
 
 //,sinLoginMiddleware
-router.get("/shopping-cart", productsController.cart,sinLoginMiddleware);
+router.get("/shopping-cart", sinLoginMiddleware,productsController.cart);
 
 router.get("/productDetail/:id", productsController.detail);
 
@@ -40,7 +40,7 @@ router.get("/productList", productsController.list);
 router.get("/searchProduct/", productsController.search);
 
 //sinLoginMiddleware
-router.get("/newProduct/", productsController.create,sinLoginMiddleware);
+router.get("/newProduct/",sinLoginMiddleware, productsController.create);
 router.post(
   "/newProduct",
   uploadFile.single("productImage"),validateCreateForm,
@@ -48,7 +48,7 @@ router.post(
 );
 
 //,sinLoginMiddleware
-router.get("/editProduct/:id", productsController.edit,sinLoginMiddleware);
+router.get("/editProduct/:id",sinLoginMiddleware, productsController.edit);
 router.put(
   "/editProduct/:id",
   uploadFile.single("productImage"),
