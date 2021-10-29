@@ -35,16 +35,16 @@ CREATE TABLE `addresses` (
   `Reference` text DEFAULT NULL,
   PRIMARY KEY (`Id_addresses`),
   UNIQUE KEY `Addresses_un` (`Street`,`Number_ext`,`Colony`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `addresses`
---
+---
 
 LOCK TABLES `addresses` WRITE;
 /*!40000 ALTER TABLE `addresses` DISABLE KEYS */;
-INSERT INTO `addresses` VALUES (1,'Norte 81',56,'Centro',NULL,''),(2,'Río Bravo',286,'Santa Fe',NULL,NULL),(3,'Nicolas Bravo',1012,'San Manuel',NULL,NULL),(4,'Sur 31',92,'Hidalgo',NULL,NULL);
+INSERT INTO `addresses` VALUES (1,'Norte 81','56','Centro',NULL,''),(2,'Río Bravo','286','Santa Fe',NULL,NULL),(3,'Nicolas Bravo','1012','San Manuel',NULL,NULL),(4,'Sur 31','92','Hidalgo',NULL,NULL),(5,'bravo','2345','trigal','256','                                                        \r\n                        \r\n                        '),(6,'5 de mayo','365','20 de noviembre',NULL,NULL),(7,'Roma','267','Ex-normal',NULL,NULL);
 /*!40000 ALTER TABLE `addresses` ENABLE KEYS */;
 UNLOCK TABLES;
 
