@@ -100,7 +100,19 @@ CREATE TABLE `products` (
 
 LOCK TABLES `products` WRITE;
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
-INSERT INTO `products` VALUES (1,'Hamburguesa Clásica ','85.00',2,'Hamburguesa con una jugosa carne 100% de res, queso tipo americano, lechuga, cebolla y jitomate',''),(2,'Alitas BBQ','115.00',1,'Deliciosas alitas de pollo cubiertas de salsa BBQ',''),(3,'Brownie Sundae','80.00',3,'Rico brownie de chocolate acompañado con helado de vainilla cubierto de caramelo y decorado con frutos secos',''),(4,'Papas a la francesa','59.00',1,'Las mejores papas fritas con corte a la francesa acompañadas de un rico aderezo.',NULL),(5,'Aros de Cebolla','65.00',1,'Crujientes aros de cebolla que con un bocado te hará tocar las estrellas ',NULL),(6,'Nachos','50.00',1,'Lo mejor para empezar;  totopos crujientes con sabrosos frijoles refritos, queso derretido, tomates y cebollitas.',NULL),(7,'Hot Dog','89.00',2,'El mejor sabor esta en un hot dog con salsa de tomate, mostaza, jalapeño y cebolla',NULL),(8,'Pizza','115',2,'Exquisita pizza hecha solo para ti, con masa recien horneada y exquisitas especias',NULL),(9,'Sushi','140',2,'El mejor sushi de la ciudad acompañado de aderezos deliciosos',NULL),(10,'Dona glaseada','40',3,'Las donas que te enamoraran a primera vista, cubierta con chocolate y con deliciosos rellenos',NULL),(11,'Cheese cake','70',3,'Delicioso Cheese cake con orilla de galleta sabor vainilla',NULL),(12,'Nieve','50',3,'Las mejores nieves caseras, hechas solo para ti',NULL);
+INSERT INTO `products` VALUES 
+(1,'Hamburguesa Clásica ','85.00',2,'Hamburguesa con una jugosa carne 100% de res, queso tipo americano, lechuga, cebolla y jitomate','img-1635502390442img-hamburguesa.png'),
+(2,'Alitas BBQ','115.00',1,'Deliciosas alitas de pollo cubiertas de salsa BBQ','img-1635502638378img-alitas.png'),
+(3,'Brownie Sundae','80.00',3,'Rico brownie de chocolate acompañado con helado de vainilla cubierto de caramelo y decorado con frutos secos','img-1635502814714img-brownie.png'),
+(4,'Papas a la francesa','59.00',1,'Las mejores papas fritas con corte a la francesa acompañadas de un rico aderezo.','img-1635502610895img-papas-francesas.jpg'),
+(5,'Aros de Cebolla','65.00',1,'Crujientes aros de cebolla que con un bocado te hará tocar las estrellas ','img-1635502545046img-aros-cebolla.jpg'),
+(6,'Nachos','50.00',1,'Lo mejor para empezar;  totopos crujientes con sabrosos frijoles refritos, queso derretido, tomates y cebollitas.','img-1635502425202img-nachos.png'),
+(7,'Hot Dog','89.00',2,'El mejor sabor esta en un hot dog con salsa de tomate, mostaza, jalapeño y cebolla','img-1635502355293img-hot-dog.png'),
+(8,'Pizza','115',2,'Exquisita pizza hecha solo para ti, con masa recien horneada y exquisitas especias','img-1635502320462img-pizza.png'),
+(9,'Dona glaseada','40',3,'Las donas que te enamoraran a primera vista, cubierta con chocolate y con deliciosos rellenos','img-1635502775564img-dona-glaseada.png'),
+(10,'Cheese cake','70',3,'Delicioso Cheese cake con orilla de galleta sabor vainilla','img-1635502739478img-cheese-cake.png'),
+(11,'Nieve','50',3,'Las mejores nieves caseras, hechas solo para ti','img-1635502689718img-nieve-vainilla.png');
+
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
 UNLOCK TABLES;
 

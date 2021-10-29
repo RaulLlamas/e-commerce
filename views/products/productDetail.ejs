@@ -21,18 +21,26 @@
                 <div class="product-description">
                     <p><%= product.description %></p>
                 </div>
-                <% if(locals.userLogged.Admin) {%>
-                <a href="/products/editProduct/<%= product.Id_products %>" class="action-button-edit">EDITAR PRODUCTO</a>
+                <% if( locals.isLogged ) {%>
+                    <% if( locals.userLogged.Admin == 1) {%> 
+                        <a href="/products/editProduct/<%= product.Id_products %>" class="action-button-edit">EDITAR PRODUCTO</a>
+                    <% } else{ %>
+                        <p><a href="#" class="action-button-edit">Agregar al carrito </a></p>
+                    <% }  %>   
                 <% } else{ %>
                     <p><a href="#" class="action-button-edit">Agregar al carrito </a></p>
-                   <% }  %>
-                   <% if(res.locals.userLogged.Admin) {%>  
-                <form action="/products/delete/<%= product.Id_products %>?_method=DELETE>" method="POST" style="display: inline-flex">
-                    <button type="submit" class="action-button-delete">ELIMINAR</button>
-                </form>
+                <% }  %>
+                <% if( locals.isLogged ) {%>
+                    <% if( locals.userLogged.Admin == 1) {%>   
+                        <form action="/products/delete/<%= product.Id_products %>?_method=DELETE>" method="POST" style="display: inline-flex">
+                            <button type="submit" class="action-button-delete">ELIMINAR</button>
+                        </form>
+                    <% } else{ %>
+                        <button type="submit" class="action-button-delete" style="display: inline-flex">Comprar</button>
+                    <% }  %>
                 <% } else{ %>
                     <button type="submit" class="action-button-delete" style="display: inline-flex">Comprar</button>
-                   <% }  %>
+                <% }  %>
             </div>
        </div>
    </main>

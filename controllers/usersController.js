@@ -127,9 +127,6 @@ update: function (req,res) {
     .catch(error => res.send(error))
 },
   profile:  (req, res) => {
-    //console.log(res.locals.userLogged.email + ' +++Hola'); [{association:"address"}]
-    //, {include: {association:"address"} }
-
     db.Usuario.findByPk(res.locals.userLogged.Id_users, {include: {association:"address"}})
     .then(usuario => {
         

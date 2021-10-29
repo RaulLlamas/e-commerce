@@ -16,23 +16,9 @@
                             <img src="/img/users/<%= usuarios.Image %>" alt="">
                     </div>
                     <div class="user-info">
-                        <% if(locals.userLogged.Admin) {%>
-                            <div class="user-info-Admin">
-                                
-                                <div class="user-name"> <%= usuarios.name %></div>                    
-                                <div class="user-email"><%= usuarios.email %></div>
-                                <div class="user-name"> <%= usuarios.Telephone %></div>                    
-                                <div class="user-email"><%= usuarios.Birthday_date %></div>
-                                <div class="user-name"> <%= usuarios.address.Street %></div>                    
-                                <div class="user-email"><%= usuarios.address.Number_ext %></div>
-                                <div class="user-email"><%= usuarios.address.Colony %></div>
-                                <a href="/users/userProfile/" class="btn-update-user">REGRESAR</a>
-                            </div>
-                            <% } else{ %>
                                 <div class="user-name"> <%= usuarios.name %></div>                    
                                 <div class="user-email"><%= usuarios.email %></div>
                                 <a href="/users/editUser/<%= usuarios.Id_users %>" class="btn-update-user">EDITAR USUARIO</a>
-                               <% }  %>
                     </div>
                     
                     

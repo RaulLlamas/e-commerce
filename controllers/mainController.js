@@ -26,7 +26,7 @@ const controller = {
         const postres = products.filter((pro) => {
           return pro.Id_Categories === 3;
         })
-        
+        console.log(req.session.userLogged);
         res.render('index', {entradas: entradas,porvienes: porvienes, postres: postres, toThousand: toThousand, user: req.session.userLogged})
       })
     
